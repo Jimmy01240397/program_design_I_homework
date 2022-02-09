@@ -14,8 +14,8 @@ Return the target page. If the target word is not in the dictionary, return 0.
 <p>Your code will be judge using this program:</p>
 </div>
 <pre>
-#include<stdio.h>
-#include<string.h>
+#include<&zwj;stdio.h>
+#include<&zwj;string.h>
 #define N 10
 
 typedef struct dict_t_struct {
@@ -29,7 +29,7 @@ int main() {
     dict_t dictionary[N];
     char targetWord[10];
 
-    for(int i=0; i<N; i++) 
+    for(int i=0; i<&zwj;N; i++) 
         scanf("%s %d\n", dictionary[i].word, &dictionary[i].page);
     
     scanf("%s", targetWord);

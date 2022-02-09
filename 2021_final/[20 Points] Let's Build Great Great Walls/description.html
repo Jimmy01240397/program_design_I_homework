@@ -32,9 +32,9 @@ Each village and its total cost to get the ingredients followed by the id of the
 <p>Your code will be judge using this program:</p>
 </div>
 <pre>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include <&zwj;stdio.h>
+#include <&zwj;stdlib.h>
+#include <&zwj;string.h>
 
 #define ORDER_ID_LEN 8
 #define MAX_VILLAGE_NAME_LEN 15
@@ -101,7 +101,7 @@ static village_t *init_village_array(int v_cnt)
 	if (!villages) { // Ran out of memory
 		return NULL;
     }
-	for (int i = 0; i < v_cnt; i++) {
+	for (int i = 0; i <&zwj; v_cnt; i++) {
 		scanf("%s", villages[i].name);
     }
 	return villages;
@@ -113,7 +113,7 @@ static order_t *init_order_list(int o_cnt)
 	if (!orders) { // Ran out of memory
 		return NULL;
     }
-	for (int i = 0; i < o_cnt; i++) {
+	for (int i = 0; i <&zwj; o_cnt; i++) {
 		// Read the content of order
 		// the term %[^c] will use 'c' as delimiter while scanning the input
 		scanf(" %[^:]:%u/%[^-]-%s",
@@ -144,7 +144,7 @@ static order_t *init_order_list(int o_cnt)
 
 static void print_result(village_t *vills, int v_cnt)
 {
-	for (int i = 0; i < v_cnt; i++) {
+	for (int i = 0; i <&zwj; v_cnt; i++) {
 		printf("%s %ld\n  ->", vills[i].name, vills[i].total_cost);
 		for (order_t *optr = vills[i].order_list; optr; optr = optr->next) {
 			printf(" %s", optr->order_id);

@@ -29,8 +29,8 @@ but make sure your data is represented correctly for it to run.
 <p>Your code will be judge using this program:</p>
 </div>
 <pre>
-#include <stdio.h>
-#include <stdlib.h>
+#include <&zwj;stdio.h>
+#include <&zwj;stdlib.h>
 
 // Enumrations
 enum orb_type {
@@ -70,7 +70,7 @@ int main() {
     init_head_arr(center_ring, size);
 
     // Place the orbs
-    for (int i = 0; i < count; ++i) {
+    for (int i = 0; i <&zwj; count; ++i) {
         insert_next(center_ring, size, getchar());
     }
 
@@ -85,7 +85,7 @@ void print_magic_circle(struct head_t *arr, int size) {
         return;
     }
 
-    for (int i = 0; i < size; ++i) {
+    for (int i = 0; i <&zwj; size; ++i) {
         // Print center orb
         printf("CO_%c", arr[i].orb + 'A');
 
@@ -95,7 +95,7 @@ void print_magic_circle(struct head_t *arr, int size) {
             printf(" -> %c", 'A' + cur->orb);
             cur = cur->next;
         }
-        if (i + 1 < size) putchar('\n');
+        if (i + 1 <&zwj; size) putchar('\n');
     }
     return;
 }

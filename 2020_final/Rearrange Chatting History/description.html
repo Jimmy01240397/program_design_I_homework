@@ -15,8 +15,8 @@ All message information in correct order with the format same as Input.
 <p>Your code will be judge using this program:</p>
 </div>
 <pre>
-#include <stdio.h>
-#include <stdlib.h>
+#include <&zwj;stdio.h>
+#include <&zwj;stdlib.h>
 #define MESSAGE_LENGTH 64
 #define NAME_LENGTH 10
 
@@ -37,11 +37,11 @@ int main(void) {
     struct message_info m[100];
     int total;
     scanf("%d", &total);
-    for(int i = 0; i < total; i++) {
+    for(int i = 0; i <&zwj; total; i++) {
         scanf("%d:%d %s %[^\n]", &m[i].time.hour, &m[i].time.minute, m[i].name, m[i].message);
     }
     sort_message(m, &total);
-    for(int i = 0; i < total; i++) {
+    for(int i = 0; i <&zwj; total; i++) {
         printf("%02d:%02d %s %s\n", m[i].time.hour, m[i].time.minute, m[i].name, m[i].message);
     }
     return 0;

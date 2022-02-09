@@ -16,9 +16,9 @@ A list of remained goods from top to bottom. The output format is: "Good_type x 
 <p>Your code will be judge using this program:</p>
 </div>
 <pre>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include <&zwj;stdio.h>
+#include <&zwj;stdlib.h>
+#include <&zwj;string.h>
 
 const char *good_types[] = {
     "Juice",
@@ -39,7 +39,7 @@ int main() {
         if (!strcmp(job, "Produce")) {
             good = strtok(NULL, " ");
             count = atol(strtok(NULL, " "));
-            for (int i = 0; i < 3; i++) {
+            for (int i = 0; i <&zwj; 3; i++) {
                 if (!strcmp(good, good_types[i])) {
                     top_of_stack = produce(top_of_stack, good_types[i], count);
                     break;

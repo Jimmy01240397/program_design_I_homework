@@ -14,7 +14,7 @@ Your function needs to change the colors for each pixel in the graph after sprea
 <p>Your code will be judge using this program:</p>
 </div>
 <pre>
-#include <stdio.h>
+#include <&zwj;stdio.h>
 #define M 5
 #define N 8
 char colors[4] = {'R', 'G', 'B', 'X'};   // Red, Green, Blue, Empty
@@ -25,8 +25,8 @@ int main(void) {
     char graph[M][N];
     int row, col;
 
-    for(int i = 0; i < M; i++) {
-        for(int j = 0; j < N; j++)
+    for(int i = 0; i <&zwj; M; i++) {
+        for(int j = 0; j <&zwj; N; j++)
             scanf("%c", &graph[i][j]);
         getchar();      // Ignore '\n'
     }
@@ -35,8 +35,8 @@ int main(void) {
     spread(&graph[0][0], row, col);
     
     // Print out the spreading result
-    for(int i = 0; i < M; i++) {
-        for(int j = 0; j < N; j++)
+    for(int i = 0; i <&zwj; M; i++) {
+        for(int j = 0; j <&zwj; N; j++)
             printf("%c", graph[i][j]);
         printf("\n");
     }

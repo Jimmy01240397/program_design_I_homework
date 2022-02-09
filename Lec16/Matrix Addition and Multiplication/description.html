@@ -14,7 +14,7 @@ The content of the result matrix. Each element is followed by a space character.
 <p>Your code will be judge using this program:</p>
 </div>
 <pre>
-#include <stdio.h>
+#include <&zwj;stdio.h>
 #define SIZE 50
 
 struct mat {
@@ -48,16 +48,16 @@ int main(void) {
 
 void scan_mat(struct mat *m_p) {
     scanf("%d %d", &m_p->row, &m_p->col);
-    for (int i = 0; i < m_p->row; ++i) {
-        for (int j = 0; j < m_p->col; ++j) {
+    for (int i = 0; i <&zwj; m_p->row; ++i) {
+        for (int j = 0; j <&zwj; m_p->col; ++j) {
             scanf("%d", &m_p->value[i][j]);
         }
     }
 }
 
 void print_mat(const struct mat *m_p){
-    for (int i = 0; i < m_p->row; ++i) {
-        for (int j = 0; j < m_p->col; ++j) {
+    for (int i = 0; i <&zwj; m_p->row; ++i) {
+        for (int j = 0; j <&zwj; m_p->col; ++j) {
             printf("%d ", m_p->value[i][j]);
             if (j == m_p->col - 1) {
                 printf("\n");

@@ -15,8 +15,8 @@ If there isn't any route, print out "Can't find the exit!".
 <p>Your code will be judge using this program:</p>
 </div>
 <pre>
-#include <stdio.h>
-#include <stdbool.h>
+#include <&zwj;stdio.h>
+#include <&zwj;stdbool.h>
 #define n 5
 
 bool visit(char [][n], int [][n], int, int);
@@ -24,16 +24,16 @@ int main(void) {
     char maze[n][n];
     int route[n][n];
     // initialize maze and route matrices
-    for (int i=0; i<n; i++) {
-        for (int j=0; j<n; j++) {
+    for (int i=0; i<&zwj;n; i++) {
+        for (int j=0; j<&zwj;n; j++) {
 	        route[i][j]=0;
 	        scanf("%c", &maze[i][j]);
 	        getchar();
 	    }
     }
     if (visit(maze, route, 0, 0)) { // (0,0) is a starting point
-        for (int i=0; i<n; i++) {
-	        for (int j=0; j<n; j++)
+        for (int i=0; i<&zwj;n; i++) {
+	        for (int j=0; j<&zwj;n; j++)
 	            printf("%d ", route[i][j]);
 	        printf("\n");
         }

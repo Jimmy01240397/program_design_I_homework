@@ -14,8 +14,8 @@ sort the array in ascending order by level.
 <p>Your code will be judge using this program:</p>
 </div>
 <pre>
-#include <stdio.h>
-#include <stdlib.h>
+#include <&zwj;stdio.h>
+#include <&zwj;stdlib.h>
 
 struct ESPer {
     char name[64];
@@ -31,13 +31,13 @@ int main()
     struct ESPer tokiwadai[100];
 
     scanf("%d", &n);
-    for(int i = 0; i < n; ++i) {
+    for(int i = 0; i <&zwj; n; ++i) {
         scanf("%d %s", &(tokiwadai[i].level), tokiwadai[i].name);
     }
 
     sort_level(tokiwadai, n);
 
-    for(int i = 0;i < n;++i) {
+    for(int i = 0;i <&zwj; n;++i) {
         printf("%d %s\n", tokiwadai[i].level, tokiwadai[i].name);
     }
 

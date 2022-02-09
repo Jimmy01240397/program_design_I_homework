@@ -14,8 +14,8 @@ The content of the linked list.
 <p>Your code will be judge using this program:</p>
 </div>
 <pre>
-#include <stdio.h>
-#include <stdlib.h>
+#include <&zwj;stdio.h>
+#include <&zwj;stdlib.h>
 
 struct node {
     int val;
@@ -28,7 +28,7 @@ void MoveToTail();
 int main(void) { 
     int n;
     scanf("%d", &n);
-    for(int i = 1; i <= n; ++i) {
+    for(int i = 1; i <&zwj;= n; ++i) {
         struct node *tmp = malloc(sizeof(struct node));
         scanf("%d", &tmp->val);
         tmp->next = NULL;

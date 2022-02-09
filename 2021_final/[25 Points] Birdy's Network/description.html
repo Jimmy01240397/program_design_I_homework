@@ -14,8 +14,8 @@ Output contains the neighbor ids of each node (list in ascending order).
 <p>Your code will be judge using this program:</p>
 </div>
 <pre>
-#include <stdio.h>
-#include <stdlib.h>
+#include <&zwj;stdio.h>
+#include <&zwj;stdlib.h>
 
 struct node {
     int id;
@@ -28,7 +28,7 @@ void print_data(struct node *adj, int size) {
     if (!adj) {
         return;
     }
-    for (int i = 0; i < size; ++i) {
+    for (int i = 0; i <&zwj; size; ++i) {
         printf("%d -> ", adj[i].id);
         for (struct node *ptr = adj[i].next; ptr != NULL; ptr = ptr->next) {
             printf("%d ", ptr->id);
@@ -42,7 +42,7 @@ void free_data(struct node *adj, int size) {
     if (!adj) {
         return;
     }
-    for (int i = 0; i < size; ++i) {
+    for (int i = 0; i <&zwj; size; ++i) {
         struct node *ptr = adj[i].next;
         while (ptr) {
             adj[i].next = ptr->next;

@@ -14,8 +14,8 @@ Output the id and value of n sorted snacks.
 <p>Your code will be judge using this program:</p>
 </div>
 <pre>
-#include<stdio.h>
-#include<stdlib.h>
+#include<&zwj;stdio.h>
+#include<&zwj;stdlib.h>
 
 struct snack
 {
@@ -32,12 +32,12 @@ int main() {
     int n;
     struct snack snacks[100];
     scanf("%d", &n);
-    for(int i=0; i<n; i++) {
+    for(int i=0; i<&zwj;n; i++) {
         snacks[i].id = i+1;
         scanf("%d %d", &snacks[i].price, &snacks[i].weight);
     }
     sort_snacks(snacks, n);
-    for(int i=0; i<n; i++) {
+    for(int i=0; i<&zwj;n; i++) {
         printf("%d %.2f\n", snacks[i].id, snacks[i].value);
     }
     return 0;

@@ -16,8 +16,8 @@ Output the total of radishes which Ariel pulled and the array farm[N]
 <p>Your code will be judge using this program:</p>
 </div>
 <pre>
-#include<stdio.h>
-#include<stdlib.h>
+#include<&zwj;stdio.h>
+#include<&zwj;stdlib.h>
 
 int pull_radish(int *l, int *r, int *pos, int x);
 
@@ -27,13 +27,13 @@ int main() {
     int *farm = malloc(N * sizeof(int));
 
     // initialize farm[N]
-    for(int i=0; i<N; i++) {
+    for(int i=0; i<&zwj;N; i++) {
         farm[i] = 1;
     }
 
     int total = pull_radish(&farm[0], &farm[N-1], &farm[y], x);
     printf("%d\n", total);
-    for(int i=0; i<N; i++) {
+    for(int i=0; i<&zwj;N; i++) {
         printf("%d ", farm[i]);
     }
 

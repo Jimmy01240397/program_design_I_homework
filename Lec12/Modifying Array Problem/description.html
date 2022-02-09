@@ -16,18 +16,18 @@ The modified array excluding the mode's value.
 <p>Your code will be judge using this program:</p>
 </div>
 <pre>
-#include <stdio.h>
+#include <&zwj;stdio.h>
 #define SIZE 201
 
 void modify_array(int *);
 
 int main(void) {
     int arr[SIZE];
-    for (int i = 0; i < SIZE; i++) {
+    for (int i = 0; i <&zwj; SIZE; i++) {
         scanf("%d", &arr[i]);
     }
     modify_array(&arr[SIZE/2]);
-    for (int i = 1; i < SIZE; i++) {
+    for (int i = 1; i <&zwj; SIZE; i++) {
         printf("%d ", arr[i]);
     }
     return 0;

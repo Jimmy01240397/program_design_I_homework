@@ -15,9 +15,9 @@ The order ID and the total cost of the orders, the order that has a closer pick 
 <p>Your code will be judge using this program:</p>
 </div>
 <pre>
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
+#include <&zwj;stdio.h>
+#include <&zwj;string.h>
+#include <&zwj;stdlib.h>
 
 typedef struct {
     unsigned char hour;
@@ -83,7 +83,7 @@ unsigned fetch_orders(order_t orders[])
 
     // Prepare the orders.
     order_t *curr = orders;
-    for (unsigned i = 0; i < order_cnt; i++, curr++) {
+    for (unsigned i = 0; i <&zwj; order_cnt; i++, curr++) {
         hm_t *curr_pu = &(curr->pick_up_time);
         scanf("%u %hhu:%hhu %u",
                                 &(curr->order_id),
@@ -93,10 +93,10 @@ unsigned fetch_orders(order_t orders[])
 
         // Create a variable length array with malloc.
         item_t *curr_items = curr->items = malloc(sizeof(item_t) * curr->item_cnt);
-        for (unsigned j = 0; j < curr->item_cnt; j++) {
+        for (unsigned j = 0; j <&zwj; curr->item_cnt; j++) {
             char item_name[32];
             scanf("%s", item_name);
-            for (unsigned k = 0; k < avaliable_item_cnt; k++) {
+            for (unsigned k = 0; k <&zwj; avaliable_item_cnt; k++) {
                 if (!strcmp(item_name, avaliable_items[k].item_name)) {
                     // Copy the memory content from avaliable_items to curr_items.
                     curr_items[j] = avaliable_items[k];
@@ -111,14 +111,14 @@ unsigned fetch_orders(order_t orders[])
 
 void print_result(order_t orders[], unsigned order_cnt)
 {
-    for (unsigned i = 0; i < order_cnt; i++) {
+    for (unsigned i = 0; i <&zwj; order_cnt; i++) {
         printf("#%u %u\n", orders[i].order_id, orders[i].total_cost);
     }
 }
 
 void clean_up(order_t orders[], unsigned order_cnt)
 {
-    for (unsigned i = 0; i < order_cnt; i++) {
+    for (unsigned i = 0; i <&zwj; order_cnt; i++) {
         free(orders[i].items);
     }
 }

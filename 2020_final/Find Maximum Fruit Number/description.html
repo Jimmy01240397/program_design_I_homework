@@ -1,0 +1,56 @@
+<h3>Description</h3>
+<div>
+<p><code>-英文題目-</code></p><p>Given a sequence (char input[]), there are many fruits in this sequence. (at most 20 kinds of fruit)</p><p>The fruits are connected with +_+ symbol.</p><p>Please output every fruit which has the maximum number of <strong>occurrence.</strong></p><p>If there are many fruits which have the same maximum number of occurrence, follow char fruit[][15]'s order.</p><p><code>hint: answer can more than one fruit</code></p><p><code>-中文題目-</code></p><p>給定一個 sequence，</p><p>該 sequence 包含很多種水果(最多會出現20種水果)，</p><p>並且每種水果以 +_+ 符號隔開，</p><p></p><p>其中這20種可能出現的水果已經定義在 Loader，</p><p>也傳入 find_fruit() (等同於 char fruit[][15])，</p><p>例如: fruit[0] 代表第一種水果, fruit[1]代表第二種水果等等，</p><p>請將所有出現最多次的水果都印出來</p><p><code>如果有相同出現次數的水果，順序請依照 char fruit[][15] 中的順序，例如優先印出 guava 再來 litchi</code></p><p>相同次數印出的先後順序:</p><p>guava&gt;litchi&gt;longan&gt;watermelon&gt;pomelo&gt;pear&gt;banana&gt;papaya&gt;pumpkin&gt;tomato&gt;mango&gt;kiwi&gt;persimmon&gt;cantaloupe&gt;strawberry&gt;grape&gt;peach&gt;orange&gt;coconut&gt;lemon</p><p><code>提示: 出現最多次的水果可能不只一種</code></p><p><code>提示: 請務必仔細閱讀 Loader code，來弄清楚整個程式的架構</code></p><p><code>hint: strtok()</code></p><p></p>
+</div>
+<p></p>
+<h3>Input</h3>
+There is one line for the sequence (char input[])  and has at most 20000 char.
+The fruits are connected with +_+ in this sequence (at least one fruit in this sequence).
+<p></p>
+<h3>Output</h3>
+Output the fruit which has the maximum number of occurrence.
+(you need to print "\n" at the end of each line)。
+如果有相同出現次數的水果，順序請依照 char fruit[][15] 中的順序，例如優先印出 guava 再來 litchi 等等
+<p></p>
+<h3>Loader Code</h3>
+<div>
+<p>Your code will be judge using this program:</p>
+</div>
+<pre>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#define N 20000
+
+void find_fruit(char input[], char fruit[][15]);
+
+int main(void) {
+	char fruit[20][15] = {
+        "guava",
+        "litchi",
+        "longan",
+        "watermelon",
+        "pomelo",
+        "pear",
+        "banana",
+        "papaya",
+        "pumpkin",
+        "tomato",
+        "mango",
+        "kiwi",
+        "persimmon",
+        "cantaloupe",
+        "strawberry",
+        "grape",
+        "peach",
+        "orange",
+        "coconut",
+        "lemon"
+    };
+    char input[N];
+    scanf("%s", input);
+    find_fruit(input, fruit);
+    return 0;
+}
+</pre>

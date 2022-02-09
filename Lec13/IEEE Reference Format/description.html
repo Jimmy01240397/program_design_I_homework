@@ -1,0 +1,29 @@
+<h3>Description</h3>
+<div>
+<p>大家一定都有寫報告的經驗對吧？寫報告的時候最重要的，就是要把你引用的來源給註記清楚。在資訊系，我們寫報告時很常會引用來自 IEEE 的論文或期刊，IEEE 規範的會議論文引用格式為：</p><blockquote><p>J. K. Author, “Title of paper,” in Abbreviated Name of Conf., (location of conference is optional), (Month and day(s) if provided) year, pp. xxx-xxx.</p></blockquote><p>一個實際範例如下：</p><blockquote><p>Y. Azar et al., "28 GHz propagation measurements for outdoor cellular communications using steerable beam antennas in New York city," 2013 IEEE International Conference on Communications (ICC), Budapest, 2013, pp. 5143-5147, doi: 10.1109/ICC.2013.6655399.</p></blockquote><p>這裡頭包含了以下元素：</p><p>主要作者：J. K. Author，"et al." 代表有複數作者但未全數列出，範例內為 <code>Y. Azar et al.</code><br>論文標題：Title of paper，範例內為 <code>28 GHz propagation measurements for outdoor cellular communications using steerable beam antennas in New York city</code><br>會議名稱：Abbreviated Name of Conf.，範例內為<code>2013 IEEE International Conference on Communications (ICC)</code><br>會議舉辦地點（選填）：(location of conference is optional)，範例內為<code>Budapest</code><br>會議舉辦時間：(Month and day(s) if provided) year，年份為必填、月份與日期選填。範例內為<code>2013</code><br>出版物資訊：pp. xxx-xxx，包含頁碼和數位物件辨識碼等，範例內為<code>pp. 5143-5147, doi: 10.1109/ICC.2013.6655399</code></p><p>給定以上資訊，請你把所有的資訊組合在一起，組成符合 IEEE 論文引用格式的字串。</p>
+</div>
+<p></p>
+<h3>Input</h3>
+The arguments will include the information mentioned above. Include authors, title, conference name, location, date and page information.
+<p></p>
+<h3>Output</h3>
+Your function have to return a string of information about this paper that match the IEEE reference format.
+<p></p>
+<h3>Loader Code</h3>
+<div>
+<p>Your code will be judge using this program:</p>
+</div>
+<pre>
+#include<stdio.h>
+#include<string.h>
+
+char *reference(char author[], char title[], char conference[], char location[], char date[], char ppdoi[]);
+
+int main(){
+    char author[100], title[150], conference[150], location[30], date[5], ppdoi[60];
+    scanf("%[^\n]\n%[^\n]\n%[^\n]\n%[^\n]\n%[^\n]\n%[^\n]", author, title, conference, location, date, ppdoi);
+    printf("%s", reference(author, title, conference, location, date, ppdoi));
+    return 0;
+}
+
+</pre>

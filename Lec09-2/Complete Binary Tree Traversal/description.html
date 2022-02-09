@@ -1,0 +1,43 @@
+<h3>Description</h3>
+<div>
+<p>Tree is a widely used data structure.</p><p>A <strong>tree</strong> looks like:</p><pre><code>Tree:
+         1
+       /   \
+     2       3
+   /   \   /   \
+  4     5 6     7</code></pre><p>can be stored in an 8 elements integer array</p><pre><code> [no_use, 1, 2, 3, 4, 5, 6, 7]</code></pre><p><strong>Child node</strong>:</p><pre><code>The lower nodes 2、3 linked to 1 are called "the node 1's children".</code></pre><p><strong>Binary tree</strong> is define as :</p><pre><code>For each node, it has at most two children.</code></pre><p><strong>Complete binary tree </strong>can be seen as :</p><pre><code>The tree node is "from top to down, left to right" full.</code></pre><pre><code>Is a complete binary tree:
+         1
+       /   \
+     2       3
+   /   \   /   
+  4     5 6   
+  
+Not a complete binary tree:
+         1
+       /   \
+     2       3
+       \      
+        5      </code></pre><p></p><hr><p>There are 3 kind of simple traversal can be implemented on tree :</p><p><strong>Pre-order traversal</strong> :</p><p>visit current node -&gt; visit left child -&gt; visit right child</p><p><strong>In-order</strong> <strong>traversal</strong> :</p><p>visit left child -&gt; visit current node -&gt; visit right child</p><p><strong>Post-order</strong> <strong>traversal</strong> :</p><p>visit left child -&gt; visit right child -&gt; visit current node</p><p>Please implement the Complete Binary Tree Traversal.</p><hr><p></p>
+</div>
+<p></p>
+<h3>Input</h3>
+The first line is what kind traversal should be implemented.
+'0' for pre-order traversal
+'1' for in-order traversal
+'2' for post-order traversal
+The second line is the number of nodes in this tree.
+The third line is a integer list represent the tree.Each integer seperated by a space.
+the number of tree node n is ranged in:
+0 <= n <= 5000
+<p></p>
+<h3>Output</h3>
+A sequential integer list show the traversal result.
+Each visited node is seperated by a space.
+<p></p>
+<h3>Loader Code</h3>
+<div>
+<p>Your code will be judge using this program:</p>
+</div>
+<pre>
+
+</pre>

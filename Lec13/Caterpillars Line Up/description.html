@@ -1,0 +1,30 @@
+<h3>Description</h3>
+<div>
+<p>A caterpillar has a head 'A', a tail 'Z' and a body with <code>n</code> lower case letters. (<code>n</code>&gt;=0)</p><p>Now several caterpillars  stand in line but some caterpillars' direction isn't correct. Please help them to line up again!</p>
+</div>
+<p></p>
+<h3>Input</h3>
+A string.
+<p></p>
+<h3>Output</h3>
+A string.
+<p></p>
+<h3>Loader Code</h3>
+<div>
+<p>Your code will be judge using this program:</p>
+</div>
+<pre>
+#include<stdio.h>
+#include<stdbool.h>
+
+void lineup_again(char line[]);
+void swap(char *a, char *b);
+void reverse_caterpillar(char *l, char *r);
+
+int main() {
+    char line[1000000];
+    scanf("%s", line);
+    lineup_again(line);
+    printf("%s", line);
+}
+</pre>

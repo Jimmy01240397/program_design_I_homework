@@ -1,0 +1,49 @@
+<h3>Description</h3>
+<div>
+<p>Nowadays, "LINE" is a well known communication application. "LINE" provides a feature that you can store your chatting history into text files(<code>.txt</code>). Unfortunately, you get a text file with incorrect order. Therefore, your task is to rearrange the chatting history into the ascending order with timestamp (<strong>00:00 - 23:59</strong>). Assume that at most one message per minute and the history is always on the same day.</p><p>現今，"LINE"是個知名的通訊應用程式。“ LINE”提供了一項功能，你可以將聊天記錄存儲到文本文件(<code>.txt</code>)中。很不幸的是，你拿到了一份錯誤順序的文本文件。因此，你的任務就是將聊天紀錄依照時間升序(<strong>00:00 - 23:59</strong>)重新排序。假設每分鐘最多只有一則訊息且記錄一定都是在同一天。</p>
+</div>
+<p></p>
+<h3>Input</h3>
+First line is the total message (<= 100).
+Then, the followings are the each message information separated by newline with the format: hour:miniute name content.
+<p></p>
+<h3>Output</h3>
+All message information in correct order with the format same as Input.
+<p></p>
+<h3>Loader Code</h3>
+<div>
+<p>Your code will be judge using this program:</p>
+</div>
+<pre>
+#include <stdio.h>
+#include <stdlib.h>
+#define MESSAGE_LENGTH 64
+#define NAME_LENGTH 10
+
+struct timestamp {
+    int hour, minute;
+};
+
+struct message_info {
+    struct timestamp time;
+    char name[NAME_LENGTH];
+    char message[MESSAGE_LENGTH];
+};
+
+int cmp(const void *a, const void *b);
+void sort_message(struct message_info *m, int *total);
+
+int main(void) {
+    struct message_info m[100];
+    int total;
+    scanf("%d", &total);
+    for(int i = 0; i < total; i++) {
+        scanf("%d:%d %s %[^\n]", &m[i].time.hour, &m[i].time.minute, m[i].name, m[i].message);
+    }
+    sort_message(m, &total);
+    for(int i = 0; i < total; i++) {
+        printf("%02d:%02d %s %s\n", m[i].time.hour, m[i].time.minute, m[i].name, m[i].message);
+    }
+    return 0;
+}
+</pre>

@@ -1,0 +1,46 @@
+<h3>Description</h3>
+<div>
+<p>There are two arrays <code>A</code> and <code>B</code>. Both of them have the same length <code>n</code>. We want to make<code>A[i]</code> not less than that of <code>B[i]</code> (0 &lt;=<code>i</code>&lt;= <code>n</code>- 1) by swapping them. Please implement the <code>swap</code> function.</p>
+</div>
+<p></p>
+<h3>Input</h3>
+The first line contains the length of the array. The second and third lines are the elements of array A and B.
+<p></p>
+<h3>Output</h3>
+The swapped arrays separated by newline character.
+<p></p>
+<h3>Loader Code</h3>
+<div>
+<p>Your code will be judge using this program:</p>
+</div>
+<pre>
+#include <stdio.h>
+#define MAX_LEN 20000
+
+void swap(int *, int *);
+
+int main() {
+  int n, A[MAX_LEN], B[MAX_LEN];
+
+  // read input
+  scanf("%d", &n);
+  for (int i = 0; i < n; ++i)
+    scanf("%d", &A[i]);
+  for (int i = 0; i < n; ++i)
+    scanf("%d", &B[i]);
+
+  // swapping
+  for (int i = 0; i < n; ++i)
+    swap(&A[i], &B[i]);
+
+  // output
+  for (int i = 0; i < n; ++i)
+    printf("%d ", A[i]);
+  putchar('\n');
+  for (int i = 0; i < n; ++i)
+    printf("%d ", B[i]);
+
+  return 0;
+}
+
+</pre>

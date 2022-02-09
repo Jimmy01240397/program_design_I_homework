@@ -1,0 +1,21 @@
+<h3>Description</h3>
+<div>
+<p>The Vigenère cipher is a method of encrypting alphabetic text by using a series of interwoven Caesar ciphers, based on the letters of a keyword. In a Caesar cipher, each letter of the alphabet is shifted along some number of places. For example, in a Caesar cipher of shift 3, <code>A</code> would become <code>D</code>, <code>b</code> would become <code>e</code>, <code>y</code> would become <code>b</code> and so on. The Vigenère cipher has several Caesar ciphers in sequence with different shift values, which are determined by a text string called "key". The "key" only contains lowercase letters.</p><p>For example, let's assume the "key" is <code>abcde</code>. Each alphabet of the "key" is converted to its corresponding numeric value (e.g.<code>a</code> = <code>0</code>, <code>b</code> = <code>1</code>, ... <code>z</code> = <code>25</code>):</p><ul><li><p>alphabet: <code>a b c d e</code></p></li></ul><ul><li><p>numeric value: <code>0 1 2 3 4</code></p></li></ul><p>To encrypt the message, say "<strong>TAs are so H4ND5OME.</strong>", we should arrange the "key" as follows:</p><p><code>a b c d e a b c d e a b c d</code></p><p><code>0 1 2 3 4 0 1 2 3 4 0 1 2 3</code></p><p>We now shift each <strong>alphabet</strong> of the message (1.) by the numeric "key" we arranged in the previous step (2.) to create ciphertext (3.) as shown below:</p><ol><li><p><code>T A s a r e s o H N D O M E</code></p></li><li><p><code>0 1 2 3 4 0 1 2 3 4 0 1 2 3</code></p></li><li><p><code>T B u d v e t q K R D P O H</code></p></li></ol><p>And the plaintext message "<strong>TAs are so H4ND5OME.</strong>" becomes "<strong>TBu dve tq K4RD5POH.</strong>" in ciphertext.</p><p>Write a program that prints out the Vigenère cipher for the given input (described in Input Format).</p><p>Note: Transform only English alphabet (case-preserving) and&nbsp;preserve other characters such as Arabic numerals or punctuation.</p><hr><p>維吉尼亞密碼是使用一系列凱薩密碼來加密文字的算法，透過一組密鑰來進行加密。在凱薩密碼中，每個英文字母都會偏移一個固定的數字。例如，在偏移量為3的凱薩密碼中，<code>A</code> 會變成 <code>D</code>，<code>b</code> 會變成 <code>e</code>，<code>y</code> 會變成 <code>b</code>，以此類推。維吉尼亞密碼則是由好幾組不同偏移量的凱薩密碼編排而成，透過一個稱為「密鑰」的字串來決定其偏移值。而這個密鑰僅包含小寫英文字母。</p><p>舉例來說，假設密鑰是 <code>abcde</code>。密鑰中的每個字母會轉為其對應的數字(例如 <code>a</code> = <code>0</code>, <code>b</code> = <code>1</code>, ... <code>z</code> = <code>25</code>)：</p><ul><li><p>英文字母: <code>a b c d e</code></p></li></ul><ul><li><p>數字: <code>0 1 2 3 4</code></p></li></ul><p>要加密 "<strong>TAs are so H4ND5OME.</strong>" 這段訊息，我們要將密鑰如下排列：</p><p><code>a b c d e a b c d e a b c d</code></p><p><code>0 1 2 3 4 0 1 2 3 4 0 1 2 3</code></p><p>接著根據前一步驟排列的密鑰(2.)，對訊息中的每個<strong>英文字母</strong>(1.)做位移來產生加密的文字(3.)，如下：</p><ol><li><p><code>T A s a r e s o H N D O M E</code></p></li><li><p><code>0 1 2 3 4 0 1 2 3 4 0 1 2 3</code></p></li><li><p><code>T B u d v e t q K R D P O H</code></p></li></ol><p>而這段純文字訊息 "<strong>TAs are so H4ND5OME.</strong>"&nbsp;會變成&nbsp;"<strong>TBu dve tq K4RD5POH.</strong>"，即為加密後的訊息，意思是助教好帥 ;-)。</p><p>寫一個程式，根據給定的輸入來輸出對應的維吉尼亞加密。</p><p>註：只需轉換英文字母(保留大小寫)且保留其他字元例如阿拉伯數字或標點符號。</p>
+</div>
+<p></p>
+<h3>Input</h3>
+The input contains three lines. All of these lines are followed by a newline character.
+The first line contains the length of the "key", and 1 <= length(key) <= 100.
+The second line is the "key", which contains only lowercase letters.
+Finally, the third line is the plaintext message.
+<p></p>
+<h3>Output</h3>
+Output the ciphertext of the given input. There is no newline character at the end of the output.
+<p></p>
+<h3>Loader Code</h3>
+<div>
+<p>Your code will be judge using this program:</p>
+</div>
+<pre>
+
+</pre>

@@ -1,0 +1,35 @@
+<h3>Description</h3>
+<div>
+<p>In PK high school, there is a transfer student. <strong>The student number is sorted by their name.</strong></p><p>Following are the student number sorting rules:</p><p>- Sorted by the letter of name, if the letter is closer to A, the student number is smaller. (For instance, the student number of <code>Chloe</code> is smaller than that of <code>Sam</code> because compare with <code>C</code> and <code>S</code>, <code>C</code> is closer to <code>A</code>)</p><p>- It is no different between lowercase and uppercase (ex. <code>AMY</code> and <code>amy</code> are the same)</p><p>- In this case, <code>Sam</code> and <code>Samuel</code>, the letters of <code>Sam</code> is the same as the first three letters of <code>Samuel</code>, but the length of <code>Sam</code> is shorter than that of <code>Samuel</code>, <code>Sam</code>'s student number is smaller than <code>Samuel</code>.</p><p>Here is an example.</p><p>There are two students in class. The name of those students are <code>nendou</code> and <code>saiki</code>.</p><p>The transfer student's name is <code>saiko</code>.</p><p>Let's compare <code>nendou</code> and <code>saiko</code> first. Because the order of <code>n</code> is smaller than <code>s</code>, the student number of <code>nendou</code> is smaller than <code>saiko</code>.</p><p>Next, compare <code>saiki</code> and <code>saiko</code>. Because the first four letter of their name are the same, compare the 5th letter. Because the order of <code>i</code> is smaller than <code>o</code>, the student number of <code>saiki</code> is smaller than <code>saiko</code>.</p><p>In this case, transfer student <code>saiko</code> 's student number is 3.</p><p>Please help transfer student to find his/her student number.</p><p>p.s The transfer student's name won't be the same as the student's name.</p><p></p><hr><p></p><p>呀咧呀咧，新學期PK學園又來了個新轉學生，在這裡所有的學生 <strong>座號都是使用名字拼音排序</strong> 的。</p><p>排序的規則為</p><ul><li><p>從名字拼音的開始排序，比較接近 <code>a</code> 的座號會比較前面</p></li></ul><ul><li><p>大小寫字母沒有分別 (ex. <code>AMY</code> 與 <code>amy</code> 視作完全相同)</p></li></ul><ul><li><p>如果剛好出現轉學生全名與班上學生某姓名的前面字母完全相等，或班上某學生全名與轉學生姓名前面字母完全相等，則名字較短的座號會比較前面。 (ex. <code>Sam</code> 與 <code>Samuel</code>， <code>Sam</code> 的座號會比較小)</p></li></ul><p>現在來舉個例子：</p><p>班上有兩個學生，分別是 <code>nendou</code> 與 <code>saiki</code>，</p><p>轉學生的名字叫 <code>saiko</code>。</p><p>先來比較 <code>nendou</code> 與 <code>saiko</code> ，按照英文 26 個字母的排序，<code>n</code> 比 <code>s</code> 來得更前面，所以 <code>nendou</code> 的座號在 <code>saiko</code> 之前。</p><p>再比較 <code>saiki</code> 與 <code>saiko</code> ，由於前四個字母皆為 <code>saik</code> ，比較第五個字母，由於 <code>i</code> 在 <code>o</code> 之前，所以 <code>saiki</code> 的座號也在 <code>saiko</code> 之前。</p><p>在這個範例裡，新轉學生 <code>saiko</code> 的座號就是 3。</p><p></p><p>每個學期都會出現新的轉學生，可以請你幫轉學生找到他的座號嗎？</p><p>p.s 不會出現班上同學與轉學生撞名的狀況</p>
+</div>
+<p></p>
+<h3>Input</h3>
+First line is a number  (N ) represent for how many students are in the class.
+Second line is transfer student's information. The first number ( n ) represents for the length of the student's name, following is the student's name.
+Following N lines are the origin student's information. The first number ( n ) represents for the length of the student's name, following is the student's name.
+
+1 <= N <= 30
+1 <= n <= 16
+
+The students' names are composed of a ~ z and A ~ Z
+-----------------------
+第 1 行的輸入 N 代表班上目前有幾名學生
+第 2 行的輸入是轉學生資訊，有兩個欄位，第一個 n 表示轉學生名字的長度，後面接續著轉學生的名字
+後面 N 行是班上學生的資訊，第一個 n 表示學生名字長度，後面接續著班上學生的名字（注意：這 N 行之間並不是已排序好的學生資訊）
+
+1 <= N <= 30
+1 <= n <= 16
+學生名稱由小寫英文字母 a ~ z 及大寫英文字母 A ~ Z 組成
+<p></p>
+<h3>Output</h3>
+Transfer student's student number ( student number starts from 1 )
+----------------------
+輸出為轉學生的座號 (座號從 1 開始)
+<p></p>
+<h3>Loader Code</h3>
+<div>
+<p>Your code will be judge using this program:</p>
+</div>
+<pre>
+
+</pre>

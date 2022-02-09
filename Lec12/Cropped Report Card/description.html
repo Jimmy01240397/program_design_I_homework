@@ -1,0 +1,43 @@
+<h3>Description</h3>
+<div>
+<p>考試考完，又到了面對現實的時刻。大雄很緊張，因為他知道肯定會有科目不及格，但是不能給媽媽看到不及格的成績，所以裁切成績單的時刻到了！</p><p>裁切成績單的規則是：</p><ol><li><p>裁切後的成績單內只有及格 (大於等於六十分) 的成績</p></li><li><p>成績數量越多越好，這樣媽媽才不會懷疑成績單是不是被動了手腳</p></li><li><p>如果數量相等，取成績合最大的區段</p></li></ol><p>舉例來說，現在大雄的成績是 <code>40 50 60 70 80 50 90</code>，<br>那我們想要找到的成績區段就是 <code>60 70 80</code></p><p>請你幫助大雄度過難關！</p><hr><p>After the exam, it’s time to face the reality.<br>Nobita is nervious because he knows that he must have failed some subjects. He will be in trouble if his mom knows that. It is time to crop the report card!</p><p>The rules of croping reocrd card are listed below:</p><ol><li><p>The cropped report card should only contain the score higher or equal to 60 points.</p></li><li><p>There should be as many score records as possibile.</p></li><li><p>If the number of score records is the same, choose the section with the highest sum of scores.</p></li></ol><p>For example, Nobita’s scores are<code>40 50 60 70 80 50 90</code>,<br>the result should be <code>60 70 80</code>.</p><p>Please help Nobita overcome this difficulty.</p>
+</div>
+<p></p>
+<h3>Input</h3>
+A line contain n integers.
+The 1st number to (n - 1)th number indicate the score.
+The nth number is -1
+
+0 <= score <= 100
+1 <= n <= 1000
+<p></p>
+<h3>Output</h3>
+The scores on the report card.
+Each number must follow by a space.
+<p></p>
+<h3>Loader Code</h3>
+<div>
+<p>Your code will be judge using this program:</p>
+</div>
+<pre>
+#include <stdio.h>
+int *report_card (int *s) ;
+
+int main () {
+    int score[1001];
+    int *show;
+    int count = 0;
+
+    do {
+        scanf("%d", &score[count++]);
+    } while (score[count - 1] != -1);
+
+    show = report_card(score);
+
+    count = 0;
+    while (*(show + count) != -1) {
+        printf("%d ", *(show + count));
+        count++;
+    }
+}
+</pre>

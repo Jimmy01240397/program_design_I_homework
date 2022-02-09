@@ -1,0 +1,34 @@
+<h3>Description</h3>
+<div>
+<p>Given two struct Nodes, please multiply their <code>num</code>.</p><p>Be careful these two Node's type, one is a struct variable and another is a struct pointer.</p>
+</div>
+<p></p>
+<h3>Input</h3>
+Two struct Nodes, long long int ans and every variable num < 10000
+<p></p>
+<h3>Output</h3>
+Multiply these two node's num
+
+<p></p>
+<h3>Loader Code</h3>
+<div>
+<p>Your code will be judge using this program:</p>
+</div>
+<pre>
+#include <stdio.h>
+
+struct Node {
+    int num;
+};
+void mul(struct Node *, struct Node, long long int *);
+
+int main(void) {
+    struct Node node_a, node_b;
+    long long int ans = 1;
+    scanf("%d", &node_a.num);
+    scanf("%d", &node_b.num);
+    mul(&node_a, node_b, &ans);
+    printf("%lld", ans);
+    return 0;
+}
+</pre>

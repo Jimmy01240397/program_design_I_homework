@@ -1,0 +1,19 @@
+<h3>Description</h3>
+<div>
+<p>The <strong>odd </strong>magic square consists of consecutive integers (starting with 1 and ending with n²) placed into<code>n</code>rows by <code>n</code> columns.</p><p>The sum of each row, each column and each diagonal are the same.</p><p><strong>Hint:</strong></p><ol><li><p>Place number 1 in the middle of first row.</p></li><li><p>Check if the <strong>upper right</strong> grid is empty:</p></li></ol><ul><li><p>if empty: fill the next number in this <strong>upper right</strong> grid</p></li><li><p>if not empty: fill the next number in the <strong>bottom of current grid</strong></p></li></ul><ol start="3"><li><p>Check if the last step <strong>exceeds the boundary</strong>, you need to return to the <strong>other side</strong>.</p><p>You can see the following example to understand the process !</p></li></ol><p>奇數魔方陣是指在<code>n</code>x<code>n</code>的方陣中，放入從1開始到n^2的連續數字。</p><p>使每一行、每一列與每條對角線的和皆相同。</p><p>提示:</p><ol><li><p>首先在第一列的最中間那個方格填入1。</p></li><li><p>接著檢查該方格的<strong>右上方</strong>是否為空的:</p></li></ol><ul><li><p>如果是空的: 將下個數字填入<strong>右上方的方格</strong></p></li><li><p>如果不是空的: 將下個數字填入<strong>當前方格的正下面那格</strong></p></li></ul><ol start="3"><li><p>如果在上一步會<strong>超出邊界</strong>，則需要返回<strong>另一邊</strong></p><p>你可以看下方的範例來了解過程!</p></li></ol><p><strong>For example:</strong><code>n</code><strong> = 3</strong></p><p>step1:</p><p>0 <strong>1</strong> 0</p><p>0 0 0</p><p>0 0 0</p><p>step2:</p><p>0 1 0</p><p>0 0 0</p><p>0 0 <strong>2</strong></p><p>step3:</p><p>0 1 0</p><p><strong>3</strong> 0 0</p><p>0 0 2</p><p>step4:</p><p>0 1 0</p><p>3 0 0</p><p><strong>4 </strong>0 2</p><p>Finally, after 9 steps:</p><p>8 1 6</p><p>3 5 7</p><p>4 9 2</p>
+</div>
+<p></p>
+<h3>Input</h3>
+There is an odd integer between 1 and 50
+<p></p>
+<h3>Output</h3>
+Output the square.
+There is a space after each number.
+<p></p>
+<h3>Loader Code</h3>
+<div>
+<p>Your code will be judge using this program:</p>
+</div>
+<pre>
+
+</pre>

@@ -1,0 +1,36 @@
+<h3>Description</h3>
+<div>
+<p>Ariel learns pointer today. She wants to implement a polynomial function named 'poly'.</p><p>The polynomial function is <br></p><blockquote><p><em>𝐱³ + y² + z</em></p></blockquote><p><br>The 'poly' function has three parameters <code>A</code>, <code>B</code>, <code>C</code> and all of them are pointer to integer. <code>x</code>, <code>y</code>, <code>z</code> are integer variables which pointed by <code>A</code>,<code>B</code>,<code>C</code>. <strong>Notice</strong> that they're maybe <code>NULL</code>. If the pointer is <code>NULL</code>, then set integer variable zero.<strong>(referring to Sample 2)</strong></p><p>Finally, return a pointer from 'poly' function.<br>Please implement 'poly' function!</p>
+</div>
+<p></p>
+<h3>Input</h3>
+The 'poly' function has three parameters A, B, C. All of them are pointer to integer.(They're maybe NULL.)
+<p></p>
+<h3>Output</h3>
+Return a pointer from  'poly' function.
+<p></p>
+<h3>Loader Code</h3>
+<div>
+<p>Your code will be judge using this program:</p>
+</div>
+<pre>
+#include<stdio.h>
+
+int *poly(int*, int*, int*);
+
+int main() {
+    int a, b, c;
+    int *A, *B, *C;
+    scanf("%d %d %d", &a, &b, &c);
+    A = &a;
+    B = &b;
+    C = &c;
+    if (a < 0) A = NULL;
+    if (b < 0) B = NULL;
+    if (c < 0) C = NULL;
+
+    int *result = poly(A, B, C);
+    printf("%d", *result);
+    return 0;
+}
+</pre>

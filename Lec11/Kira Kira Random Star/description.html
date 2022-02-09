@@ -1,0 +1,34 @@
+<h3>Description</h3>
+<div>
+<p>Here comes the POINTER, some stars start to appear in your program.</p><p>Let's start from the easiest one !</p><p>Please implement this function:</p><p><code>void star(int* a, int b, int* sum)</code></p><p></p><p>一閃一閃亮晶晶 滿天都是小星星</p><p>教到指標後大家的程式編輯器裡也開始充滿了星星<s>（相信某些人的頭上也開始冒出星星了）</s></p><p>就讓我們從最簡單的部份開始認識這令人心跳不已的功能吧！</p><p>請實作以下函式：</p><p><code>void star(int* a, int b, int* sum)</code></p><p><a rel="noopener noreferrer nofollow" href="https://youtu.be/Y7JoFiRQ0RA">https://youtu.be/Y7JoFiRQ0RA</a></p>
+</div>
+<p></p>
+<h3>Input</h3>
+Input a is a pointer to an int, b is an int
+<p></p>
+<h3>Output</h3>
+Sum of the value a points to and b, stored in the memory space sum points to
+<p></p>
+<h3>Loader Code</h3>
+<div>
+<p>Your code will be judge using this program:</p>
+</div>
+<pre>
+#include <stdio.h>
+
+void star(int*, int, int*);
+
+int main()
+{
+    int kirakira, dokidoki, kasumi;
+    scanf("%d%d", &kirakira, &dokidoki);
+
+    // kasumi = kirakira + dokidoki
+    star(&kirakira, dokidoki, &kasumi);
+
+    printf("%d", kasumi);
+
+    return 0;
+}
+
+</pre>

@@ -1,0 +1,18 @@
+<h3>Description</h3>
+<div>
+<p>There are four people <code>A</code> ,<code>B</code> ,<code>C</code> ,<code>D</code> . Each of them has one poker hand which consists of five cards. Each card in the hand will have both a suit (<code>clubs</code>, <code>diamonds</code>, <code>hearts</code>, or <code>spades</code>) and a rank (<code>2</code>, <code>3</code>, <code>4</code>, <code>5</code>, <code>6</code>, <code>7</code>, <code>8</code>, <code>9</code>, <code>10</code>, <code>jack</code>, <code>queen</code>, <code>king</code>, or <code>ace</code>). Write a program that prints out their order <strong>from highest to lowest</strong>.</p><p>The categories of hand, from highest to lowest, are listed below:</p><ol><li><p>straight flush (both a straight and a flush)</p></li><li><p>four-of-a-kind (four cards of the same rank)</p></li><li><p>full house (a three-of-a-kind and a pair)</p></li><li><p>flush (five cards of the same suit)</p></li><li><p>straight (five cards with consecutive ranks)</p></li><li><p>three-of-a-kind (three cards of the same rank)</p></li><li><p>two pairs</p></li><li><p>pair (two cards of the same rank)</p></li><li><p>high card (any other hand)</p></li></ol><p>We abbreviate ranks and suits as follows (letters may only be lower-case):</p><p>Ranks: <code>2 3 4 5 6 7 8 9 t j q k a</code></p><p>Suits: <code>c d h s</code></p><p>Cards are always <strong>compared by rank first</strong>, and only then by suit. We compare suits using the <strong>'reverse alphabetical order'</strong> ranking: spades (highest), hearts, diamonds, clubs (lowest).</p><p>If any number of poker hands are <strong>in the same category</strong>, follow the rules below (simplified, not the standard way):</p><ol><li><p>straight flush: The one with the higher ranking top card is better. If they are the same, compare the suit of the top cards. (for straight: <code>2 3 4 5 6</code> ~ <code>t j q k a</code>)</p></li><li><p>four-of-a-kind: The one with the higher ranking set of four cards is better.</p></li><li><p>full house: The one with the higher ranking set of three cards is better.</p></li><li><p>flush: Same as 1.</p></li><li><p>straight: Same as 1.</p></li><li><p>three-of-a-kind: Same as 3.</p></li><li><p>two pairs: The hand with the highest ranking pair wins. If they have the same rank, compare the highest suit of the highest ranking pair.</p></li><li><p>pair: Same as 7.</p></li><li><p>high card: Same as 1.</p></li></ol><p>Note: not allow the use of jokers, and assume that aces are high.</p>
+</div>
+<p></p>
+<h3>Input</h3>
+The input contains four lines. Each line is followed by a newline character. These four lines also represent four hands of five cards for A, B, C, D respectively. 
+<p></p>
+<h3>Output</h3>
+List A, B, C, D in the order from best to worst according to their poker hands. Each letter is followed by a space.
+<p></p>
+<h3>Loader Code</h3>
+<div>
+<p>Your code will be judge using this program:</p>
+</div>
+<pre>
+
+</pre>

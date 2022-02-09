@@ -1,0 +1,155 @@
+<h3>Description</h3>
+<div>
+<p>利姆路是隻可愛的始萊姆，雖然是它只是隻始萊姆，但它統領著森林中的魔物們。自古以來，魔物們最大的威脅莫過於人類的殺戮，利姆路為了保護它所管理的魔物們，它決定讓魔物們在村莊四周蓋上城牆，但是在它領導的眾多魔物村莊中，僅有部份村莊生產建造城牆所需的材料，因此其他村莊需要向這些村莊下訂這些材料。經過一年汲汲營營的建造，利姆路的辦公桌上積滿了來自各個村莊下訂建材的訂單，請你寫一個程式幫助它統整這些訂單。</p><p>在這題中，你僅需要完成程式的特定函式，在這個函式中，你會拿到<strong>由訂單組成的 linked-list</strong>，其中每筆訂單都會包含以下資訊：訂單的編號、下定的村莊、下定的建材編號以及數量。請注意：<strong>建材數量的資訊被包裝在 union 中</strong>，你必須根據建材編號讀取特定的欄位。你要實做的函式需要<strong>替每個村莊收集屬於它的訂單</strong>，並將它們串接成<strong>獨立的 linked-list</strong>，其中的訂單須按照<strong>訂單編號由少至多</strong>進行排序，並且，請替每個村莊<strong>計算過去這年它共花了多少錢</strong>購買建材（不同建材的單價可以在 loader code 中找到）。最後，為了簡化之後的查詢速度，請<strong>將村莊按照名稱排列</strong>。</p><hr><p>Rimuru is a cute slime who was killed by a random murder in his previous life, now he becomes the leader of the monsters live in the forest. To help the monsters prevent threads from the human world, he plans to make monsters build great walls around their villages. Since there are lots of villages in his monster kingdom, and only several of them are able to supply the building parts, they must trade those ingredients between the villages. After a year went through, the orders between villages are piled up like a mountain, please, help him to unify the orders.</p><p>In the following program, you will get <strong>several orders constructed as a linked-list</strong>, each order contains following things: order id, consumer of the order, the ingredient id and the amount of the ingredient. Please notice that <strong>the amount of the ingredient are packed in an union</strong>, you have to retrieve it from the specific member depends on the ingredient id. For each village, your program should not only <strong>gather the orders belongs to it</strong>, <strong>reconstruct them into an independent linked-list</strong>, <strong>sort the orders in ascending order by the order id</strong>, but also <strong>calculate the total cost</strong> of all orders (the unit cost of each ingredient can be found in the loader program). Finally, your program should <strong>sort the result list of villages via their name</strong>.</p><p><img src="https://steamuserimages-a.akamaihd.net/ugc/947342913895300025/7FC9DECBD7B41332CD3D264AA6B07A4BD8674D2C/"></p>
+</div>
+<p></p>
+<h3>Input</h3>
+輸入的第一行有兩個整數：V 跟 O，分別代表村莊的數量跟訂單的總筆數，接著有 V 行村莊的名字，剩下的 O 行為訂單的內容，訂單內容為以下格式：「訂單編號:建材編號/建材數量-下訂村莊」。
+
+限制：
+1. 1 <= V <= 75
+2. 1 <= O <= 1024
+3. 1 <= 建材數量 <= 1024
+4. 村莊名稱 < 16
+5. 訂單編號是一個 16 進位的字串，長度為 8
+
+The first line contains two integers V, O that indicates the number of villages and orders, the next V lines are the village names. The rest of O lines are the orders which are in the format "order_id:integration_id/amount-consumer", each order occupies a line.
+
+restrictions:
+1. 1 <= V <= 75
+2. 1 <= O <= 1024
+3. 1 <= amount <= 1024
+4. length of village name < 16
+5. order id is a hex string with length 8
+<p></p>
+<h3>Output</h3>
+程式須輸出每個村莊的名、它一年來的建材費用以及排序後，屬於該村莊的訂單的編號。
+
+Each village and its total cost to get the ingredients followed by the id of the orders belong to the village, the output ids should be sorted in ascending order.
+<p></p>
+<h3>Loader Code</h3>
+<div>
+<p>Your code will be judge using this program:</p>
+</div>
+<pre>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#define ORDER_ID_LEN 8
+#define MAX_VILLAGE_NAME_LEN 15
+
+typedef struct order_s {
+	struct order_s *next;
+	char order_id[ORDER_ID_LEN + 1];
+	char consumer[MAX_VILLAGE_NAME_LEN + 1];
+	enum {
+		INGRED_A = 1,
+		INGRED_B,
+		INGRED_C,
+	} ingredient_id;
+	union {
+		char ing_a[8];
+		long ing_b;
+		double ing_c;
+	} amount;
+} order_t;
+
+typedef struct village_s {
+	char name[MAX_VILLAGE_NAME_LEN + 1];
+	unsigned long total_cost;
+	order_t *order_list;
+} village_t;
+
+static const long unit_costs[] = {
+	[INGRED_A] = 256,
+	[INGRED_B] = 512,
+	[INGRED_C] = 1024,
+};
+
+static village_t *init_village_array(int v_cnt);
+static order_t *init_order_list(int o_cnt);
+static void unify_orders(village_t *vills, int v_cnt, order_t *orders);
+static void print_result(village_t *vills, int v_cnt);
+
+int main()
+{
+	int village_cnt, order_cnt;
+	scanf("%d%d", &village_cnt, &order_cnt);
+	village_t *villages = init_village_array(village_cnt);
+	if (!villages) {
+		goto init_village_failed;
+    }
+	order_t *orders = init_order_list(order_cnt);
+	if (!orders)  {
+		goto init_order_failed;
+    }
+	unify_orders(villages, village_cnt, orders);
+	print_result(villages, village_cnt);
+	free(orders);
+
+init_order_failed:
+	free(villages);
+
+init_village_failed:
+	return 0;
+}
+
+static village_t *init_village_array(int v_cnt)
+{
+	village_t *villages = malloc(sizeof(village_t) * v_cnt);
+	if (!villages) { // Ran out of memory
+		return NULL;
+    }
+	for (int i = 0; i < v_cnt; i++) {
+		scanf("%s", villages[i].name);
+    }
+	return villages;
+}
+
+static order_t *init_order_list(int o_cnt)
+{
+	order_t *orders = malloc(sizeof(order_t) * o_cnt);
+	if (!orders) { // Ran out of memory
+		return NULL;
+    }
+	for (int i = 0; i < o_cnt; i++) {
+		// Read the content of order
+		// the term %[^c] will use 'c' as delimiter while scanning the input
+		scanf(" %[^:]:%u/%[^-]-%s",
+				orders[i].order_id,
+				&orders[i].ingredient_id,
+				orders[i].amount.ing_a,
+				orders[i].consumer);
+		
+		switch (orders[i].ingredient_id) {
+			case INGRED_B:
+				orders[i].amount.ing_b = atol(orders[i].amount.ing_a);
+				break;
+			case INGRED_C:
+				orders[i].amount.ing_c = atof(orders[i].amount.ing_a);
+				break;
+			default:
+				break;
+		}
+		// Construct orders into linked-list
+		if (i) {
+			orders[i - 1].next = orders + i;
+        }
+	}
+	// End the linked-list
+	orders[o_cnt - 1].next = NULL;
+	return orders;
+}
+
+static void print_result(village_t *vills, int v_cnt)
+{
+	for (int i = 0; i < v_cnt; i++) {
+		printf("%s %ld\n  ->", vills[i].name, vills[i].total_cost);
+		for (order_t *optr = vills[i].order_list; optr; optr = optr->next) {
+			printf(" %s", optr->order_id);
+        }
+		printf("\n");
+	}
+}
+</pre>

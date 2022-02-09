@@ -1,0 +1,21 @@
+<h3>Description</h3>
+<div>
+<p>Do you remember <a href="https://ckj.imslab.org/#/problems/L6vddcFTIix4" rel="noopener noreferrer nofollow">Caesar cipher</a>? One similar technique is <strong>Trithemius cipher</strong>, it is a successive shift cipher. In the case of Caesar cipher, each character in the plaintext message is shifted with a fixed offset <code>k</code>. As for <strong>Trithemius cipher</strong>, a successive shift (it could be ascending or descending, each time it shift 1) and the offset <code>k</code> is added to each character.</p><p>For example: <code>k=1</code> , ascending, and the message we want to encode is <code>TAs are so H4ND5OME</code>. The offset of each character is:</p><ol><li><p><code>T A s a r e s o H N D O M E</code></p></li><li><p><code>1 2 3 4 5 6 7 8 9 10 11 12 13 14</code></p></li></ol><p>The cipher text becomes <code>UCv ewk zw Q4XO5AZS</code>.</p><p>Write a program that prints out the result of Trithemius cipher for the given input (described in Input Format).</p><p>Note: Transform only <strong>english alphabet (case-preserving)</strong> and preserve other characters such as Arabic numerals or punctuation. The successive shift only occurs on english alphabet.</p><hr><p>還記得<a href="https://ckj.imslab.org/#/problems/L6vddcFTIix4" rel="noopener noreferrer nofollow">凱薩密碼</a>嗎？有個類似的加密方式是<strong>特里特米烏斯密碼</strong>。在凱薩密碼中，每個字元都會被平移一個固定的值<code>k</code>，而<strong>特里特米烏斯密碼密碼</strong>則會額外多加一個連續的偏移值(會是遞增或遞減，每次移動1)。</p><p>舉例來說， <code>k=1</code>、遞增的狀況下，我們想加密<code>TAs are so H4ND5OME</code>，而每個字元的偏移量為：</p><ol><li><p><code>T A s a r e s o H N D O M E</code></p></li><li><p><code>1 2 3 4 5 6 7 8 9 10 11 12 13 14</code></p></li></ol><p>加密文字會是<code>UCv ewk zw Q4XO5AZS</code>.</p><p>請撰寫一支程式來加密給定的訊息。</p><p>註：只需轉換英文字母(需保留大小寫)並保留其他字元例如阿拉伯數字、標點符號等等。連續偏移量只會在遇到英文字母時增減。</p>
+</div>
+<p></p>
+<h3>Input</h3>
+The first line is an integer k, where -2147483648 <= k <= 2147483647.
+The second line contains a character 'a' or 'd' which indicates that it is ascending or descending.
+The third line is the message that you need to encode.
+Each line is ended with a newline character.
+<p></p>
+<h3>Output</h3>
+The cipher text.
+<p></p>
+<h3>Loader Code</h3>
+<div>
+<p>Your code will be judge using this program:</p>
+</div>
+<pre>
+
+</pre>

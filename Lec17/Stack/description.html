@@ -1,0 +1,65 @@
+<h3>Description</h3>
+<div>
+<p>Stack is an abstract data type that serves as a collection of elements, with two main principal operations:</p><ol><li><p>Push: which adds an element to the top of the stack</p></li><li><p>Pop: which removes an element from the top of the stack if the stack is not empty</p></li></ol><p><img alt="Image" src="https://www.tutorialspoint.com/data_structures_algorithms/images/stack_representation.jpg"></p><p>Please implement push and pop operations of the stack using linked list.</p><p>Reference: <a rel="noopener noreferrer nofollow" href="https://www.tutorialspoint.com/data_structures_algorithms/stack_algorithm.htm">https://www.tutorialspoint.com/data_structures_algorithms/stack_algorithm.htm</a></p>
+</div>
+<p></p>
+<h3>Input</h3>
+The input contains two parts. The first part is the number of the operations. The second part contains the content of the operations, which is push or pop an integer to/from the stack.
+<p></p>
+<h3>Output</h3>
+The output contains two lines. The first line is the size of the stack, and the second line consists of elements' data and each data is followed by a space. You should output them in reverse chronological order.
+<p></p>
+<h3>Loader Code</h3>
+<div>
+<p>Your code will be judge using this program:</p>
+</div>
+<pre>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+struct element {
+    int data;
+    struct element *next;
+};
+
+void print_stack(struct element *top);
+void push(struct element **top_p, int data);
+struct element *pop(struct element **top_p);
+
+int main(void) {
+    struct element *top = NULL;
+    int num, data;
+    char command[5];
+    scanf("%d", &num);
+    while (num--) {
+        scanf("%4s", command);
+        if (strcmp(command, "push") == 0) {
+            scanf("%d", &data);
+            push(&top, data);
+        }
+        else if (strcmp(command, "pop") == 0) {
+            struct element *e = pop(&top);
+            free(e);
+        }
+    }
+    print_stack(top);
+    while (top) {
+        struct element *ptr = top;
+        top = top->next;
+        free(ptr);
+    }
+    return 0;
+}
+
+void print_stack(struct element *top) {
+    int size = 0;
+    for (struct element *ptr = top; ptr != NULL; ptr = ptr->next) {
+        size++;
+    }
+    printf("%d\n", size);
+    for (struct element *ptr = top; ptr != NULL; ptr = ptr->next) {
+        printf("%d ", ptr->data);
+    }
+}
+</pre>

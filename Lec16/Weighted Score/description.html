@@ -1,0 +1,73 @@
+<h3>Description</h3>
+<div>
+<p>期末快到了，該到結算成績的時候，請你幫助教算出所有學生們的期末成績以及最高分章節成績與最低分章節。<br>在這裡有三個 struct:</p><ul><li><p><code>weight</code> : 每個章節會有不同的比重，<strong>全部的比重加起來為 100</strong></p></li><li><p><code>score</code> : 每個章節加權前的分數</p></li><li><p><code>report_card</code> :</p><ul><li><p><code>final</code> : 加權後的分數 (無條件捨去到整數位)</p></li><li><p><code>max_score</code> : 最高分章節成績</p></li><li><p><code>min_score</code> : 最低分章節成績</p><p></p></li></ul></li></ul><hr><p></p><p>Please help TAs to calculate student’s final score, maximum score and minimum score.</p><p>There are three structs:</p><ul><li><p><code>weight</code> : Each chapter contain different weight, <strong>sum of them is 100</strong>.</p></li><li><p><code>score</code> : The score of each chapter</p></li><li><p><code>report_card</code> :</p><ul><li><p><code>final</code> : Score after weighting</p></li><li><p><code>max_score</code> : Maximum score</p></li><li><p><code>min_score</code> : Minimum score</p></li></ul></li></ul>
+</div>
+<p></p>
+<h3>Input</h3>
+First line contain two numbers: chapter_num (n), student_num (m)
+1 <= chapter_num (n) <= 10
+1 <= student_num (m) <= 100
+
+Each of following n lines contain one number and a string.
+The number means the weight of chapter.
+The string means the name of chapter.
+
+Followings are the student information.
+First line is student name.
+Next n lines are student score and chapter.
+0 <= student score <= 100
+<p></p>
+<h3>Output</h3>
+Student name, final score, maximum score and minimum score
+<p></p>
+<h3>Loader Code</h3>
+<div>
+<p>Your code will be judge using this program:</p>
+</div>
+<pre>
+#include <stdio.h>
+
+struct weight {
+    char chapter[10];
+    int percent;
+};
+
+struct score {
+    char chapter[10];
+    int score;
+};
+
+struct report_card {
+    char name[32];
+    struct score record[10];
+    int final;
+    int max_score;
+    int min_score;
+};
+
+void calculate (struct report_card[], struct weight[], int student_num, int chapter_num);
+
+int main () {
+    int student_num, chapter_num;
+    struct weight chapter[10];
+    struct report_card card[100];
+
+    scanf("%d %d\n", &chapter_num, &student_num);
+    for (int i = 0; i < chapter_num; ++i) {
+        scanf("%d %s", &chapter[i].percent, chapter[i].chapter);
+    }
+
+    for (int i = 0; i < student_num; ++i) {
+        scanf("%s", card[i].name);
+        for (int j = 0; j < chapter_num; ++j) {
+            scanf("%d %s", &card[i].record[j].score, card[i].record[j].chapter);
+        }
+    }
+
+    calculate(card, chapter, student_num, chapter_num);
+
+    for (int i = 0; i < student_num; ++i) {
+        printf("%s %d %d %d\n", card[i].name, card[i].final, card[i].max_score, card[i].min_score);
+    }
+}
+</pre>

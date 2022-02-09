@@ -1,0 +1,41 @@
+<h3>Description</h3>
+<div>
+<p>Jack wants to search a word. Please help him to find which page he should turn to.</p><p><strong>Hint</strong>: use <code>strcmp()</code></p>
+</div>
+<p></p>
+<h3>Input</h3>
+There are 10 records in a dictionary and a target word.
+<p></p>
+<h3>Output</h3>
+Return the target page. If the target word is not in the dictionary, return 0.
+<p></p>
+<h3>Loader Code</h3>
+<div>
+<p>Your code will be judge using this program:</p>
+</div>
+<pre>
+#include<stdio.h>
+#include<string.h>
+#define N 10
+
+typedef struct dict_t_struct {
+    char word[10];
+    int page;
+} dict_t;
+
+int search(dict_t arr[], char target[]);
+
+int main() {
+    dict_t dictionary[N];
+    char targetWord[10];
+
+    for(int i=0; i<N; i++) 
+        scanf("%s %d\n", dictionary[i].word, &dictionary[i].page);
+    
+    scanf("%s", targetWord);
+    int targetPage = search(dictionary, targetWord);
+    printf("%d", targetPage);
+    return 0;
+}
+
+</pre>

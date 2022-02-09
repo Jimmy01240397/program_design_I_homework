@@ -1,0 +1,47 @@
+<h3>Description</h3>
+<div>
+<p>Given <code>n</code> <strong>different positive</strong> integers, please move the maximum value to the tail of the linked list.</p><p>給定<code>n</code>個<strong>相異的正整數</strong>，請你將當中最大的那個數字移到該Linked-List的最後面。</p>
+</div>
+<p></p>
+<h3>Input</h3>
+5 <= n <= 1000, each value will be less 100000.
+<p></p>
+<h3>Output</h3>
+The content of the linked list.
+<p></p>
+<h3>Loader Code</h3>
+<div>
+<p>Your code will be judge using this program:</p>
+</div>
+<pre>
+#include <stdio.h>
+#include <stdlib.h>
+
+struct node {
+    int val;
+    struct node *next;
+};
+struct node *head = NULL;
+struct node *tail = NULL;
+void MoveToTail();
+
+int main(void) { 
+    int n;
+    scanf("%d", &n);
+    for(int i = 1; i <= n; ++i) {
+        struct node *tmp = malloc(sizeof(struct node));
+        scanf("%d", &tmp->val);
+        tmp->next = NULL;
+        if(i == 1)
+            head = tmp;
+        else
+            tail->next = tmp;
+        tail = tmp;
+    }
+    MoveToTail();
+    for(struct node *cur = head; cur != NULL; cur = cur->next) {
+        printf("%d ", cur->val);
+    }
+    return 0;
+}
+</pre>

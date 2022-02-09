@@ -1,0 +1,45 @@
+<h3>Description</h3>
+<div>
+<p>In lab, students buy snacks once a month. They want to choose snacks with good value for money. (物超所值)</p><p>The <code>value</code> means  <code>weight/price</code>. </p><p>Please help them sort snacks in descending order based on snacks' <code>value</code>. <br>If the <code>value</code> of snacks are equal, sort snacks in ascending order based on snacks' <code>price</code>. <br>If the <code>price</code> of snacks are equal, sort snacks in ascending order based on snacks' <code>id</code>. </p><p>You can use C standard library's <code>qsort</code> function to sort snacks:</p><p><code>void qsort (void* base, size_t num, size_t size, int (*compar)(const void*,const void*));</code></p><p>The reference link: <a rel="noopener noreferrer nofollow" href="https://www.cplusplus.com/reference/cstdlib/qsort/?kw=qsort">https://www.cplusplus.com/reference/cstdlib/qsort/?kw=qsort</a></p>
+</div>
+<p></p>
+<h3>Input</h3>
+n kinds of snacks.
+<p></p>
+<h3>Output</h3>
+Output the id and value of n sorted snacks.
+<p></p>
+<h3>Loader Code</h3>
+<div>
+<p>Your code will be judge using this program:</p>
+</div>
+<pre>
+#include<stdio.h>
+#include<stdlib.h>
+
+struct snack
+{
+    int id;
+    int price;
+    int weight;
+    double value;
+};
+
+int cmp(const void *a, const void *b);
+void sort_snacks(struct snack snacks[], int n);
+
+int main() {
+    int n;
+    struct snack snacks[100];
+    scanf("%d", &n);
+    for(int i=0; i<n; i++) {
+        snacks[i].id = i+1;
+        scanf("%d %d", &snacks[i].price, &snacks[i].weight);
+    }
+    sort_snacks(snacks, n);
+    for(int i=0; i<n; i++) {
+        printf("%d %.2f\n", snacks[i].id, snacks[i].value);
+    }
+    return 0;
+}
+</pre>

@@ -1,0 +1,46 @@
+<h3>Description</h3>
+<div>
+<p>Given an array of <code>struct ESPer</code> which contains <code>level</code> and <code>name</code>,</p><p>please sort this array in ascending order by level.</p><p>hint: You can use C standard library's <code>qsort</code> function:</p><p></p><p>學園都市是個進行超能力開發的機關，會定期對學生進行能力檢測</p><p>他們使用的資料結構包含兩個欄位：<code>level</code> 和 <code>name</code></p><p>請你寫一個 function 來對包含這個 struct 的陣列做排序</p><p>hint: 你可以使用內建的 <code>qsort</code></p><p><a rel="noopener noreferrer nofollow" href="https://youtu.be/EGmLt7mYSo4">https://youtu.be/EGmLt7mYSo4</a></p>
+</div>
+<p></p>
+<h3>Input</h3>
+An array of "struct ESPer", array length
+<p></p>
+<h3>Output</h3>
+sort the array in ascending order by level.
+<p></p>
+<h3>Loader Code</h3>
+<div>
+<p>Your code will be judge using this program:</p>
+</div>
+<pre>
+#include <stdio.h>
+#include <stdlib.h>
+
+struct ESPer {
+    char name[64];
+    int level;
+};
+
+int cmp(const void *a, const void *b);
+void sort_level(struct ESPer *arr, int length);
+
+int main()
+{
+    int n;
+    struct ESPer tokiwadai[100];
+
+    scanf("%d", &n);
+    for(int i = 0; i < n; ++i) {
+        scanf("%d %s", &(tokiwadai[i].level), tokiwadai[i].name);
+    }
+
+    sort_level(tokiwadai, n);
+
+    for(int i = 0;i < n;++i) {
+        printf("%d %s\n", tokiwadai[i].level, tokiwadai[i].name);
+    }
+
+    return 0;
+}
+</pre>

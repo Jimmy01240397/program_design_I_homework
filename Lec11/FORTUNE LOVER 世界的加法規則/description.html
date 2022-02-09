@@ -1,0 +1,36 @@
+<h3>Description</h3>
+<div>
+<p>卡塔麗娜今年就要上小學囉~ 在小學的第一節數學課，老師要教大家怎麼做整數加法！</p><p></p><p>在 FORTUNE LOVER 裡，整數加法的規則是這樣的：</p><ol><li><p>先把被加數和加數當作 float 看待（以 <a href="https://zh.wikipedia.org/zh-tw/IEEE_754" rel="noopener noreferrer nofollow">IEEE 754 單精度浮點數的格式</a>表達）。</p><ul><li><p>所以 1 並不是 00000000 00000000 00000000 00000001，而是 00111111 10000000 00000000 00000000。</p></li><li><p>然後 2 也不是 00000000 00000000 00000000 00000010，而是 01000000 00000000 00000000 00000000。</p></li><li><p>如果你不知道怎麼做轉換，可以用<a href="https://www.binaryconvert.com/convert_float.html" rel="noopener noreferrer nofollow">這個網站</a>來幫你，只要在 Decimal 處輸入一個整數，按下 "Convert to binary"，就可以知道他的 IEEE 754 表示法是什麼囉~</p></li></ul></li><li><p>將兩個 32-bits 的二進位數字作加法，得到一個 32-bits 的二進位數字</p></li><li><p>將該二進位數字當作 int （<a href="https://zh.wikipedia.org/zh-tw/%E4%BA%8C%E8%A3%9C%E6%95%B8" rel="noopener noreferrer nofollow">二補數</a>的有號整數）解讀。</p><ul><li><p>如果該二進位數字是 00000000 00000000 00000000 00001111，那你就要把他當成 15</p></li><li><p>如果該二進位數字是 11111111 11111111 11111111 11110000，那你就要把他當成 -16</p></li><li><p>Again，如果你不知道怎麼做轉換，可以用<a href="https://www.binaryconvert.com/convert_signed_int.html" rel="noopener noreferrer nofollow">這個網站</a>來幫你，只要在 Binary 處輸入32-bits 的二進位數字（不要有空白分隔），按下 "Convert to Decimal"， 就可以知道這個 32-bits 二進位數字對應的整數是多少了~</p></li></ul></li></ol><p></p><p>舉例來說，如果我們想進行 1 + 2 的加法：</p><ol><li><p>把 1 和 2 當作 float，寫出他們的 bit pattern：</p><ul><li><p>1 = 00111111 10000000 00000000 00000000</p></li><li><p>2 = 01000000 00000000 00000000 00000000</p></li></ul></li></ol><ol start="2"><li><p>將兩個 32-bits 的二進位數字作加法，得到一個 32-bits 的二進位數字</p><pre><code>   00111111 10000000 00000000 00000000
++) 01000000 00000000 00000000 00000000
+---------------------------------------
+   01111111 10000000 00000000 00000000</code></pre></li></ol><ol start="3"><li><p>將該二進位數字當作 int 解讀</p><ul><li><p>01111111 10000000 00000000 00000000 = 2139095040</p></li></ul></li></ol><p>所以， 1 + 2 = 2139095040。</p><p></p><p>你是卡塔麗娜的數學老師，為了讓卡塔麗娜更理解這個複雜的加法是怎麼進行的，請你在進行每一題範例講解時都把這個相加的過程清楚的寫出來喔~</p><p><img src="https://c.tenor.com/ZqSIoxyMrIIAAAAC/otome-game-bakarina.gif"></p>
+</div>
+<p></p>
+<h3>Input</h3>
+Two integer a, b. The range of a, b is -999,999 <= a, b <= 999,999.
+<p></p>
+<h3>Output</h3>
+The process of addition and its result. Please refer to examples.
+<p></p>
+<h3>Loader Code</h3>
+<div>
+<p>Your code will be judge using this program:</p>
+</div>
+<pre>
+#include<stdio.h>
+
+void addition();
+
+void print_binary(void *n){
+    for(int i = 31; i >= 0; --i){
+        printf("%d", (*(int *)n >> i) & 1);
+        if (i && !(i % 8)) printf(" ");
+    }
+}
+
+int main(){
+    addition();
+    return 0;
+}
+
+</pre>

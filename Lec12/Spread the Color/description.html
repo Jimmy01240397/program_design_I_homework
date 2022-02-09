@@ -1,0 +1,45 @@
+<h3>Description</h3>
+<div>
+<p>Read a graph with size <code>M(5) * N(8)</code>, for each pixel there are <strong>3 colors(Red, Green, Blue)</strong> that we respectively use <code>R</code>, <code>G</code>, <code>B</code> to represent. If the pixel is <strong>empty</strong>, we use <code>X</code> to represent. After reading the graph, read <code>row</code> and <code>col</code> to get the color of <code>graph[row][col]</code>.Now, you need to spread the color starting from the position <code>(row, col)</code> and finally print out the result. The spreading rules are below:</p><p><strong>Spread color </strong><code>graph[row][col]</code><strong> starting from </strong><code>(row, col)</code><strong>in 4 directions(Up, Down, Left, Right).</strong> You will encounter three situations. <br>1. Pixel's color is <code>X</code>: Fill the color with <code>graph[row][col]</code> and go on.<br>2. Pixel's color is the same as <code>graph[row][col]</code>: Go on.<br>3. Pixel's color is different from <code>graph[row][col]</code>: Stop spreading.</p><h3><strong>Hint: See two-dimensional array as one-dimensional array.</strong></h3><p>Given <code>char *p = &amp;graph[0][0]</code>, you can use <code>*(p+row*N+col)</code> to visit the element in <code>graph[row][col]</code>.</p>
+</div>
+<p></p>
+<h3>Input</h3>
+Input a is a pointer which indicates graph[0][0], row and col are int that indicate the starting position for spreading.
+<p></p>
+<h3>Output</h3>
+Your function needs to change the colors for each pixel in the graph after spreading.
+<p></p>
+<h3>Loader Code</h3>
+<div>
+<p>Your code will be judge using this program:</p>
+</div>
+<pre>
+#include <stdio.h>
+#define M 5
+#define N 8
+char colors[4] = {'R', 'G', 'B', 'X'};   // Red, Green, Blue, Empty
+
+void spread(char*, int, int);
+
+int main(void) {
+    char graph[M][N];
+    int row, col;
+
+    for(int i = 0; i < M; i++) {
+        for(int j = 0; j < N; j++)
+            scanf("%c", &graph[i][j]);
+        getchar();      // Ignore '\n'
+    }
+    scanf("%d %d", &row, &col);    // Starting position
+    
+    spread(&graph[0][0], row, col);
+    
+    // Print out the spreading result
+    for(int i = 0; i < M; i++) {
+        for(int j = 0; j < N; j++)
+            printf("%c", graph[i][j]);
+        printf("\n");
+    }
+    return 0;
+}
+</pre>

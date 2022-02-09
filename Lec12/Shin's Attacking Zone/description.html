@@ -1,0 +1,45 @@
+<h3>Description</h3>
+<div>
+<p>As the leader of the 86 spearhead squadron, Shin's main job is to guide the squadron members to the right place. He will receive the coordinates of the enemies from the handler during the mission, all he has to do is convert the coordinates into directions and distances that will become the instructions of the squadron members.</p><p><img src="https://c.tenor.com/Z34tCoScISsAAAAC/86anime-eighty-six.gif"></p>
+</div>
+<p></p>
+<h3>Input</h3>
+First line contains an integer N which indicates the number of the enemies.
+Next, follows a list of coordinates (x, y) of the enemies, where each coordinate of an enemy occupies a line.
+
+1 <= N <= 1024
+-1000 <= x, y <= 1000, where origin is (0, 0)
+<p></p>
+<h3>Output</h3>
+N lines of the direction DIR and the distance DIST of enemies where the direction comes first followed by the distance and closed by a newline character.
+
+0 <= DIR <360, where 0 represents the positive x axis and increases through counterclockwise.
+Both DIR and DIST should be rounded to the hundredths.
+<p></p>
+<h3>Loader Code</h3>
+<div>
+<p>Your code will be judge using this program:</p>
+</div>
+<pre>
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+#define MAX_N 1024
+
+void convert_to_polar(int *coords, int N);
+
+int main()
+{
+    int N, coords[MAX_N + 1][2];
+    scanf("%d", &N);
+    
+    for (int i = 0; i < N; i++)
+        scanf("%d%d", &coords[i][0], &coords[i][1]);
+    
+    
+    convert_to_polar((int *) coords, N);
+    
+    return 0;
+}
+</pre>

@@ -1,0 +1,33 @@
+<h3>Description</h3>
+<div>
+<p>It is usual that a paper may have many references. Probably a website, a book, or other papers.</p><p>Assume that if we want to understand a specific paper, we need to read the paper and its all references.</p><p>(If the referenced paper has other references, all of them should be read.)</p><p>In this problem, given some reference numbers,</p><p>write a program that lists all papers that should be read for the specific paper.</p><p></p><p>For the first sample testcase, given a number <code>5</code>, which means there are five papers (number 1 ~ 5),</p><p>then, follow the format 「referencingPaper referencedPaper1 referencedPaper2 ...」 to input.</p><p>We can know that,</p><p>the 5th paper references the 1st 2nd 3rd papers</p><p>the 2nd paper references the 4th paper</p><p>the 1st paper references the 2nd paper</p><p>the 3rd paper references the 4th paper</p><p>until we encounter 0, stop inputting.</p><p></p><p>Now, if we want to fully understand all these five papers, then</p><p>for the 1st paper, we should read the 1st, 2nd, 4th papers (since the 1st paper references the 2nd paper, and the 2nd paper references the 4th paper)</p><p>for the 2nd paper, we should read the 2nd, 4th papers</p><p>for the 3rd paper, we should read the 3rd, 4th papers</p><p>for the 4th paper, we should read the 4th paper</p><p>for the 5th paper, we should read the 1st, 2nd, 3rd, 4th, 5th papers</p><p></p><hr><p></p><p>在一篇論文中，通常會有許多參考文獻，可能是某個網站、某本書、或是其他相關論文。</p><p>假設要完整個理解某篇論文，需要完整看完自身內容，以及其參考文獻（若類推下去仍有參考文獻，亦須將其完整看完）。</p><p>本題以此概念為出發，給予許多篇的論文編號，</p><p>請寫出一個程式，條列出透徹每篇論文所須看的所有論文編號。</p><p></p><p>以第一筆範例測資來說，給予一數字 <code>5</code>，代表有著五篇論文（編號 1 ~ 5），</p><p>接下來以「參考論文 被參考論文1 被參考論文2 ...」的格式進行輸入。</p><p>因此可以解讀出以下訊息：</p><p>第 5 篇論文參考了第 1、2、3 篇論文</p><p>第 2 篇論文參考了第 4 篇論文</p><p>第 1 篇論文參考了第 2 篇論文</p><p>第 3 篇論文參考了第 4 篇論文</p><p>直到遇到 0，代表輸入結束。</p><p></p><p>那麼若要透徹這五篇論文，則</p><p>第 1 篇論文應閱讀完第 1、2、4 篇論文（因為第 1 篇論文參考了第 2 篇論文，而第 2 篇論文又參考了第 4 篇論文）</p><p>第 2 篇論文應閱讀完第 2、4 篇論文</p><p>第 3 篇論文應閱讀完第 3、4 篇論文</p><p>第 4 篇論文應閱讀完第 4 篇論文</p><p>第 5 篇論文應閱讀完第 1、2、3、4、5 篇論文。</p>
+</div>
+<p></p>
+<h3>Input</h3>
+The first line is an integer N, and it means there are N papers (number 1 ~ N). And 1 <= N <= 100.
+Then follow the format 「referencingPaper referencedPaper1 referencedPaper2 ...」 to input until encounter 0.
+Notice that the referencing paper number on each row won't be ordered.
+You don't need to consider the cycle. (If the 1st paper references the 3rd paper, and the 3rd paper references the 1st paper, well, it sounds weird!)
+
+一開始輸入一數字 N，代表有 N 篇論文，編號為 1 ~ N，且 1 <= N <= 100。
+接者以「參考論文 被參考論文1 被參考論文2 ...」的格式進行輸入，
+直到讀到 0 代表輸入結束。
+注意，每列的參考論文編號並不會按照順序，
+且不必考慮 cycle 的狀況（如果說第 1 篇論文參考第 3 篇論文，而第 3 篇論文卻又參考了第 1 篇論文，聽起來超怪的對吧！）。
+<p></p>
+<h3>Output</h3>
+Print each paper number in ascending order on each row.
+Then follow the format 「referencingPaper -> readPaper1 readPaper2 ...」.
+Notice that the readPaperN should be printed in ascending order.
+
+依照每個論文號碼順序輸出，
+並以「參考論文 -> 需閱讀的論文1 需閱讀的論文2 ...」的格式回答。
+注意，須閱讀的論文N 必須由小到大排序。
+<p></p>
+<h3>Loader Code</h3>
+<div>
+<p>Your code will be judge using this program:</p>
+</div>
+<pre>
+
+</pre>

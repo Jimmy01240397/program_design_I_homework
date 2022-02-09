@@ -1,0 +1,33 @@
+<h3>Description</h3>
+<div>
+<p>Given an array's initial address(means arr[0]) which contains 5 elements, please print out the sum of these five elements.</p><p></p><p>給定一個陣列的起始記憶體位置並且這個陣列包含五個元素，請你輸出陣列所有元素的和</p>
+</div>
+<p></p>
+<h3>Input</h3>
+Input arr is a pointer to an array address
+<p></p>
+<h3>Output</h3>
+Your function need to assign correct value(int type) to variable result.
+<p></p>
+<h3>Loader Code</h3>
+<div>
+<p>Your code will be judge using this program:</p>
+</div>
+<pre>
+#include <stdio.h>
+
+void star(int*, int*);
+
+int main()
+{
+    int arr[5], result;
+    for(int i=0; i<5; i++)
+        scanf("%d", &arr[i]);
+    
+    star(arr, &result);
+
+    printf("%d", result);
+
+    return 0;
+}
+</pre>

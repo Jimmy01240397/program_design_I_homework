@@ -1,0 +1,32 @@
+<h3>Description</h3>
+<div>
+<p>Please calculate the sum of the numbers.</p><p><strong>Hint: Use </strong><code>strtok()</code><strong> and </strong><code>atoi()</code></p>
+</div>
+<p></p>
+<h3>Input</h3>
+A string whose length isn't greater than 100. Every number is separated by '+'.
+<p></p>
+<h3>Output</h3>
+The sum of the numbers.
+<p></p>
+<h3>Loader Code</h3>
+<div>
+<p>Your code will be judge using this program:</p>
+</div>
+<pre>
+#include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+
+#define N 100
+
+int addition(char str[]);
+
+int main() {
+    char str[N];
+    scanf("%s", str);
+    int sum = addition(str);
+    printf("%d", sum);
+    return 0;
+}
+</pre>

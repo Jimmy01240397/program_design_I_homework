@@ -1,0 +1,35 @@
+<h3>Description</h3>
+<div>
+<p>給定一陣列，利用指標操作，根據給定的模式，將陣列的值做對應的轉換。</p><p>規則如下：</p><p>一開始給定一個陣列 <code>arr</code>，其中的第一個元素（<code>arr[0]</code>）代表的是「模式」。</p><p>對於接下來的元素（<code>arr[1]</code> ~ <code>arr[SIZE-1]</code>），我們用一個新的陣列 <code>newArr</code> 來講解。</p><p></p><p>我們讓：</p><p><code>newArr[0]</code> = <code>arr[1]</code></p><p><code>newArr[1]</code> = <code>arr[2]</code></p><p><code>newArr[2]</code> = <code>arr[3]</code></p><p>依此類推，<code>newArr[i]</code> = <code>arr[i+1]</code>。</p><p></p><p>在 <code>newArr</code> 裡，</p><p>如果模式為 1，則 index 為 2 的倍數的值將加上 10；</p><p>如果模式為 2，則 index 為 3 的倍數的值將乘以 8；</p><p>如果模式為 3，則 index 為 5 的倍數的值將減去 2。</p><p>最後，將改動後的內容印出來（不包含「模式」的值）。</p><p></p><p><strong>注意：須根據給定之 </strong><code>main</code><strong> 函式完成 </strong><code>modify_array</code><strong> 函式的實作，請仔細閱讀 </strong><code>main</code><strong> 函式的內容 ;) 。</strong></p><hr><p></p><p>Given an array, please use pointer to modify its elements' values based on the provided mode.</p><p>The rule is showed below:</p><p>We will give you an array <code>arr</code>, the first element (<code>arr[0]</code>) means「mode」.</p><p>For the other elements (<code>arr[1]</code> ~ <code>arr[SIZE-1]</code>), we will use a new array <code>newArr</code> to introduce.</p><p></p><p>Let...</p><p><code>newArr[0]</code> = <code>arr[1]</code></p><p><code>newArr[1]</code> = <code>arr[2]</code></p><p><code>newArr[2]</code> = <code>arr[3]</code></p><p>and so on, <code>newArr[i]</code> = <code>arr[i+1]</code>.</p><p></p><p>In <code>newArr</code>,</p><p>if the mode is 1, then the value should add   10 if its index is the multiples of 2;</p><p>if the mode is 2, then the value should time   8 if its index is the multiples of 3;</p><p>if the mode is 3, then the value should minus  2 if its index is the multiples of 5.</p><p>Then, print the modified array excluding the mode's value.</p><p></p><p><strong>Notice: You have to implement </strong><code>modify_array()</code><strong> based on the provided </strong><code>main()</code><strong>, please read </strong><code>main()</code><strong> carefully ;).</strong></p>
+</div>
+<p></p>
+<h3>Input</h3>
+給定一陣列，第一個元素為改動模式的數值。
+Given an array, the first element is the mode's value.
+<p></p>
+<h3>Output</h3>
+改動後陣列的內容（不包含「模式」的值）。
+The modified array excluding the mode's value.
+<p></p>
+<h3>Loader Code</h3>
+<div>
+<p>Your code will be judge using this program:</p>
+</div>
+<pre>
+#include <stdio.h>
+#define SIZE 201
+
+void modify_array(int *);
+
+int main(void) {
+    int arr[SIZE];
+    for (int i = 0; i < SIZE; i++) {
+        scanf("%d", &arr[i]);
+    }
+    modify_array(&arr[SIZE/2]);
+    for (int i = 1; i < SIZE; i++) {
+        printf("%d ", arr[i]);
+    }
+    return 0;
+}
+</pre>

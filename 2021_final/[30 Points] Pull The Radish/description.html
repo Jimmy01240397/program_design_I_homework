@@ -1,0 +1,42 @@
+<h3>Description</h3>
+<div>
+<p>在開心農場裡，Ariel 種了 <code>N</code> 根蘿蔔，每個蘿蔔的間距為一公尺，今天是收成的日子，但 Ariel 不想要一次拔光所有蘿蔔，所以他決定以自己為起點 (起點為 <code>y</code>)，分別向左和向右，每隔 <code>x</code> 公尺就拔一根蘿蔔，請輸出 Ariel 今天總共收成了幾根蘿蔔，並告訴他現在農場的情況。<br><br><code>farm[N]</code> 表示農場狀況，若 <code>farm[i]</code> 為 1 ，表示在 index 為 <code>i</code> 時，有種一根蘿蔔 ; 若 <code>farm[i]</code> 為 0 ，表示在 index 為 <code>i</code> 時，沒有種蘿蔔。( index <code>i</code> 與 <code>i+1</code> 之間表示間隔為一公尺)</p><p><strong>Notice</strong>: 請完成 <code>pull_radish</code> 函式，並回傳總共拔了幾個蘿蔔，注意參數是什麼 !</p><hr><p>In happy farm, Ariel planted <code>N</code> radishes. The radishes  are spaced at one-meter intervals.  It is time to harvest, but Ariel doesn't want to pull all radishes. Therefore, she deicides to start with herself (starting point is <code>y</code>), and pulls radishes every <code>x</code> meters to left and right, respectively. Please output how many radishes Ariel pulls and the situation of farm.</p><p><code>farm[N]</code> represents the situation of farm. If <code>farm[i]</code> is 1, that means there is a radish at index <code>i</code> ;  If <code>farm[i]</code> is 0, that means there isn't a radish at index <code>i</code>.</p><p><strong>Notice</strong>: Please finish <code>pull_radish</code> function, and return the number of radishes that Ariel pulls. Pay attention to the parameter!</p>
+</div>
+<p></p>
+<h3>Input</h3>
+There are three number, integer N , y and x, represent the number of radishes, Ariel's position and the interval.
+
+
+<p></p>
+<h3>Output</h3>
+Output the total of radishes which Ariel pulled and the array farm[N] 
+<p></p>
+<h3>Loader Code</h3>
+<div>
+<p>Your code will be judge using this program:</p>
+</div>
+<pre>
+#include<stdio.h>
+#include<stdlib.h>
+
+int pull_radish(int *l, int *r, int *pos, int x);
+
+int main() {
+    int N, y, x;
+    scanf("%d %d %d", &N, &y, &x);
+    int *farm = malloc(N * sizeof(int));
+
+    // initialize farm[N]
+    for(int i=0; i<N; i++) {
+        farm[i] = 1;
+    }
+
+    int total = pull_radish(&farm[0], &farm[N-1], &farm[y], x);
+    printf("%d\n", total);
+    for(int i=0; i<N; i++) {
+        printf("%d ", farm[i]);
+    }
+
+    return 0;
+}
+</pre>

@@ -8,7 +8,7 @@ XOR Cipher
 Given a string of text, which is our input data, encrypt the data by
 applying the bitwise XOR operator to every character using a given key.
 
-![](/Lec20/XOR Cipher/images/c863db41704f71e81272da277a3016cbeda09d1d.png)For
+![](/Lec20/XOR%20Cipher/images/c863db41704f71e81272da277a3016cbeda09d1d.png)For
 example, given a plaintext data `TAs are so handsome` and the key `key`,
 the result cipher is:
 

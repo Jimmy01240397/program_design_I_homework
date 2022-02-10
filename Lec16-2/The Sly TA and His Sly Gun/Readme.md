@@ -22,7 +22,7 @@ direction of the next fire will be decided by following process:
     backward, otherwise
 
 ![Screenshot from 2022-01-04
-18-38-50.png](/Lec16-2/The Sly TA and His Sly Gun/images/2516c52e66c26e06652820d3df42d522bbcf15a4.png)
+18-38-50.png](/Lec16-2/The%20Sly%20TA%20and%20His%20Sly%20Gun/images/2516c52e66c26e06652820d3df42d522bbcf15a4.png)
 
 ![](https://i.makeagif.com/media/10-28-2015/Bsr1dr.gif)
 

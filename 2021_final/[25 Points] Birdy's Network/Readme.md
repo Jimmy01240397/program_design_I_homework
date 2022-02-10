@@ -11,7 +11,7 @@ Birdy 是一個網路管理員，他想要使用一個 **鄰接表** (adjacency 
 node)，並將所有的節點資訊儲存於一條陣列中，\
 以下是本鄰接表的示意圖：
 
-![](/2021_final/[25 Points] Birdy's Network/images/9b93c2bb45ee6823fe06d6554e9cfcd4679c94bd.png)
+![](/2021_final/%5B25%20Points%5D%20Birdy's%20Network/images/9b93c2bb45ee6823fe06d6554e9cfcd4679c94bd.png)
 
 同時，他也希望鄰接表上的節點按照 id 由小到大的排序。\
 請你幫助他建立並排序這張鄰接表。
@@ -23,7 +23,7 @@ to represent his network. One representation of adjacency list is an
 array of linked lists which records the neighbors for each node. The
 structure of the adjacency list is shown as following:
 
-![](/2021_final/[25 Points] Birdy's Network/images/9b93c2bb45ee6823fe06d6554e9cfcd4679c94bd.png)He
+![](/2021_final/%5B25%20Points%5D%20Birdy's%20Network/images/9b93c2bb45ee6823fe06d6554e9cfcd4679c94bd.png)He
 also wants to make the order of the adjacency list ascending. Please
 help him load the data to an adjacency list and reorganize its order.
 

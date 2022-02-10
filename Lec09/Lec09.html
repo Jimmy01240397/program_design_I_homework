@@ -1,0 +1,344 @@
+<h1>Lec09</h1>
+<h2>Alpha compositing</h2>
+<h3>Description</h3>
+<div>
+<p>在計算機圖形學領域，Alpha 合成（英語：alpha compositing）是一種將圖像與背景結合的過程，結合後可以產生部分透明或全透明的視覺效果。 (By <a rel="noopener noreferrer nofollow" href="https://zh.wikipedia.org/wiki/Alpha%E5%90%88%E6%88%90">Wikipedia</a>) </p><p>在電腦當中，圖片就是一個含有一堆像素的二維陣列，每一個像素都是一個顏色，該顏色可以用數字來表示。因此，一張 m x n 大小的圖片，在電腦中可以用一個 m x n 大小的矩陣來表示。</p><p>要進行 Alpha 合成，必須先準備兩張圖片：一張前景 A，一張背景 B。兩張圖當中的每個像素分別以 <code>Ca</code>, <code>Cb</code> 表示，而兩張圖的透明度則分別以 <code>Aa</code>, <code>Ab</code> 表示。透明度會介於 0 到 1 之間，0 代表完全透明，1 代表完全不透明。</p><p>有了以上參數，我們想要計算兩張圖片合成起來之後的圖片 O，這張合成後的圖片中的每個像素以 <code>Co</code> 表示，則 <code>Co</code> 可以透過以下算式得知：</p><p><code>Co = (Ca * Aa + Cb * Ab * (1 - Aa)) / (Aa + Ab * (1 - Aa))</code></p><p>Alpha 合成的用處非常廣泛，例如：在渲染網頁畫面時，如果有某些畫面元件希望顯示成半透明的，可以使用 CSS 中的 opacity 濾鏡來指定元件的透明度，這個 opacity 濾鏡就是使用了Alpha合成的演算法進行畫面渲染的。</p><p>現在，給你一張照片 <code>image</code> 、這張照片的長寬 <code>width</code>, <code>height</code>、這張照片的透明度 <code>alpha</code>，和一個不透明純色背景的顏色 <code>background_color</code>，請你將這張照片跟純色背景進行 Alpha 合成。</p>
+</div>
+<p></p>
+<h3>Input</h3>
+The first line contains foreground's alpha value (floating number range in [0, 1]), and background color (integer number range in [0, 255]).
+The second line contains width and height of the foreground image, both are integer number range in [0, 255].
+The following lines contain each pixel of the foreground image.
+<p></p>
+<h3>Output</h3>
+The composited image.
+<p></p>
+<h3>Loader Code</h3>
+<div>
+<p>Your code will be judge using this program:</p>
+</div>
+<pre>
+#include <&zwj;stdio.h>
+#define SIZE 256
+
+void alpha_composite(unsigned int image[][SIZE], unsigned int width, unsigned int height, float alpha, int background_color);
+
+int main()
+{
+    unsigned int width, height, image[SIZE][SIZE] = {0}, backgounrd_color;
+    float alpha;
+
+    scanf("%f %u", &alpha, &backgounrd_color);
+    scanf("%u %u", &width, &height);
+    for (int i = 0; i <&zwj; height; ++i)
+    {
+        for (int j = 0; j <&zwj; width; ++j)
+        {
+            scanf("%u", &image[i][j]);
+        }
+    }
+
+    alpha_composite(image, width, height, alpha, backgounrd_color);
+
+    for (int i = 0; i <&zwj; height; ++i)
+    {
+        for (int j = 0; j <&zwj; width; ++j)
+        {
+            printf("%u ", image[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+</pre>
+<div>
+<h3>Sample1</h3>
+<h4>Input</h4>
+<pre>
+0.5 251
+10 5
+234 156 247 130 188 52 72 133 70 205 
+237 232 116 122 79 226 162 138 119 2 
+225 243 179 164 169 9 20 171 192 108 
+141 115 234 250 222 208 24 216 141 22 
+213 96 198 205 122 35 170 151 68 162 
+
+</pre>
+<h4>Output</h4>
+<pre>
+242 203 249 190 219 151 161 192 160 228 
+244 241 183 186 165 238 206 194 185 126 
+238 247 215 207 210 130 135 211 221 179 
+196 183 242 250 236 229 137 233 196 136 
+232 173 224 228 186 143 210 201 159 206 
+
+</pre>
+</div>
+<div>
+<h3>Sample2</h3>
+<h4>Input</h4>
+<pre>
+1 125
+16 16
+42 161 251 230 134 110 133 47 21 8 215 104 221 73 248 255 
+190 250 248 252 247 38 101 143 15 74 214 111 221 27 109 143 
+17 142 81 251 152 232 66 22 128 94 239 172 242 245 142 197 
+9 41 139 87 107 78 151 20 144 110 222 16 14 26 91 38 
+48 233 39 99 54 49 253 45 48 188 181 246 84 6 100 83 
+171 152 121 58 62 173 3 170 34 74 22 6 18 203 152 40 
+100 164 135 204 11 115 15 107 192 60 123 150 207 197 165 91 
+63 116 175 136 0 122 111 10 25 100 114 181 198 33 66 86 
+161 151 138 254 95 59 204 77 24 222 242 202 109 180 129 62 
+216 142 229 233 108 29 86 199 135 190 188 52 68 114 190 82 
+39 162 244 70 8 121 91 82 146 51 255 79 100 89 72 17 
+27 217 196 19 21 129 139 180 71 1 210 215 22 207 130 158 
+220 20 48 227 212 134 17 222 213 5 64 202 99 50 230 168 
+90 23 11 60 20 229 86 33 44 63 179 227 46 109 53 87 
+99 252 35 136 228 170 155 51 225 224 104 97 8 106 220 68 
+135 162 169 35 90 177 219 253 76 70 223 219 255 240 241 233 
+
+</pre>
+<h4>Output</h4>
+<pre>
+42 161 251 230 134 110 133 47 21 8 215 104 221 73 248 255 
+190 250 248 252 247 38 101 143 15 74 214 111 221 27 109 143 
+17 142 81 251 152 232 66 22 128 94 239 172 242 245 142 197 
+9 41 139 87 107 78 151 20 144 110 222 16 14 26 91 38 
+48 233 39 99 54 49 253 45 48 188 181 246 84 6 100 83 
+171 152 121 58 62 173 3 170 34 74 22 6 18 203 152 40 
+100 164 135 204 11 115 15 107 192 60 123 150 207 197 165 91 
+63 116 175 136 0 122 111 10 25 100 114 181 198 33 66 86 
+161 151 138 254 95 59 204 77 24 222 242 202 109 180 129 62 
+216 142 229 233 108 29 86 199 135 190 188 52 68 114 190 82 
+39 162 244 70 8 121 91 82 146 51 255 79 100 89 72 17 
+27 217 196 19 21 129 139 180 71 1 210 215 22 207 130 158 
+220 20 48 227 212 134 17 222 213 5 64 202 99 50 230 168 
+90 23 11 60 20 229 86 33 44 63 179 227 46 109 53 87 
+99 252 35 136 228 170 155 51 225 224 104 97 8 106 220 68 
+135 162 169 35 90 177 219 253 76 70 223 219 255 240 241 233 
+
+</pre>
+</div>
+<div>
+<h3>Sample3</h3>
+<h4>Input</h4>
+<pre>
+0 139
+32 32
+71 14 124 73 209 208 203 242 86 53 150 109 149 19 134 72 102 182 193 21 3 15 233 161 24 134 67 112 41 3 204 0 
+87 219 33 125 141 184 68 250 158 231 176 94 14 24 42 49 212 28 163 111 156 10 129 240 143 48 77 11 52 77 180 109 
+192 153 158 187 57 16 73 52 14 222 107 107 157 10 187 13 252 90 196 44 27 136 126 9 53 252 225 70 92 240 113 125 
+134 111 205 132 193 139 171 97 218 120 37 253 5 135 233 223 105 28 151 161 79 151 168 30 4 22 206 107 89 86 186 209 
+30 248 40 175 144 39 129 83 221 254 240 44 199 36 39 22 86 90 18 94 255 5 38 27 15 14 89 243 20 29 123 207 
+188 57 33 141 123 151 111 57 135 117 100 151 82 80 238 166 18 143 128 71 142 197 195 171 177 112 185 246 159 16 205 232 
+126 22 114 225 145 170 145 228 30 81 21 158 195 9 12 222 131 50 252 57 2 75 130 96 0 77 156 50 125 236 182 12 
+167 206 166 85 181 38 33 17 108 39 112 169 186 0 56 207 65 68 18 11 235 169 3 64 195 170 173 118 12 170 52 63 
+182 192 113 123 225 76 62 139 15 202 63 178 118 105 103 187 177 89 103 41 242 52 237 27 110 149 219 43 108 144 73 7 
+250 229 123 179 88 226 48 255 191 200 249 53 217 252 217 136 54 245 7 73 76 54 167 2 152 34 210 221 55 175 116 67 
+237 249 166 3 230 128 232 74 3 191 190 225 166 64 142 244 60 234 53 31 34 144 200 182 220 153 121 43 163 12 212 64 
+44 197 180 4 245 131 29 132 252 246 204 245 25 175 205 177 147 44 119 22 171 211 138 209 101 81 98 180 80 164 105 116 
+201 209 0 179 236 169 251 96 184 209 183 163 5 238 208 74 114 31 77 31 194 121 40 171 12 73 44 183 237 163 251 163 
+228 252 126 205 81 17 164 46 197 184 216 57 42 193 241 104 46 187 27 211 115 1 87 245 207 177 15 39 53 220 247 106 
+61 172 108 160 254 172 51 151 200 7 49 59 87 218 152 74 67 173 236 41 244 18 77 4 34 186 66 95 76 179 220 201 
+153 61 93 152 42 240 12 54 223 4 82 184 24 199 55 9 205 81 53 102 58 16 123 147 81 24 142 62 155 202 144 90 
+203 220 4 55 188 242 108 48 112 14 237 102 232 234 36 99 227 142 162 116 214 108 252 71 237 185 14 58 113 166 29 193 
+207 119 163 102 29 106 197 220 151 249 109 93 49 57 241 56 201 213 157 98 54 37 35 110 146 233 98 90 8 126 29 123 
+226 225 91 42 44 107 110 223 89 239 44 26 233 175 27 127 208 170 53 152 27 179 148 195 103 163 84 38 44 149 87 73 
+62 47 248 207 234 90 51 83 80 227 149 198 40 223 165 96 224 181 204 42 39 168 116 96 249 226 121 177 24 180 241 213 
+79 96 209 53 11 192 96 135 205 184 104 163 188 19 63 242 106 68 3 246 195 93 193 40 54 64 172 207 115 214 63 241 
+58 80 113 141 114 47 246 104 220 127 135 238 10 122 78 69 154 232 180 190 63 93 189 153 2 216 174 49 40 144 42 72 
+60 59 164 170 28 106 201 52 184 10 147 54 182 79 43 214 137 69 18 93 222 226 236 178 51 1 178 133 24 191 198 38 
+0 238 160 116 6 204 9 12 92 96 146 158 231 139 49 127 133 95 43 240 149 111 191 130 129 209 39 162 240 215 55 175 
+86 210 204 185 249 150 221 252 137 66 98 113 147 205 35 199 190 114 94 181 198 26 134 195 191 82 227 15 40 143 216 164 
+248 172 238 13 222 190 18 197 236 199 201 236 86 229 202 48 135 143 178 96 248 161 243 18 129 250 221 226 178 217 194 178 
+233 144 90 11 147 123 178 249 124 90 65 109 132 180 236 222 33 198 253 93 99 14 231 198 130 116 111 170 100 156 84 51 
+137 236 51 147 157 254 223 208 91 14 30 103 37 113 238 40 35 168 13 90 110 94 7 219 6 82 225 66 209 51 110 120 
+114 145 158 127 114 239 155 166 90 107 203 116 146 39 251 111 169 227 197 28 29 9 98 56 156 164 23 172 155 190 65 39 
+201 220 255 205 12 200 110 185 113 54 39 39 219 178 133 139 177 11 142 126 53 139 170 134 132 186 187 144 102 114 222 42 
+175 206 159 47 173 66 59 146 188 102 48 23 169 209 18 173 244 118 191 176 35 127 212 141 60 178 48 151 240 49 36 46 
+185 204 72 221 136 184 144 103 101 213 46 93 94 194 134 147 210 21 51 122 48 225 33 111 196 4 85 133 199 101 209 176 
+
+</pre>
+<h4>Output</h4>
+<pre>
+139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 
+139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 
+139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 
+139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 
+139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 
+139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 
+139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 
+139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 
+139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 
+139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 
+139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 
+139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 
+139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 
+139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 
+139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 
+139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 
+139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 
+139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 
+139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 
+139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 
+139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 
+139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 
+139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 
+139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 
+139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 
+139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 
+139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 
+139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 
+139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 
+139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 
+139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 
+139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 
+
+</pre>
+</div>
+<h2>Combination Again (Oh come on)</h2>
+<h3>Description</h3>
+<div>
+<p>Although you guys have done Combination in lecture 7 before (right?), you all notice that a factorial of a large number may cause overflow even with type <code>unsigned long</code>(what a nightmare. We all have learnt that there is another definition of combination:</p><p>C(n, m) =</p><ol><li><p><code>1</code>, if m == 0 or m == n</p></li><li><p><code>C(n - 1, m - 1) + C(n - 1, m)</code>, otherwise</p></li></ol><p>Please try to calculate the combination again with this definition.</p>
+</div>
+<p></p>
+<h3>Input</h3>
+A line with two integers represent n and m respectively. (1 <= m <= n <= 30)
+<p></p>
+<h3>Output</h3>
+An integer which represents C(n, m).
+<p></p>
+<h3>Loader Code</h3>
+<div>
+<p>Your code will be judge using this program:</p>
+</div>
+<pre>
+
+</pre>
+<div>
+<h3>Sample1</h3>
+<h4>Input</h4>
+<pre>
+25 8
+</pre>
+<h4>Output</h4>
+<pre>
+1081575
+</pre>
+</div>
+<div>
+<h3>Sample2</h3>
+<h4>Input</h4>
+<pre>
+28 25
+</pre>
+<h4>Output</h4>
+<pre>
+3276
+</pre>
+</div>
+<h2>Passcode of Treasure Box</h2>
+<h3>Description</h3>
+<div>
+<p>In Henry’s dream, there are 10000 treasure boxes. A mysterious sound says: past paper of PD1 is in the nth treasure box.</p><p>Each treasure box has its own passcode. The rule of the passcode is as following:</p><p>The passcode of the <strong>1st</strong> treasure box is <code>1</code><br>For other boxes, if  <strong>n is an even number</strong>, the passcode is the same as the<code>(n/2)th treasure box</code>.<br>If <strong>n is an odd number</strong>, the passcode is the sum of the passcode of <code>(n + 1)th treasure box</code> and that of <code>(n - 1)th treasure box</code>.</p><p>Please help Henry to find the passcode.</p><p>After Henry has found the passcode and opened the treasure box, there is a letter:<br>Here are all of the past paper, but the questions in this midterm are all newly set by the TAs. XD</p><p></p><hr><p></p><p>小明做了一個夢，夢裡有 10000 個寶箱，奇妙的聲音告訴他，程設一期中考考古在第 n 個寶箱，想要的話可以全部給你，去找吧…</p><p>所有寶箱都有密碼，密碼規則是這樣的：</p><p>第一個寶箱，密碼是 1<br>其餘的寶箱，若 n 是偶數，密碼和<code>第 n / 2 個寶箱</code>相同<br>如果 n 是奇數，密碼是<code>第 n + 1 個寶箱</code> 與 <code>第 n - 1 個寶箱</code> 密碼的總和</p><p>請問你能幫小明猜中密碼嗎？</p><p>後續…<br>小明猜中了！<br>打開寶箱一看，發現裡面只有一張字條，<br>想要考古通通都給你，但是這次期中考題目都是助教新出的，加油XD</p>
+</div>
+<p></p>
+<h3>Input</h3>
+1 <= n <= 10000
+<p></p>
+<h3>Output</h3>
+An integer number of passcode
+<p></p>
+<h3>Loader Code</h3>
+<div>
+<p>Your code will be judge using this program:</p>
+</div>
+<pre>
+
+</pre>
+<div>
+<h3>Sample1</h3>
+<h4>Input</h4>
+<pre>
+7
+</pre>
+<h4>Output</h4>
+<pre>
+3
+</pre>
+</div>
+<div>
+<h3>Sample2</h3>
+<h4>Input</h4>
+<pre>
+3
+</pre>
+<h4>Output</h4>
+<pre>
+2
+</pre>
+</div>
+<h2>Secret Value</h2>
+<h3>Description</h3>
+<div>
+<p><s>2021/11/05 Updated Description! (Incorrect, Removed)</s></p><p><u>2021/11/09 <strong>Added information about calculating GCD(a, 0).</strong></u></p><p></p><hr><p>David is trying to calculate the "secret value" of numbers.<br>The secret value of integer <code>N</code> is calculated as:</p><ol><li><p><strong>If </strong><code>N</code><strong> is a one-digit integer, the secret value is itself.</strong></p></li><li><p>Split the number into upper part and lower part.<br>If there are an odd number of digits, the middle digit belongs to the lower part.</p><ul><li><p>The integer 121088 gets divided into 121 and 088.</p></li><li><p>The integer 12345 gets divided into 12 and 345</p></li></ul></li><li><p>Find the two parts' <strong>greatest common divisor(GCD)</strong>. The result is called <code>k</code>.</p><ul><li><p>Please keep in mind that <strong>GCD(a, 0) = GCD(0, a) = |a|.</strong></p></li><li><p>The result of GCD(a,b) is the greatest non-negative integer k satisfices that a = ck, b = dk. Read <a rel="noopener noreferrer nofollow" href="https://en.wikipedia.org/wiki/Greatest_common_divisor#Definition">This</a> to know more.</p></li></ul></li><li><p>Sum up <code>N</code> <strong>itself</strong> and the <strong>secret value of </strong><code>k</code>.</p></li></ol><p><strong>David hate huge numbers, so you MUST answer in modular 10007.<br>Your work will be judged by </strong><u><strong>running the loader section</strong></u><strong>, so please implement the functions provided!</strong></p><hr><h3>Example (Sample Input 1)</h3><p>For <code>N</code> = 2424, we can split it into 24 and 24, whose GCD is also 24, so the result <code>k</code> of 2424 is 24. <br>Now we need to know the secret number of 24 to sum up with <code>N</code>.</p><p>For <code>N</code>= 24, we can split it into 2 and 4, whose GCD is 2, so the result <code>k</code> of 24 is 2.</p><p>Since 2 has only one digit, the secret value of 2 is 2</p><p>Hence, we can get the secret value of <u>2424 = 2424 + secret value of 24 = 2424 + 24 + secret value of 2 = 2450</u></p>
+</div>
+<p></p>
+<h3>Input</h3>
+A single integer N
+1 ≦ N ≦ 2,147,483,647
+<p></p>
+<h3>Output</h3>
+The secret value of N, mod 10007
+<p></p>
+<h3>Loader Code</h3>
+<div>
+<p>Your code will be judge using this program:</p>
+</div>
+<pre>
+#include <&zwj;stdio.h>
+#define MODULUS 10007
+int getSecret(int n);
+int gcd(int a, int b);
+
+int main(){
+	int n;
+	scanf("%d", &n);
+	printf("%d", getSecret(n));
+	return 0;
+}
+</pre>
+<div>
+<h3>Sample1</h3>
+<h4>Input</h4>
+<pre>
+2424
+</pre>
+<h4>Output</h4>
+<pre>
+2450
+</pre>
+</div>
+<div>
+<h3>Sample2</h3>
+<h4>Input</h4>
+<pre>
+99
+</pre>
+<h4>Output</h4>
+<pre>
+108
+</pre>
+</div>
+<div>
+<h3>Sample3</h3>
+<h4>Input</h4>
+<pre>
+121088
+</pre>
+<h4>Output</h4>
+<pre>
+1016
+</pre>
+</div>

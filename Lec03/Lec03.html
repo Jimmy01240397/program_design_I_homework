@@ -1,0 +1,298 @@
+<h1>Lec03</h1>
+<h2>Addition in Column Form</h2>
+<h3>Description</h3>
+<div>
+<p>Your cousin is a second grade elementary school student. He learned the addition that written in column form in his today's class. However, he still has lots of questions about it. Your task is to write a small program to demonstrate the answer to the addition of <code>x</code>and <code>y</code>written in column form.</p>
+</div>
+<p></p>
+<h3>Input</h3>
+Given 2 integers split by a space.
+0 <= x, y <= 9999
+<p></p>
+<h3>Output</h3>
+The column form will be performed in 4 lines.
+First line will start in 2 space and augend(被加數) padding with zeros until 4 digits. 
+Second line will start in "+)" and addend (加數) padding with zeros until 4 digits. 
+Third line is "------".
+Last line is the result padding with zeros until 6 digits. 
+<p></p>
+<h3>Loader Code</h3>
+<div>
+<p>Your code will be judge using this program:</p>
+</div>
+<pre>
+
+</pre>
+<div>
+<h3>Sample1</h3>
+<h4>Input</h4>
+<pre>
+0 0
+</pre>
+<h4>Output</h4>
+<pre>
+  0000
++)0000
+------
+000000
+</pre>
+</div>
+<div>
+<h3>Sample2</h3>
+<h4>Input</h4>
+<pre>
+9999 9999
+</pre>
+<h4>Output</h4>
+<pre>
+  9999
++)9999
+------
+019998
+</pre>
+</div>
+<div>
+<h3>Sample3</h3>
+<h4>Input</h4>
+<pre>
+105 9651
+</pre>
+<h4>Output</h4>
+<pre>
+  0105
++)9651
+------
+009756
+</pre>
+</div>
+<div>
+<h3>Sample4</h3>
+<h4>Input</h4>
+<pre>
+50 985
+</pre>
+<h4>Output</h4>
+<pre>
+  0050
++)0985
+------
+001035
+</pre>
+</div>
+<h2>Cirno's Perfect Math Class 琪露諾的完美算術教室</h2>
+<h3>Description</h3>
+<div>
+<p>琪露諾的算術教室要開始了～以天才為目標努力吧！</p><p>琪露諾除了算術教室以外也經營幻想鄉客運（車上附冷氣）</p><p>某天她想計算經過每站後車上分別會有幾位乘客</p><p>但眾所皆知，琪露諾是個『⑨. 笨蛋』</p><p>所以請各位幫忙計算人數</p><p></p><p>問題：</p><p>巴士從紅魔館 (<code>X</code>站) 出發　一開始有 <code>A</code> 人上車</p><p>在白玉樓 (<code>Y</code> 站) 有 <code>B</code> 人下車　另外有 <code>C</code> 個人上車了</p><p>在八雲家 (<code>Z</code> 站) 有 <code>D</code> 人下車　請問每次過站後車上分別有幾位乘客?</p><p>為了讓琪露諾看得懂，請在每個人數前用<code>0</code>補滿四位數</p><p></p><p>Everybody! Cirno's math class is about to begin! Do your best to become a genius!</p><p>Not only the math class, Cirno also operates a bus company "Gensokyo Bus",</p><p>One day she wants to know how many passengers is onboard when the bus passes each station,</p><p>but everybody knows cirno is a "⑨. Baka" (a.k.a. an idiot),</p><p>so please help her to calculate this.</p><p></p><p>Problem:</p><p>A bus left the Scarlet Devil Mansion (say, <code>X</code> station); <code>A</code> people boarded at the start</p><p>At Hakugyokurou (say, <code>Y</code> station), <code>B</code> left and <code>C</code> people boarded</p><p>At Yakumo-san's house (say, <code>Z</code> station), <code>D</code> people left; so how many passengers is on board after each station?</p><p>To help cirno understand the number, please left-padding each number to 4 digits with <code>0</code></p><p></p><p><a href="https://www.youtube.com/watch?v=xFdDNrd6W9s" rel="noopener noreferrer nofollow">https://www.youtube.com/watch?v=xFdDNrd6W9s</a></p>
+</div>
+<p></p>
+<h3>Input</h3>
+One line contain 4 integers A B C D separated by space
+(0 <= A, B, C, D <= 9999)
+<p></p>
+<h3>Output</h3>
+One line contains 3 integers x, y, z padding with zeros until 4 digits separated by space (0 <= x, y, z <= 9999)
+<p></p>
+<h3>Loader Code</h3>
+<div>
+<p>Your code will be judge using this program:</p>
+</div>
+<pre>
+
+</pre>
+<div>
+<h3>Sample1</h3>
+<h4>Input</h4>
+<pre>
+6381 5852 3862 4329
+</pre>
+<h4>Output</h4>
+<pre>
+6381 4391 0062
+</pre>
+</div>
+<div>
+<h3>Sample2</h3>
+<h4>Input</h4>
+<pre>
+8982 8444 1532 571
+</pre>
+<h4>Output</h4>
+<pre>
+8982 2070 1499
+</pre>
+</div>
+<div>
+<h3>Sample3</h3>
+<h4>Input</h4>
+<pre>
+3791 2054 6299 7230
+</pre>
+<h4>Output</h4>
+<pre>
+3791 8036 0806
+</pre>
+</div>
+<div>
+<h3>Sample4</h3>
+<h4>Input</h4>
+<pre>
+6641 787 1731 5883
+</pre>
+<h4>Output</h4>
+<pre>
+6641 7585 1702
+</pre>
+</div>
+<h2>Scanf Format Problem</h2>
+<h3>Description</h3>
+<div>
+<p>There is a sequence A/B**C/)D , where A,B,C,D are integer.</p><p>Please output the <em>A</em>+<em>B+C+D.</em></p>
+</div>
+<p></p>
+<h3>Input</h3>
+There is one line sequence A/B**C/)D.
+( 1 < A,B,C,D < 1000000 and A,B,C,D are integers  )
+<p></p>
+<h3>Output</h3>
+Please output the A+B+C+D.
+No need to print the newline.
+<p></p>
+<h3>Loader Code</h3>
+<div>
+<p>Your code will be judge using this program:</p>
+</div>
+<pre>
+
+</pre>
+<div>
+<h3>Sample1</h3>
+<h4>Input</h4>
+<pre>
+123/456**789/)222
+</pre>
+<h4>Output</h4>
+<pre>
+1590
+</pre>
+</div>
+<div>
+<h3>Sample2</h3>
+<h4>Input</h4>
+<pre>
+234322/45226**723489/)22222
+</pre>
+<h4>Output</h4>
+<pre>
+1025259
+</pre>
+</div>
+<div>
+<h3>Sample3</h3>
+<h4>Input</h4>
+<pre>
+2/43226**712119/)522
+</pre>
+<h4>Output</h4>
+<pre>
+755869
+</pre>
+</div>
+<div>
+<h3>Sample4</h3>
+<h4>Input</h4>
+<pre>
+684643/930498**150845/)464300
+</pre>
+<h4>Output</h4>
+<pre>
+2230286
+</pre>
+</div>
+<h2>俗俗的賣大拍賣 Discount Price Tag Printing</h2>
+<h3>Description</h3>
+<div>
+<p>2021/10/21 21:50 更新 / Update:</p><p>新增提示，請至下方 Hint 查看</p><p>Added hint below</p><hr><p>資訊系阿超正在協助可憐的銷售員設計即將到來的周年慶看板。</p><p>但是因為人工處理起來真的太費時了，</p><p>請幫她設計一個程式可以自動化的處理完這件任務吧!</p><p>別擔心，阿超知道要如何將輸出結果從螢幕終端顯示器中帶到現實的!</p><p>A-chao, from CSIE, is helping a poor supermarket salesperson designing the price tag for the upcoming anniversary event. However, there is way too much to do it by hand. Please help him design a program to print out the price tag format. Don't worry, he knows how to make things in the terminal become physical.</p><p>The following are the rules for each output lines:</p><ul><li><p>Line #0 / #4: Filly Packed with the character <code>"</code></p></li><li><p>Line #1: Start with a backslash <code>\</code>, four spaces, <strong>the discount percentage which takes 3 character lengths</strong>, the string <code>%off!</code>, four more spaces, then ends with another backslash.</p></li><li><p>Line #2: Start with a backslash <code>\</code>, one space, the string <code>Before</code> , two more spaces, a dollar sign <code>$</code>, <strong>the original cost without a decimal point </strong>using<strong> </strong>a<strong> field width of five characters (justified to the right)</strong>, and ends with another space and a backslash.</p></li><li><p>Line #3: Start with a backslash <code>\</code>, one space, the string <code>After</code>, three more spaces, a dollar sign <code>$</code>, <strong>the discounted cost till the second decimal place</strong> using a <strong>field width of five characters (justified to the right)</strong>, and ends with another space and a backslash.</p></li><li><p><strong>No leading zero</strong> should be added to any of the printed numbers.</p></li><li><p>You can checkout the testing cases for full examples.</p></li></ul>
+</div>
+<p></p>
+<h3>Input</h3>
+Two integers a, b separated by a space.
+a represents "discount percentage".
+b represents "original cost".
+0 <= a <= 100
+1 <= b <= 99
+<p></p>
+<h3>Output</h3>
+Consists of 5 lines,  forming a 18*5 rectangle.
+Please refer to the description section for details of each line.
+<p></p>
+<h3>Loader Code</h3>
+<div>
+<p>Your code will be judge using this program:</p>
+</div>
+<pre>
+
+</pre>
+<div>
+<h3>Sample1</h3>
+<h4>Input</h4>
+<pre>
+50 8
+</pre>
+<h4>Output</h4>
+<pre>
+""""""""""""""""""
+\     50%off!    \
+\ Before  $    8 \
+\ After   $ 4.00 \
+""""""""""""""""""
+
+</pre>
+</div>
+<div>
+<h3>Sample2</h3>
+<h4>Input</h4>
+<pre>
+25 16
+</pre>
+<h4>Output</h4>
+<pre>
+""""""""""""""""""
+\     25%off!    \
+\ Before  $   16 \
+\ After   $12.00 \
+""""""""""""""""""
+
+</pre>
+</div>
+<div>
+<h3>Sample3</h3>
+<h4>Input</h4>
+<pre>
+15 80
+</pre>
+<h4>Output</h4>
+<pre>
+""""""""""""""""""
+\     15%off!    \
+\ Before  $   80 \
+\ After   $68.00 \
+""""""""""""""""""
+
+</pre>
+</div>
+<div>
+<h3>Sample4</h3>
+<h4>Input</h4>
+<pre>
+100 1
+</pre>
+<h4>Output</h4>
+<pre>
+""""""""""""""""""
+\    100%off!    \
+\ Before  $    1 \
+\ After   $ 0.00 \
+""""""""""""""""""
+
+</pre>
+</div>

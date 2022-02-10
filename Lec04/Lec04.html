@@ -1,0 +1,191 @@
+<h1>Lec04</h1>
+<h2>EAN-13</h2>
+<h3>Description</h3>
+<div>
+<p>In Taiwan, manufacturers of goods put a barcode on each product. This code identifies both the manufacturer and the product. Among a variety of different formats of the barcodes, one of these is known as EAN-13, which represents a thirteen-digit number. For example: 4 710367 663270.</p><p>The EAN-13 is composed of the following four components:</p><ol><li><p>GS1 prefix: The first three digits usually identify the GS1 Member Organization which the manufacturer has joined.</p></li><li><p>Manufacturer code: This is a unique code (variable-length) assigned to each manufacturer by the numbering authority indicated by the GS1 Prefix.</p></li><li><p>Product code: The product code, which immediately follows manufacturer code, is assigned by the manufacturer.</p></li><li><p>Check digit: This is an additional digit, used to verify that a barcode has been scanned correctly.</p></li></ol><p>To calculate the check digit, follow the three steps below:</p><ol><li><p>Numbering the positions from the right (exclude check digit), the odd positions in the twelve-digit number are weight of 3 and the even positions are weight of 1. Multiply each data digit with its corresponding weight.</p><p>For example:</p><blockquote><p>data: 4 7 1 0 3 6 7 6 6 3 2 7</p><p>weight: 1 3 1 3 1 3 1 3 1 3 1 3</p></blockquote></li><li><p>Calculate the sum of the results from step 1.</p></li><li><p>Subtract the sum from <strong>the nearest multiple of 10 that is equal to or higher than the sum (see hint)</strong>. The result is the check digit.</p></li></ol><p>Write a program that calculate the check digit.</p><p>Reference: <a href="https://en.wikipedia.org/wiki/International_Article_Number" rel="noopener noreferrer nofollow">https://en.wikipedia.org/wiki/International_Article_Number</a></p>
+</div>
+<p></p>
+<h3>Input</h3>
+Three integers (1 digit, 6 digits and 5 digits) which form the first twelve-digit number of the EAN-13.
+<p></p>
+<h3>Output</h3>
+Output the check digit that your program calculate.
+<p></p>
+<h3>Loader Code</h3>
+<div>
+<p>Your code will be judge using this program:</p>
+</div>
+<pre>
+
+</pre>
+<div>
+<h3>Sample1</h3>
+<h4>Input</h4>
+<pre>
+4 710367 66327
+</pre>
+<h4>Output</h4>
+<pre>
+0
+</pre>
+</div>
+<div>
+<h3>Sample2</h3>
+<h4>Input</h4>
+<pre>
+4 006381 33393
+</pre>
+<h4>Output</h4>
+<pre>
+1
+</pre>
+</div>
+<h2>Lena's pudding plan</h2>
+<h3>Description</h3>
+<div>
+<p>Lena loves to eat pudding, one day, she receives several boxes of puddings from her friend Anetta. The puddings are handmade and can only leave for a week. Lena does not want any pudding to become spoiled, and she wants to have the same number of puddings each day. Please help her to deal with a plan to take these puddings in the coming week.</p><p>There are three boxes of puddings, you have to find out how many puddings that Lena can take in each day of a week (<strong>7 days</strong>), moreover, how many puddings will be left if she wishes to have the same number of puddings each day.</p><p><img src="https://c.tenor.com/mYhkXUCEi00AAAAC/86eighty-six-86anime.gif"></p>
+</div>
+<p></p>
+<h3>Input</h3>
+Three integers in a single line that indicates the number of puddings in each box.
+There are not more than 10000 puddings in each box.
+<p></p>
+<h3>Output</h3>
+Two integers x and y in a single line, where x indicates the number of puddings that Lena can take for each day, and y means the number of puddings left.
+<p></p>
+<h3>Loader Code</h3>
+<div>
+<p>Your code will be judge using this program:</p>
+</div>
+<pre>
+
+</pre>
+<div>
+<h3>Sample1</h3>
+<h4>Input</h4>
+<pre>
+9112 9213 1709
+</pre>
+<h4>Output</h4>
+<pre>
+2862 0
+</pre>
+</div>
+<div>
+<h3>Sample2</h3>
+<h4>Input</h4>
+<pre>
+4972 1970 979
+</pre>
+<h4>Output</h4>
+<pre>
+1131 4
+</pre>
+</div>
+<div>
+<h3>Sample3</h3>
+<h4>Input</h4>
+<pre>
+1287 5609 393
+</pre>
+<h4>Output</h4>
+<pre>
+1041 2
+</pre>
+</div>
+<div>
+<h3>Sample4</h3>
+<h4>Input</h4>
+<pre>
+2551 229 8342
+</pre>
+<h4>Output</h4>
+<pre>
+1588 6
+</pre>
+</div>
+<h2>Polynomial Calculation</h2>
+<h3>Description</h3>
+<div>
+<p>Read a floating-point number for <code>x</code> and calculate the value of the following polynomial:</p><blockquote><p>𝟕𝐱⁴ - 𝟖𝐱³ - 𝐱² + 𝟔𝐱 - 𝟐𝟐</p></blockquote>
+</div>
+<p></p>
+<h3>Input</h3>
+A floating-point number to read for x.
+<p></p>
+<h3>Output</h3>
+The result should be displayed with one digit after the decimal point.
+<p></p>
+<h3>Loader Code</h3>
+<div>
+<p>Your code will be judge using this program:</p>
+</div>
+<pre>
+
+</pre>
+<div>
+<h3>Sample1</h3>
+<h4>Input</h4>
+<pre>
+5.5
+</pre>
+<h4>Output</h4>
+<pre>
+5055.2
+</pre>
+</div>
+<div>
+<h3>Sample2</h3>
+<h4>Input</h4>
+<pre>
+0
+</pre>
+<h4>Output</h4>
+<pre>
+-22.0
+</pre>
+</div>
+<h2>Temperature conversion</h2>
+<h3>Description</h3>
+<div>
+Give you a floating-point number that represent Celsius. Please convert it to Fahrenheit.
+Fahrenheit = Celsius *9/5 + 32
+</div>
+<p></p>
+<h3>Input</h3>
+A floating-point number that represent Celsius. (-273.15 <= t <= 10^4)
+<p></p>
+<h3>Output</h3>
+A floating-point number with two digits after the decimal point that represents Fahrenhelt.
+<p></p>
+<h3>Loader Code</h3>
+<div>
+<p>Your code will be judge using this program:</p>
+</div>
+<pre>
+
+</pre>
+<div>
+<h3>Sample1</h3>
+<h4>Input</h4>
+<pre>
+4794.71
+</pre>
+<h4>Output</h4>
+<pre>
+8662.48
+
+</pre>
+</div>
+<div>
+<h3>Sample2</h3>
+<h4>Input</h4>
+<pre>
+5970.84
+</pre>
+<h4>Output</h4>
+<pre>
+10779.51
+
+</pre>
+</div>

@@ -1,0 +1,901 @@
+<h1>Lec16</h1>
+<h2>LEVEL5 -judgelight-</h2>
+<h3>Description</h3>
+<div>
+<p>Given an array of <code>struct ESPer</code> which contains <code>level</code> and <code>name</code>,</p><p>please sort this array in ascending order by level.</p><p>hint: You can use C standard library's <code>qsort</code> function:</p><p></p><p>學園都市是個進行超能力開發的機關，會定期對學生進行能力檢測</p><p>他們使用的資料結構包含兩個欄位：<code>level</code> 和 <code>name</code></p><p>請你寫一個 function 來對包含這個 struct 的陣列做排序</p><p>hint: 你可以使用內建的 <code>qsort</code></p><p><a rel="noopener noreferrer nofollow" href="https://youtu.be/EGmLt7mYSo4">https://youtu.be/EGmLt7mYSo4</a></p>
+</div>
+<p></p>
+<h3>Input</h3>
+An array of "struct ESPer", array length
+<p></p>
+<h3>Output</h3>
+sort the array in ascending order by level.
+<p></p>
+<h3>Loader Code</h3>
+<div>
+<p>Your code will be judge using this program:</p>
+</div>
+<pre>
+#include <&zwj;stdio.h>
+#include <&zwj;stdlib.h>
+
+struct ESPer {
+    char name[64];
+    int level;
+};
+
+int cmp(const void *a, const void *b);
+void sort_level(struct ESPer *arr, int length);
+
+int main()
+{
+    int n;
+    struct ESPer tokiwadai[100];
+
+    scanf("%d", &n);
+    for(int i = 0; i <&zwj; n; ++i) {
+        scanf("%d %s", &(tokiwadai[i].level), tokiwadai[i].name);
+    }
+
+    sort_level(tokiwadai, n);
+
+    for(int i = 0;i <&zwj; n;++i) {
+        printf("%d %s\n", tokiwadai[i].level, tokiwadai[i].name);
+    }
+
+    return 0;
+}
+</pre>
+<div>
+<h3>Sample1</h3>
+<h4>Input</h4>
+<pre>
+5
+6 NanjoYoshino
+5 MisakaMikoto
+0 SatenRuiko
+1 UiharuKazari
+4 ShiraiKuroko
+
+</pre>
+<h4>Output</h4>
+<pre>
+0 SatenRuiko
+1 UiharuKazari
+4 ShiraiKuroko
+5 MisakaMikoto
+6 NanjoYoshino
+
+</pre>
+</div>
+<h2>Look Up the Word in the Dictionary</h2>
+<h3>Description</h3>
+<div>
+<p>Jack wants to search a word. Please help him to find which page he should turn to.</p><p><strong>Hint</strong>: use <code>strcmp()</code></p>
+</div>
+<p></p>
+<h3>Input</h3>
+There are 10 records in a dictionary and a target word.
+<p></p>
+<h3>Output</h3>
+Return the target page. If the target word is not in the dictionary, return 0.
+<p></p>
+<h3>Loader Code</h3>
+<div>
+<p>Your code will be judge using this program:</p>
+</div>
+<pre>
+#include<&zwj;stdio.h>
+#include<&zwj;string.h>
+#define N 10
+
+typedef struct dict_t_struct {
+    char word[10];
+    int page;
+} dict_t;
+
+int search(dict_t arr[], char target[]);
+
+int main() {
+    dict_t dictionary[N];
+    char targetWord[10];
+
+    for(int i=0; i<&zwj;N; i++) 
+        scanf("%s %d\n", dictionary[i].word, &dictionary[i].page);
+    
+    scanf("%s", targetWord);
+    int targetPage = search(dictionary, targetWord);
+    printf("%d", targetPage);
+    return 0;
+}
+
+</pre>
+<div>
+<h3>Sample1</h3>
+<h4>Input</h4>
+<pre>
+apple 2
+banana 5
+cow 7
+dog 9
+element 13
+frog 22
+go 44
+horse 51
+in 52
+jet 100
+element
+</pre>
+<h4>Output</h4>
+<pre>
+13
+</pre>
+</div>
+<div>
+<h3>Sample2</h3>
+<h4>Input</h4>
+<pre>
+apple 2
+banana 5
+cap 6
+dog 9
+element 13
+frog 22
+go 44
+horse 51
+in 52
+jet 100
+cow
+</pre>
+<h4>Output</h4>
+<pre>
+0
+</pre>
+</div>
+<h2>Matrix Addition and Multiplication</h2>
+<h3>Description</h3>
+<div>
+<p>Write a program that implements matrix addition and multiplication of two matrices.</p>
+</div>
+<p></p>
+<h3>Input</h3>
+The input contains three parts. The first and second part represent the information of the first matrix and the second matrix respectively. The first line of each part contains row and column number of the matrix, and the following line is an array of integers which represent the matrix itself. The second part is a character which represents the operation of the matrix.
+<p></p>
+<h3>Output</h3>
+The content of the result matrix. Each element is followed by a space character.
+<p></p>
+<h3>Loader Code</h3>
+<div>
+<p>Your code will be judge using this program:</p>
+</div>
+<pre>
+#include <&zwj;stdio.h>
+#define SIZE 50
+
+struct mat {
+    int row;
+    int col;
+    int value[SIZE][SIZE];
+};
+
+void scan_mat(struct mat *);
+void print_mat(const struct mat *);
+void add_mat(const struct mat *, const struct mat *, struct mat *);
+void mul_mat(const struct mat *, const struct mat *, struct mat *);
+
+int main(void) {
+    struct mat m1, m2, result;
+    char op;
+    scan_mat(&m1);
+    scanf(" %c", &op);
+    scan_mat(&m2);
+    switch (op) {
+        case '+':
+            add_mat(&m1, &m2, &result);
+            break;
+        case '*':
+            mul_mat(&m1, &m2, &result);
+            break;
+    }
+    print_mat(&result);
+    return 0;
+}
+
+void scan_mat(struct mat *m_p) {
+    scanf("%d %d", &m_p->row, &m_p->col);
+    for (int i = 0; i <&zwj; m_p->row; ++i) {
+        for (int j = 0; j <&zwj; m_p->col; ++j) {
+            scanf("%d", &m_p->value[i][j]);
+        }
+    }
+}
+
+void print_mat(const struct mat *m_p){
+    for (int i = 0; i <&zwj; m_p->row; ++i) {
+        for (int j = 0; j <&zwj; m_p->col; ++j) {
+            printf("%d ", m_p->value[i][j]);
+            if (j == m_p->col - 1) {
+                printf("\n");
+            }
+        }
+    }
+}
+</pre>
+<div>
+<h3>Sample1</h3>
+<h4>Input</h4>
+<pre>
+2 3
+3 2 6
+2 4 5
++
+2 3
+4 5 6
+3 1 4
+
+</pre>
+<h4>Output</h4>
+<pre>
+7 7 12 
+5 5 9 
+
+</pre>
+</div>
+<div>
+<h3>Sample2</h3>
+<h4>Input</h4>
+<pre>
+2 2
+1 2
+3 4
+*
+2 2
+5 6
+7 8
+
+</pre>
+<h4>Output</h4>
+<pre>
+19 22 
+43 50 
+
+</pre>
+</div>
+<h2>Notice Struct Pointer</h2>
+<h3>Description</h3>
+<div>
+<p>Given two struct Nodes, please multiply their <code>num</code>.</p><p>Be careful these two Node's type, one is a struct variable and another is a struct pointer.</p>
+</div>
+<p></p>
+<h3>Input</h3>
+Two struct Nodes, long long int ans and every variable num < 10000
+<p></p>
+<h3>Output</h3>
+Multiply these two node's num
+
+<p></p>
+<h3>Loader Code</h3>
+<div>
+<p>Your code will be judge using this program:</p>
+</div>
+<pre>
+#include <&zwj;stdio.h>
+
+struct Node {
+    int num;
+};
+void mul(struct Node *, struct Node, long long int *);
+
+int main(void) {
+    struct Node node_a, node_b;
+    long long int ans = 1;
+    scanf("%d", &node_a.num);
+    scanf("%d", &node_b.num);
+    mul(&node_a, node_b, &ans);
+    printf("%lld", ans);
+    return 0;
+}
+</pre>
+<div>
+<h3>Sample1</h3>
+<h4>Input</h4>
+<pre>
+8687 363 
+</pre>
+<h4>Output</h4>
+<pre>
+3153381
+</pre>
+</div>
+<div>
+<h3>Sample2</h3>
+<h4>Input</h4>
+<pre>
+3741 3313 
+</pre>
+<h4>Output</h4>
+<pre>
+12393933
+</pre>
+</div>
+<h2>Sei's online potion store</h2>
+<h3>Description</h3>
+<div>
+<p>Sei is a researcher at the Medicinal Flora Research Institute. She has been work there for a year and is struggling to improve her KPI. One day she finds out that she can sell potions online to improve her poor KPI (?. After several days of hard working, she has finished a framework of the ordering system, there are only two little functions that aims to calculate the total cost of orders and reordering the orders gaps her from finish, please help her to fulfill those functions.</p><p>She currently sells 15 potion products over the online shop that are given name <code>Prod_A, Prod_B ..., Prod_O</code>, each product costs differently, the information could be found in the finished part (loader code) of the platform. You do not need to concern the orders with the same pick up time.<img src="https://64.media.tumblr.com/a527a758b1d7ad5b066382dd1e879acb/da9735baa45d502a-9e/s400x600/39963fb633c270428befd5937883837e6ae46561.gifv"></p>
+</div>
+<p></p>
+<h3>Input</h3>
+The first line contains an integer N that indicates the number of orders which followed by the detail of N orders.
+For each order, the order ID comes first, then the pick up time of the order which followed by the item count M of the order, finally M items and the count are given.
+<p></p>
+<h3>Output</h3>
+The order ID and the total cost of the orders, the order that has a closer pick up time comes first.
+<p></p>
+<h3>Loader Code</h3>
+<div>
+<p>Your code will be judge using this program:</p>
+</div>
+<pre>
+#include <&zwj;stdio.h>
+#include <&zwj;string.h>
+#include <&zwj;stdlib.h>
+
+typedef struct {
+    unsigned char hour;
+    unsigned char minute;
+} hm_t;
+
+typedef struct {
+    const char *item_name;
+    unsigned cost;
+    unsigned cnt;
+} item_t;
+
+typedef struct {
+    unsigned order_id;
+    hm_t pick_up_time;
+    unsigned total_cost;
+    unsigned item_cnt;
+    item_t *items;
+} order_t;
+
+const item_t avaliable_items[] = {
+    {"Prod_A",  10},
+    {"Prod_B",  20},
+    {"Prod_C",  15},
+    {"Prod_D",  30},
+    {"Prod_E",  50},
+    {"Prod_F",  60},
+    {"Prod_G",  75},
+    {"Prod_H",   5},
+    {"Prod_I",  25},
+    {"Prod_J",  80},
+    {"Prod_K", 100},
+    {"Prod_L",  90},
+    {"Prod_M",  45},
+    {"Prod_N",  40},
+    {"Prod_O",  85},
+};
+
+const unsigned avaliable_item_cnt = 15;
+#define MAX_ORDER_CNT 1024
+
+unsigned fetch_orders(order_t orders[]);
+void sum_total_costs(order_t orders[], unsigned order_cnt);
+void reorder(order_t orders[], unsigned order_cnt);
+void print_result(order_t orders[], unsigned order_cnt);
+void clean_up(order_t orders[], unsigned order_cnt);
+
+int main()
+{
+    order_t orders[MAX_ORDER_CNT];
+    unsigned order_cnt = fetch_orders(orders);
+    sum_total_costs(orders, order_cnt);
+    reorder(orders, order_cnt);
+    print_result(orders, order_cnt);
+    clean_up(orders, order_cnt);
+    return 0;
+}
+
+unsigned fetch_orders(order_t orders[])
+{
+    unsigned order_cnt;
+    scanf("%u", &order_cnt);
+
+    // Prepare the orders.
+    order_t *curr = orders;
+    for (unsigned i = 0; i <&zwj; order_cnt; i++, curr++) {
+        hm_t *curr_pu = &(curr->pick_up_time);
+        scanf("%u %hhu:%hhu %u",
+                                &(curr->order_id),
+                                &(curr_pu->hour),
+                                &(curr_pu->minute),
+                                &(curr->item_cnt));
+
+        // Create a variable length array with malloc.
+        item_t *curr_items = curr->items = malloc(sizeof(item_t) * curr->item_cnt);
+        for (unsigned j = 0; j <&zwj; curr->item_cnt; j++) {
+            char item_name[32];
+            scanf("%s", item_name);
+            for (unsigned k = 0; k <&zwj; avaliable_item_cnt; k++) {
+                if (!strcmp(item_name, avaliable_items[k].item_name)) {
+                    // Copy the memory content from avaliable_items to curr_items.
+                    curr_items[j] = avaliable_items[k];
+                    break;
+                }
+            }
+            scanf("%u", &(curr_items[j].cnt));
+        }
+    }
+    return order_cnt;
+}
+
+void print_result(order_t orders[], unsigned order_cnt)
+{
+    for (unsigned i = 0; i <&zwj; order_cnt; i++) {
+        printf("#%u %u\n", orders[i].order_id, orders[i].total_cost);
+    }
+}
+
+void clean_up(order_t orders[], unsigned order_cnt)
+{
+    for (unsigned i = 0; i <&zwj; order_cnt; i++) {
+        free(orders[i].items);
+    }
+}
+</pre>
+<div>
+<h3>Sample1</h3>
+<h4>Input</h4>
+<pre>
+3
+123 1:40 2
+Prod_A 2
+Prod_B 3
+234 2:10 3
+Prod_D 12
+Prod_E 1
+Prod_C 4
+345 1:30 4
+Prod_A 3
+Prod_B 5
+Prod_C 1
+Prod_D 2
+
+</pre>
+<h4>Output</h4>
+<pre>
+#345 205
+#123 80
+#234 470
+
+</pre>
+</div>
+<div>
+<h3>Sample2</h3>
+<h4>Input</h4>
+<pre>
+5
+100 3:10 1
+Prod_O 1
+101 1:00 3
+Prod_K 2
+Prod_L 5
+Prod_A 20
+102 0:40 2
+Prod_C 4
+Prod_I 2
+103 5:45 1
+Prod_E 2
+104 6:00 4
+Prod_F 1
+Prod_N 1
+Prod_L 1
+Prod_A 1
+
+</pre>
+<h4>Output</h4>
+<pre>
+#102 110
+#101 850
+#100 85
+#103 100
+#104 200
+
+</pre>
+</div>
+<h2>Sort Snacks</h2>
+<h3>Description</h3>
+<div>
+<p>In lab, students buy snacks once a month. They want to choose snacks with good value for money. (物超所值)</p><p>The <code>value</code> means  <code>weight/price</code>. </p><p>Please help them sort snacks in descending order based on snacks' <code>value</code>. <br>If the <code>value</code> of snacks are equal, sort snacks in ascending order based on snacks' <code>price</code>. <br>If the <code>price</code> of snacks are equal, sort snacks in ascending order based on snacks' <code>id</code>. </p><p>You can use C standard library's <code>qsort</code> function to sort snacks:</p><p><code>void qsort (void* base, size_t num, size_t size, int (*compar)(const void*,const void*));</code></p><p>The reference link: <a rel="noopener noreferrer nofollow" href="https://www.cplusplus.com/reference/cstdlib/qsort/?kw=qsort">https://www.cplusplus.com/reference/cstdlib/qsort/?kw=qsort</a></p>
+</div>
+<p></p>
+<h3>Input</h3>
+n kinds of snacks.
+<p></p>
+<h3>Output</h3>
+Output the id and value of n sorted snacks.
+<p></p>
+<h3>Loader Code</h3>
+<div>
+<p>Your code will be judge using this program:</p>
+</div>
+<pre>
+#include<&zwj;stdio.h>
+#include<&zwj;stdlib.h>
+
+struct snack
+{
+    int id;
+    int price;
+    int weight;
+    double value;
+};
+
+int cmp(const void *a, const void *b);
+void sort_snacks(struct snack snacks[], int n);
+
+int main() {
+    int n;
+    struct snack snacks[100];
+    scanf("%d", &n);
+    for(int i=0; i<&zwj;n; i++) {
+        snacks[i].id = i+1;
+        scanf("%d %d", &snacks[i].price, &snacks[i].weight);
+    }
+    sort_snacks(snacks, n);
+    for(int i=0; i<&zwj;n; i++) {
+        printf("%d %.2f\n", snacks[i].id, snacks[i].value);
+    }
+    return 0;
+}
+</pre>
+<div>
+<h3>Sample1</h3>
+<h4>Input</h4>
+<pre>
+5
+1 2
+4 6
+4 10
+2 3
+12 18
+
+</pre>
+<h4>Output</h4>
+<pre>
+3 2.50
+1 2.00
+4 1.50
+2 1.50
+5 1.50
+
+</pre>
+</div>
+<div>
+<h3>Sample2</h3>
+<h4>Input</h4>
+<pre>
+7
+8 2
+44 10
+7 2
+22 5
+6 9
+10 4
+4 1
+
+</pre>
+<h4>Output</h4>
+<pre>
+5 1.50
+6 0.40
+3 0.29
+7 0.25
+1 0.25
+4 0.23
+2 0.23
+
+</pre>
+</div>
+<h2>Struct Array</h2>
+<h3>Description</h3>
+<div>
+<p>Given a struct array (named Node) and every Node has variable <code>a</code> (int type).</p><p>Node array has 5 Node elements, please multiply every Node's <code>a</code> variable.</p>
+</div>
+<p></p>
+<h3>Input</h3>
+struct Node array (contain five nodes), long long int ans
+and each variable a < 30.
+<p></p>
+<h3>Output</h3>
+Multiply every Node's a variable
+<p></p>
+<h3>Loader Code</h3>
+<div>
+<p>Your code will be judge using this program:</p>
+</div>
+<pre>
+#include <&zwj;stdio.h>
+#define SIZE 5
+
+struct Node {
+    int a;
+};
+
+void mul(struct Node *, long long int *);
+
+int main(void) {
+    struct Node node_array[SIZE];
+    for(int i=0; i<&zwj;SIZE; i++){
+        scanf("%d", &node_array[i].a);
+    } 
+    long long int ans = 1;
+    mul(node_array, &ans);
+    printf("%lld", ans);
+    return 0;
+}
+
+</pre>
+<div>
+<h3>Sample1</h3>
+<h4>Input</h4>
+<pre>
+25 21 17 8 15 
+</pre>
+<h4>Output</h4>
+<pre>
+1071000
+</pre>
+</div>
+<div>
+<h3>Sample2</h3>
+<h4>Input</h4>
+<pre>
+11 2 28 24 3 
+</pre>
+<h4>Output</h4>
+<pre>
+44352
+</pre>
+</div>
+<h2>Weighted Score</h2>
+<h3>Description</h3>
+<div>
+<p>期末快到了，該到結算成績的時候，請你幫助教算出所有學生們的期末成績以及最高分章節成績與最低分章節。<br>在這裡有三個 struct:</p><ul><li><p><code>weight</code> : 每個章節會有不同的比重，<strong>全部的比重加起來為 100</strong></p></li><li><p><code>score</code> : 每個章節加權前的分數</p></li><li><p><code>report_card</code> :</p><ul><li><p><code>final</code> : 加權後的分數 (無條件捨去到整數位)</p></li><li><p><code>max_score</code> : 最高分章節成績</p></li><li><p><code>min_score</code> : 最低分章節成績</p><p></p></li></ul></li></ul><hr><p></p><p>Please help TAs to calculate student’s final score, maximum score and minimum score.</p><p>There are three structs:</p><ul><li><p><code>weight</code> : Each chapter contain different weight, <strong>sum of them is 100</strong>.</p></li><li><p><code>score</code> : The score of each chapter</p></li><li><p><code>report_card</code> :</p><ul><li><p><code>final</code> : Score after weighting</p></li><li><p><code>max_score</code> : Maximum score</p></li><li><p><code>min_score</code> : Minimum score</p></li></ul></li></ul>
+</div>
+<p></p>
+<h3>Input</h3>
+First line contain two numbers: chapter_num (n), student_num (m)
+1 <= chapter_num (n) <= 10
+1 <= student_num (m) <= 100
+
+Each of following n lines contain one number and a string.
+The number means the weight of chapter.
+The string means the name of chapter.
+
+Followings are the student information.
+First line is student name.
+Next n lines are student score and chapter.
+0 <= student score <= 100
+<p></p>
+<h3>Output</h3>
+Student name, final score, maximum score and minimum score
+<p></p>
+<h3>Loader Code</h3>
+<div>
+<p>Your code will be judge using this program:</p>
+</div>
+<pre>
+#include <&zwj;stdio.h>
+
+struct weight {
+    char chapter[10];
+    int percent;
+};
+
+struct score {
+    char chapter[10];
+    int score;
+};
+
+struct report_card {
+    char name[32];
+    struct score record[10];
+    int final;
+    int max_score;
+    int min_score;
+};
+
+void calculate (struct report_card[], struct weight[], int student_num, int chapter_num);
+
+int main () {
+    int student_num, chapter_num;
+    struct weight chapter[10];
+    struct report_card card[100];
+
+    scanf("%d %d\n", &chapter_num, &student_num);
+    for (int i = 0; i <&zwj; chapter_num; ++i) {
+        scanf("%d %s", &chapter[i].percent, chapter[i].chapter);
+    }
+
+    for (int i = 0; i <&zwj; student_num; ++i) {
+        scanf("%s", card[i].name);
+        for (int j = 0; j <&zwj; chapter_num; ++j) {
+            scanf("%d %s", &card[i].record[j].score, card[i].record[j].chapter);
+        }
+    }
+
+    calculate(card, chapter, student_num, chapter_num);
+
+    for (int i = 0; i <&zwj; student_num; ++i) {
+        printf("%s %d %d %d\n", card[i].name, card[i].final, card[i].max_score, card[i].min_score);
+    }
+}
+</pre>
+<div>
+<h3>Sample1</h3>
+<h4>Input</h4>
+<pre>
+3 3
+30 array
+30 loop
+40 pointer
+amy
+80 array
+70 loop
+100 pointer
+sam
+80 pointer
+80 array
+80 loop
+alice
+60 loop
+50 pointer
+60 array
+</pre>
+<h4>Output</h4>
+<pre>
+amy 85 100 70
+sam 80 80 80
+alice 56 60 50
+
+</pre>
+</div>
+<div>
+<h3>Sample2</h3>
+<h4>Input</h4>
+<pre>
+2 4
+10 union
+90 struct
+lili
+80 union
+80 struct
+christopher
+80 union
+80 struct
+pata
+0 struct
+100 union
+pon
+100 struct
+0 union
+</pre>
+<h4>Output</h4>
+<pre>
+lili 80 80 80
+christopher 80 80 80
+pata 10 100 0
+pon 90 100 0
+
+</pre>
+</div>
+<h2>windowlocation</h2>
+<h3>Description</h3>
+<div>
+<p>在 Chrome 瀏覽器內按下 F12，會打開瀏覽器的開發者工具。在 console 當中輸入 <code>window.location</code>，會看到一個叫作 <code>Location</code> 的結構跑出來，上頭記載了你當前所在的網址所包含的資訊，包含：</p><ul><li><p>通訊協定 (protocol)</p></li><li><p>主機名稱 (host)</p></li><li><p>通訊埠 (port)</p></li><li><p>所在路徑 (pathname)</p></li><li><p>查詢字串/Query String (search)</p></li><li><p>識別符號 (hash)</p></li></ul><p>那麼，這些不同的部份是怎麼被切出來的呢？其實網址是有固定格式的，就跟你家的門牌號碼一樣。網址的格式為：</p><p><code>[通訊協定]://[主機名稱]:[通訊埠]/[所在路徑]?[查詢字串]#[識別符號]</code></p><p>舉例，<code>https://www.abc.com/user/12345/photo?from=20180101&amp;to=20201231#favorite</code>可以被切成：</p><ul><li><p>通訊協定 = <code>https</code></p></li><li><p>主機名稱 = <code>www.abc.com</code></p></li><li><p>通訊埠 = 預設不顯示（但因為使用的是 https，所以可知是 443）</p></li><li><p>所在路徑 = <code>/user/12345/photo</code></p></li><li><p>查詢字串 = <code>?from=20180101&amp;to=20201231</code></p></li><li><p>識別符號 = <code>#favorite</code></p></li></ul><p>但也並非所有部份都位同時存在於一個網址中，像是本頁面的網址就沒有查詢字串的部份。</p><p>現在，給你一些網址，請你幫忙找出上述的片段，並裝入 <code>Location</code> 結構當中。</p>
+</div>
+<p></p>
+<h3>Input</h3>
+An valid url. Must includes protocol and host part, but port, pathname, search and hash are not necessarily existing.
+<p></p>
+<h3>Output</h3>
+You should put the information parsed from url into the struct passed by argument. For information not existing in url, if it's an integer, set to 0; if it's a string, make it an empty string. Hint: you should prepare memory storage yourself.
+<p></p>
+<h3>Loader Code</h3>
+<div>
+<p>Your code will be judge using this program:</p>
+</div>
+<pre>
+#include <&zwj;stdio.h>
+#include <&zwj;stdlib.h>
+#include <&zwj;string.h>
+
+typedef struct
+{
+    char *protocol;
+    char *host;
+    char *pathname;
+    char *search;
+    char *hash;
+    int port;
+} Location;
+
+Location *parse_url(char *url);
+
+int main()
+{
+    char url[500] = "";
+    fgets(url, 500, stdin); // Get url string
+    Location *l = parse_url(url);
+    printf("Location {\n  protocol: %s,\n  host: %s,\n", l->protocol, l->host);
+    if (l->port)
+        printf("  port: %d,\n", l->port);
+    else
+        printf("  port: (default),\n");
+    printf("  pathname: /%s,\n  search: ?%s,\n  hash: #%s,\n}\n", l->pathname, l->search, l->hash);
+    return 0;
+}
+
+</pre>
+<div>
+<h3>Sample1</h3>
+<h4>Input</h4>
+<pre>
+https://www.abc.com:80/user/12345/photo?from=20180101&to=20201231#favorite
+
+</pre>
+<h4>Output</h4>
+<pre>
+Location {
+  protocol: https,
+  host: www.abc.com,
+  port: 80,
+  pathname: /user/12345/photo,
+  search: ?from=20180101&to=20201231,
+  hash: #favorite,
+}
+
+</pre>
+</div>
+<div>
+<h3>Sample2</h3>
+<h4>Input</h4>
+<pre>
+http://1.2.3.4:443/it/is/a/very/long/path/name
+
+</pre>
+<h4>Output</h4>
+<pre>
+Location {
+  protocol: http,
+  host: 1.2.3.4,
+  port: 443,
+  pathname: /it/is/a/very/long/path/name,
+  search: ?,
+  hash: #,
+}
+
+</pre>
+</div>
+<div>
+<h3>Sample3</h3>
+<h4>Input</h4>
+<pre>
+ip://193.55.28.30
+
+</pre>
+<h4>Output</h4>
+<pre>
+Location {
+  protocol: ip,
+  host: 193.55.28.30,
+  port: (default),
+  pathname: /,
+  search: ?,
+  hash: #,
+}
+
+</pre>
+</div>

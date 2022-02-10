@@ -43,7 +43,7 @@ Input 會描述房間的連接狀況。**第一行代表房間數量（ 編號 0
 0 個房間，第 1 個房間的出口是第 3
 個房間\...以此類推。本範例中房間的連接情況如下圖所示：\
 
-![input01\_graph.png](/Lec08/循環房間%20-%20Looping%20Rooms/images/550619018b7d9d4fb669ed8c1a0c3edf0c3b4b10.png)
+![input01\_graph.png](/Lec08/循環房間 - Looping Rooms/images/550619018b7d9d4fb669ed8c1a0c3edf0c3b4b10.png)
 
 其中**圓圈代表房間編號**，**箭頭代表出口⟶入口的連接**。\
 各個顏色標出了房間形成環的組合，共三個，因此輸出第一行為 \"3 rings\"。
@@ -76,7 +76,7 @@ lines state the next room for each room, e.g. 0th room leads to 0th
 room, 1st room leads to 3rd room. The topology of the rooms in Sample 1
 is illustrated as below:
 
-![input01\_graph.png](/Lec08/循環房間%20-%20Looping%20Rooms/images/550619018b7d9d4fb669ed8c1a0c3edf0c3b4b10.png)\
+![input01\_graph.png](/Lec08/循環房間 - Looping Rooms/images/550619018b7d9d4fb669ed8c1a0c3edf0c3b4b10.png)\
 **The vertices(circles) represents the room and the index, and the
 edges(arrows) represents the exit⟶enter connections.**\
 As you can see, each color denotes each \"rings\" that were formed, 3 in

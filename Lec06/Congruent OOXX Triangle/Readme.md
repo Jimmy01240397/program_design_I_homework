@@ -10,7 +10,7 @@ consists of OOXX (the last line must be only consist of O).
 
 For example, `h=5`:
 
-![](/Lec06/Congruent%20OOXX%20Triangle/images/cf12418fabac0fb5c39f245055bdd797807e4ef9.png)
+![](/Lec06/Congruent OOXX Triangle/images/cf12418fabac0fb5c39f245055bdd797807e4ef9.png)
 
 </div>
 

@@ -26,7 +26,7 @@ interested in. Notice that only 8 bits will be checked each time, please
 zero out the rest of bits to zero before print out the content.
 
 ![Screenshot from 2022-01-10
-18-58-51.png](/2021_final/%5B30%20Points%5D%20Magic%20Bug/images/510d94bb3ee8cb778ce3016d5ce8f1426d60c836.png)
+18-58-51.png](/2021_final/[30 Points] Magic Bug/images/510d94bb3ee8cb778ce3016d5ce8f1426d60c836.png)
 
 ![](http://5b0988e595225.cdn.sohucs.com/images/20190310/8e8de645effc4993a1da8e22bbf7006d.gif)
 

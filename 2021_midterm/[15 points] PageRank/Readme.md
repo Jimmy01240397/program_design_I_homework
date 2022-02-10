@@ -20,7 +20,7 @@ The following figure is an example: Given three web pages A, B and C.
 Web page B and C are referenced by A, C is referenced by B and finally A
 is referenced by C.
 
-![fig1.png](/2021_midterm/%5B15%20points%5D%20PageRank/images/a549cc9a107dde439d630d3869030fdd2bdd7c3b.png)Each
+![fig1.png](/2021_midterm/[15 points] PageRank/images/a549cc9a107dde439d630d3869030fdd2bdd7c3b.png)Each
 web page starts with an equal importance which is as known as PR. Since
 the sum of all PRs should be 1, the PR of each web page is initialized
 to 1/N, the N indicates the number of web pages, which is 3 in this
@@ -36,7 +36,7 @@ page. To present this thought, the point voted by X should be multiplied
 by its own PR. As shown in the following figure, A votes to B and C,
 which makes both B and C gets 1/2 \* 1/3 = 1/6 points.
 
-![fig3.png](/2021_midterm/%5B15%20points%5D%20PageRank/images/5355b8ba69c8834a2a0ae5da7a4977085a044e70.png)The
+![fig3.png](/2021_midterm/[15 points] PageRank/images/5355b8ba69c8834a2a0ae5da7a4977085a044e70.png)The
 points voted to a web page are summed up to be the new PR of the web
 page. For example, as shown in the above figure, the new PR of web page
 C is 1/6 + 1/3 = 1/2. After several iterations over the steps mentioned
@@ -71,7 +71,7 @@ PageRank 都應該介於 0 - 1 之間，並且總和應該要是 1。
 三個網頁。其中 A 當中有通向 B 和 C 的超連結，B 當中有通向 C 的超連結，C
 當中有通向 A 的超連結。如下圖所示：
 
-![fig1.png](/2021_midterm/%5B15%20points%5D%20PageRank/images/a549cc9a107dde439d630d3869030fdd2bdd7c3b.png)一開始所有人的重要程度都是一樣的，我們把重要程度叫作
+![fig1.png](/2021_midterm/[15 points] PageRank/images/a549cc9a107dde439d630d3869030fdd2bdd7c3b.png)一開始所有人的重要程度都是一樣的，我們把重要程度叫作
 PR，並且因為總和要是 1，所以大家的 PR 都要被初始化為 1 / N，其中 N
 是這個集合的大小。在這個例子當中 N = 3，所以每個人一開始的 PR 都會是
 1/3。
@@ -86,7 +86,7 @@ X 的重要性考量進得票分數當中，由於 PR
 值，來反應他的重要程度。在這個例子當中，A 一開始的 PR 值是 1/3，他分別給
 B 跟 C 各投了一票，所以 B 跟 C 分別得到了 1/6 分，如下圖所示。
 
-![fig3.png](/2021_midterm/%5B15%20points%5D%20PageRank/images/5355b8ba69c8834a2a0ae5da7a4977085a044e70.png)所有人的投票都確定之後，我們可以把一個網頁的得分給加總起來，就是該網頁的新的
+![fig3.png](/2021_midterm/[15 points] PageRank/images/5355b8ba69c8834a2a0ae5da7a4977085a044e70.png)所有人的投票都確定之後，我們可以把一個網頁的得分給加總起來，就是該網頁的新的
 PR 值。例如上圖中 C 網頁的 PR 值就是 1/6 + 1/3 = 1/2 =
 0.5。透過不斷迭代這個計算過程，最後所有網頁的 PR
 值會收斂到某一個數字，我們就把最後收斂到的那個數字當作該網頁的

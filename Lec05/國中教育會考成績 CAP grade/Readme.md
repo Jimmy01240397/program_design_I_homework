@@ -24,14 +24,14 @@ following:
     summed up to get the total score / total points. The score / point
     translation table is as following:
 
-    ![](/Lec05/國中教育會考成績%20CAP%20grade/images/b108e1d8afa0b47514e61aebe0a502e44d24e00a.png)
+    ![](/Lec05/國中教育會考成績 CAP grade/images/b108e1d8afa0b47514e61aebe0a502e44d24e00a.png)
 
 -   The subjects Chinese, Social Study and Science are graded by the
     number of correct answers. The subjects Mathematics and English, are
     graded by the weighting system. The translation table is as
     following:
 
-    ![](/Lec05/國中教育會考成績%20CAP%20grade/images/594132e0d016faba82b2f6264c18461f75bcb122.png)
+    ![](/Lec05/國中教育會考成績 CAP grade/images/594132e0d016faba82b2f6264c18461f75bcb122.png)
 
 -   The final result can be represented as \"**score/points(ranks)**\".
 
@@ -56,12 +56,12 @@ grading result.
 
 -   不同的等級會對應到不同**積分**，不同分級對應到不同**積點**。將各科等級加總會得到總積分，各科分級加總得到總積點。其換算表如下表所示：
 
-    ![](/Lec05/國中教育會考成績%20CAP%20grade/images/b108e1d8afa0b47514e61aebe0a502e44d24e00a.png)
+    ![](/Lec05/國中教育會考成績 CAP grade/images/b108e1d8afa0b47514e61aebe0a502e44d24e00a.png)
 
 -   國文、社會、自然三科以答對題數進行評分；數學、英文因為分別有手寫、聽力部份，另以加權分數進行評分。108
     學年度的各科量尺分數換算表如下表所示：
 
-    ![](/Lec05/國中教育會考成績%20CAP%20grade/images/594132e0d016faba82b2f6264c18461f75bcb122.png)
+    ![](/Lec05/國中教育會考成績 CAP grade/images/594132e0d016faba82b2f6264c18461f75bcb122.png)
 
 -   學生成績可以被表示為「**積分/積點（等級）**」。
 

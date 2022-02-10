@@ -11,7 +11,7 @@ attack, Chtholly notices that and wants to save him, please help her
 calculate how many meters remained before Willem reaches the ground. You
 may use the following equation to calculate the distance Willem has
 traveled through: ![Screenshot from 2021-10-13
-13-54-46.png](/Lec06/The%20happiest%20girl%20in%20the%20world/images/9ced94541a2271c27c5770ab93f4145b180105e5.png)
+13-54-46.png](/Lec06/The happiest girl in the world/images/9ced94541a2271c27c5770ab93f4145b180105e5.png)
 
 ![](https://i.imgur.com/203N6L5.gif)
 

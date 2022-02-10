@@ -28,7 +28,7 @@ greater than 1
 The following figure presents an example of the previously shown steps:
 
 ![Screenshot from 2021-11-24
-17-05-20.png](/Lec09-2/The%20coordinate%20to%20the%20past/images/edfffd77eff297fa25b8ac6af556f793c332f59e.png)Please
+17-05-20.png](/Lec09-2/The coordinate to the past/images/edfffd77eff297fa25b8ac6af556f793c332f59e.png)Please
 help him to decode the coordinate.
 
 ![](https://c.tenor.com/3HSEeSLm-k8AAAAC/vivy-vivy-flourite-eyes-song.gif)
@@ -46,7 +46,7 @@ help him to decode the coordinate.
 5.  將兩組數字計算的結果串接起來（奇數組的結果在左邊，偶數組的在右邊）
 
 下面是範例二的示意圖：![Screenshot from 2021-11-24
-17-05-20.png](/Lec09-2/The%20coordinate%20to%20the%20past/images/edfffd77eff297fa25b8ac6af556f793c332f59e.png)請幫助松本解碼他收到的座標。
+17-05-20.png](/Lec09-2/The coordinate to the past/images/edfffd77eff297fa25b8ac6af556f793c332f59e.png)請幫助松本解碼他收到的座標。
 
 </div>
 

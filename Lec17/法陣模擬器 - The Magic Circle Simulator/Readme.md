@@ -34,7 +34,7 @@ Circle)』後來施放的。\
 
 以下是一個簡單範例，球中的數字標示放置的順序：
 
-![](/Lec17/法陣模擬器%20-%20The%20Magic%20Circle%20Simulator/images/6d03f52f4b5c5f09f78965424672d48ad13a914c.png)
+![](/Lec17/法陣模擬器 - The Magic Circle Simulator/images/6d03f52f4b5c5f09f78965424672d48ad13a914c.png)
 
 ### Orbs
 
@@ -59,7 +59,7 @@ Circle)』後來施放的。\
 
 -   以下為在某 Stem 上以 `Y R F G B F G` 的順序置入晶球的範例：\
     [\
-    ]{.underline}![](/Lec17/法陣模擬器%20-%20The%20Magic%20Circle%20Simulator/images/20dcfe2be0e95816633cfd84b5324f765c9866cb.png)
+    ]{.underline}![](/Lec17/法陣模擬器 - The Magic Circle Simulator/images/20dcfe2be0e95816633cfd84b5324f765c9866cb.png)
 
 **\
 複製晶球 Cloning Orb (C)**
@@ -71,7 +71,7 @@ Circle)』後來施放的。\
 
 -   範例：
 
-![](/Lec17/法陣模擬器%20-%20The%20Magic%20Circle%20Simulator/images/ec95bd2633f20d77028a50fc245ede075b4861f4.png)
+![](/Lec17/法陣模擬器 - The Magic Circle Simulator/images/ec95bd2633f20d77028a50fc245ede075b4861f4.png)
 
 **\
 擴展晶球 Expand Orb (E)**
@@ -81,7 +81,7 @@ Circle)』後來施放的。\
 
 -   範例：
 
-![](/Lec17/法陣模擬器%20-%20The%20Magic%20Circle%20Simulator/images/d44e02f6ce011e0ebff5292c157bb9850112d894.png)
+![](/Lec17/法陣模擬器 - The Magic Circle Simulator/images/d44e02f6ce011e0ebff5292c157bb9850112d894.png)
 
 **\
 吸引晶球 Dyson Orb (D)**
@@ -91,7 +91,7 @@ Circle)』後來施放的。\
 
 -   範例:
 
-![](/Lec17/法陣模擬器%20-%20The%20Magic%20Circle%20Simulator/images/d517aa76699c4848372dca990e5f46d3cc810060.png)
+![](/Lec17/法陣模擬器 - The Magic Circle Simulator/images/d517aa76699c4848372dca990e5f46d3cc810060.png)
 
 ### Program Requirement
 

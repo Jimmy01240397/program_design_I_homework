@@ -28,7 +28,7 @@ greater than 1
 The following figure presents an example of the previously shown steps:
 
 ![Screenshot from 2021-11-17
-21-14-40.png](/2021_midterm/%5B15%20Points%5D%20The%20coordinate%20to%20the%20past/images/754184777f4e1e17ed18755d2bae4b3764c4ffce.png)Please
+21-14-40.png](/2021_midterm/[15 Points] The coordinate to the past/images/754184777f4e1e17ed18755d2bae4b3764c4ffce.png)Please
 help him to decode the coordinate.
 
 ![](https://c.tenor.com/3HSEeSLm-k8AAAAC/vivy-vivy-flourite-eyes-song.gif)
@@ -48,7 +48,7 @@ help him to decode the coordinate.
 下面是範例二的示意圖：
 
 ![Screenshot from 2021-11-17
-21-14-40.png](/2021_midterm/%5B15%20Points%5D%20The%20coordinate%20to%20the%20past/images/754184777f4e1e17ed18755d2bae4b3764c4ffce.png)請幫助松本解碼他收到的座標。
+21-14-40.png](/2021_midterm/[15 Points] The coordinate to the past/images/754184777f4e1e17ed18755d2bae4b3764c4ffce.png)請幫助松本解碼他收到的座標。
 
 </div>
 

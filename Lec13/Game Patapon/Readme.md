@@ -68,7 +68,7 @@ then it means you beat out the monster.
 There are at most 30 commands in one round, please print out the result
 of the game! (See I/O description)
 
-![未命名.png](/Lec13/Game%20Patapon/images/39bb8c69a871341bdf5da3b52e19534040db90b4.png)
+![未命名.png](/Lec13/Game Patapon/images/39bb8c69a871341bdf5da3b52e19534040db90b4.png)
 
 </div>
 

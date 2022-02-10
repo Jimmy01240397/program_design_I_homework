@@ -1,3 +1,4 @@
+<h2>進階版快閃心算 - Advanced Flashing Number Mental Arithmetic</h2>
 <h3>Description</h3>
 <div>
 <p><strong>快閃心算（フラッシュ暗算）</strong>是源自日本珠算界的一個數學競技活動。計算者會在螢幕上看到快速出現消失的數個數字，在顯示完成之後必須在約5秒內回答出所有出現數字的總和。覺得聽起來很簡單嗎？參考 <a href="https://www.youtube.com/watch?v=Q7Jd3Mbzup0" rel="noopener noreferrer nofollow">https://www.youtube.com/watch?v=Q7Jd3Mbzup0</a> 試試吧！</p><p>資訊系的阿超覺得『沒錯，就是太簡單了』。於是他設計了進階版的規則：</p><ol><li><p>螢幕上顯示的數字可能是 <strong>6 進位(SEN)、8 進位(OCT)、10 進位(DEC)，以及16 進位(HEX)</strong>。</p></li><li><p>每次<strong>出現的數字 K 介於 0 和 999,999,999 之間</strong>。</p></li><li><p>由於最後的數字可能很大，<strong>回答時必須用 1,000,000,007 取餘數</strong>。</p><ul><li><p>舉例來說，假設總和是 1,000,000,010，由於 3 ≡ 1,000,000,010 mod 1,000,000,007<strong>，必須回答『3』。</strong></p></li></ul></li></ol><p></p><p>同時，阿超也出了一些題目，但是太簡單了他不屑自己算。請幫他設計一個程式，可以幫他計算這些題目的答案！</p><p><strong>※題目中沒有加註進位制的數字皆為十進制！※</strong></p><p></p><hr><p><strong>Flashing Number Mental Arithmetic（フラッシュ暗算）</strong>is a competitive game originated from Japanese zhusuan circle. The calculator (a human, that is) will see several numbers rapidly appear and disappear on the screen, after it, he/she have to answer the sum of all appeared numbers in a few seconds. Sounds simple? Try it out at  <a href="https://www.youtube.com/watch?v=Q7Jd3Mbzup0" rel="noopener noreferrer nofollow">https://www.youtube.com/watch?v=Q7Jd3Mbzup0</a> !</p><p></p><p>Chao from CSIE thinks that, "Yup, its way too easy". So, he designed the rules for a "advanced" version:</p><ol><li><p> The numbers appear on the monitor might be in <strong>Base-6(SEN), Base-8(OCT), Base-10(DEC), or Base-16(HEX)</strong>.</p></li><li><p>Value of every number will be in <strong>between 0 and 999,999,999</strong>.</p></li><li><p>Since the final number might be extremely large, <strong>you have to answer in modular 1,000,000,007.</strong></p><ul><li><p>E.g., if the sum is 1,000,000,010, since that 3 ≡ 1,000,000,010 mod 1,000,000,007, <strong>you have to answer "3"</strong>.</p></li></ul></li></ol><p></p><p>At the same time, Chao also created some problems, but they are waaaaay too easy for him to solve. Help him design a program that calculates the correct answer.</p><p><strong>※ All number in this problem description, unless specified,  are in Base-10(Decimal) ! ※</strong></p>
@@ -24,3 +25,37 @@ output a integer, that is the sum of all input K, mod 1,000,000,007.
 <pre>
 
 </pre>
+<div>
+<h3>Sample1</h3>
+<h4>Input</h4>
+<pre>
+4
+6 20
+8 040
+10 100
+16 0xFF
+</pre>
+<h4>Output</h4>
+<pre>
+399
+</pre>
+</div>
+<div>
+<h3>Sample2</h3>
+<h4>Input</h4>
+<pre>
+8
+6 0
+8 00
+10 0
+16 0x0
+6 243121245343
+8 07346544777
+10 999999999
+16 0X3B9AC9FF
+</pre>
+<h4>Output</h4>
+<pre>
+999999975
+</pre>
+</div>

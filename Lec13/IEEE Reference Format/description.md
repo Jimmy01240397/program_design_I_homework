@@ -1,0 +1,108 @@
+IEEE Reference Format
+---------------------
+
+### Description
+
+<div>
+
+大家一定都有寫報告的經驗對吧？寫報告的時候最重要的，就是要把你引用的來源給註記清楚。在資訊系，我們寫報告時很常會引用來自
+IEEE 的論文或期刊，IEEE 規範的會議論文引用格式為：
+
+> J. K. Author, "Title of paper," in Abbreviated Name of Conf.,
+> (location of conference is optional), (Month and day(s) if provided)
+> year, pp. xxx-xxx.
+
+一個實際範例如下：
+
+> Y. Azar et al., \"28 GHz propagation measurements for outdoor cellular
+> communications using steerable beam antennas in New York city,\" 2013
+> IEEE International Conference on Communications (ICC), Budapest, 2013,
+> pp. 5143-5147, doi: 10.1109/ICC.2013.6655399.
+
+這裡頭包含了以下元素：
+
+主要作者：J. K. Author，\"et al.\" 代表有複數作者但未全數列出，範例內為
+`Y. Azar et al.`\
+論文標題：Title of paper，範例內為
+`28 GHz propagation measurements for outdoor cellular communications using steerable beam antennas in New York city`\
+會議名稱：Abbreviated Name of
+Conf.，範例內為`2013 IEEE International Conference on Communications (ICC)`\
+會議舉辦地點（選填）：(location of conference is
+optional)，範例內為`Budapest`\
+會議舉辦時間：(Month and day(s) if provided)
+year，年份為必填、月份與日期選填。範例內為`2013`\
+出版物資訊：pp.
+xxx-xxx，包含頁碼和數位物件辨識碼等，範例內為`pp. 5143-5147, doi: 10.1109/ICC.2013.6655399`
+
+給定以上資訊，請你把所有的資訊組合在一起，組成符合 IEEE
+論文引用格式的字串。
+
+</div>
+
+### Input
+
+The arguments will include the information mentioned above. Include
+authors, title, conference name, location, date and page information.
+
+### Output
+
+Your function have to return a string of information about this paper
+that match the IEEE reference format.
+
+### Loader Code
+
+<div>
+
+Your code will be judge using this program:
+
+</div>
+
+    #include<‍stdio.h>
+    #include<‍string.h>
+
+    char *reference(char author[], char title[], char conference[], char location[], char date[], char ppdoi[]);
+
+    int main(){
+        char author[100], title[150], conference[150], location[30], date[5], ppdoi[60];
+        scanf("%[^\n]\n%[^\n]\n%[^\n]\n%[^\n]\n%[^\n]\n%[^\n]", author, title, conference, location, date, ppdoi);
+        printf("%s", reference(author, title, conference, location, date, ppdoi));
+        return 0;
+    }
+
+<div>
+
+### Sample1
+
+#### Input
+
+    Y. Azar et al.
+    28 GHz propagation measurements for outdoor cellular communications using steerable beam antennas in New York city
+    2013 IEEE International Conference on Communications (ICC)
+    Budapest
+    2013
+    pp. 5143-5147, doi: 10.1109/ICC.2013.6655399
+
+#### Output
+
+    Y. Azar et al., "28 GHz propagation measurements for outdoor cellular communications using steerable beam antennas in New York city," 2013 IEEE International Conference on Communications (ICC), Budapest, 2013, pp. 5143-5147, doi: 10.1109/ICC.2013.6655399.
+
+</div>
+
+<div>
+
+### Sample2
+
+#### Input
+
+    K. He, X. Zhang, S. Ren and J. Sun
+    Deep Residual Learning for Image Recognition
+    2016 IEEE Conference on Computer Vision and Pattern Recognition (CVPR)
+    Las Vegas, NV
+    2016
+    pp. 770-778, doi: 10.1109/CVPR.2016.90
+
+#### Output
+
+    K. He, X. Zhang, S. Ren and J. Sun, "Deep Residual Learning for Image Recognition," 2016 IEEE Conference on Computer Vision and Pattern Recognition (CVPR), Las Vegas, NV, 2016, pp. 770-778, doi: 10.1109/CVPR.2016.90.
+
+</div>

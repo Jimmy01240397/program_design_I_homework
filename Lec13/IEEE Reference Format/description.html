@@ -1,3 +1,4 @@
+<h2>IEEE Reference Format</h2>
 <h3>Description</h3>
 <div>
 <p>大家一定都有寫報告的經驗對吧？寫報告的時候最重要的，就是要把你引用的來源給註記清楚。在資訊系，我們寫報告時很常會引用來自 IEEE 的論文或期刊，IEEE 規範的會議論文引用格式為：</p><blockquote><p>J. K. Author, “Title of paper,” in Abbreviated Name of Conf., (location of conference is optional), (Month and day(s) if provided) year, pp. xxx-xxx.</p></blockquote><p>一個實際範例如下：</p><blockquote><p>Y. Azar et al., "28 GHz propagation measurements for outdoor cellular communications using steerable beam antennas in New York city," 2013 IEEE International Conference on Communications (ICC), Budapest, 2013, pp. 5143-5147, doi: 10.1109/ICC.2013.6655399.</p></blockquote><p>這裡頭包含了以下元素：</p><p>主要作者：J. K. Author，"et al." 代表有複數作者但未全數列出，範例內為 <code>Y. Azar et al.</code><br>論文標題：Title of paper，範例內為 <code>28 GHz propagation measurements for outdoor cellular communications using steerable beam antennas in New York city</code><br>會議名稱：Abbreviated Name of Conf.，範例內為<code>2013 IEEE International Conference on Communications (ICC)</code><br>會議舉辦地點（選填）：(location of conference is optional)，範例內為<code>Budapest</code><br>會議舉辦時間：(Month and day(s) if provided) year，年份為必填、月份與日期選填。範例內為<code>2013</code><br>出版物資訊：pp. xxx-xxx，包含頁碼和數位物件辨識碼等，範例內為<code>pp. 5143-5147, doi: 10.1109/ICC.2013.6655399</code></p><p>給定以上資訊，請你把所有的資訊組合在一起，組成符合 IEEE 論文引用格式的字串。</p>
@@ -27,3 +28,35 @@ int main(){
 }
 
 </pre>
+<div>
+<h3>Sample1</h3>
+<h4>Input</h4>
+<pre>
+Y. Azar et al.
+28 GHz propagation measurements for outdoor cellular communications using steerable beam antennas in New York city
+2013 IEEE International Conference on Communications (ICC)
+Budapest
+2013
+pp. 5143-5147, doi: 10.1109/ICC.2013.6655399
+</pre>
+<h4>Output</h4>
+<pre>
+Y. Azar et al., "28 GHz propagation measurements for outdoor cellular communications using steerable beam antennas in New York city," 2013 IEEE International Conference on Communications (ICC), Budapest, 2013, pp. 5143-5147, doi: 10.1109/ICC.2013.6655399.
+</pre>
+</div>
+<div>
+<h3>Sample2</h3>
+<h4>Input</h4>
+<pre>
+K. He, X. Zhang, S. Ren and J. Sun
+Deep Residual Learning for Image Recognition
+2016 IEEE Conference on Computer Vision and Pattern Recognition (CVPR)
+Las Vegas, NV
+2016
+pp. 770-778, doi: 10.1109/CVPR.2016.90
+</pre>
+<h4>Output</h4>
+<pre>
+K. He, X. Zhang, S. Ren and J. Sun, "Deep Residual Learning for Image Recognition," 2016 IEEE Conference on Computer Vision and Pattern Recognition (CVPR), Las Vegas, NV, 2016, pp. 770-778, doi: 10.1109/CVPR.2016.90.
+</pre>
+</div>

@@ -1,3 +1,4 @@
+<h2>windowlocation</h2>
 <h3>Description</h3>
 <div>
 <p>在 Chrome 瀏覽器內按下 F12，會打開瀏覽器的開發者工具。在 console 當中輸入 <code>window.location</code>，會看到一個叫作 <code>Location</code> 的結構跑出來，上頭記載了你當前所在的網址所包含的資訊，包含：</p><ul><li><p>通訊協定 (protocol)</p></li><li><p>主機名稱 (host)</p></li><li><p>通訊埠 (port)</p></li><li><p>所在路徑 (pathname)</p></li><li><p>查詢字串/Query String (search)</p></li><li><p>識別符號 (hash)</p></li></ul><p>那麼，這些不同的部份是怎麼被切出來的呢？其實網址是有固定格式的，就跟你家的門牌號碼一樣。網址的格式為：</p><p><code>[通訊協定]://[主機名稱]:[通訊埠]/[所在路徑]?[查詢字串]#[識別符號]</code></p><p>舉例，<code>https://www.abc.com/user/12345/photo?from=20180101&amp;to=20201231#favorite</code>可以被切成：</p><ul><li><p>通訊協定 = <code>https</code></p></li><li><p>主機名稱 = <code>www.abc.com</code></p></li><li><p>通訊埠 = 預設不顯示（但因為使用的是 https，所以可知是 443）</p></li><li><p>所在路徑 = <code>/user/12345/photo</code></p></li><li><p>查詢字串 = <code>?from=20180101&amp;to=20201231</code></p></li><li><p>識別符號 = <code>#favorite</code></p></li></ul><p>但也並非所有部份都位同時存在於一個網址中，像是本頁面的網址就沒有查詢字串的部份。</p><p>現在，給你一些網址，請你幫忙找出上述的片段，並裝入 <code>Location</code> 結構當中。</p>
@@ -45,3 +46,63 @@ int main()
 }
 
 </pre>
+<div>
+<h3>Sample1</h3>
+<h4>Input</h4>
+<pre>
+https://www.abc.com:80/user/12345/photo?from=20180101&to=20201231#favorite
+
+</pre>
+<h4>Output</h4>
+<pre>
+Location {
+  protocol: https,
+  host: www.abc.com,
+  port: 80,
+  pathname: /user/12345/photo,
+  search: ?from=20180101&to=20201231,
+  hash: #favorite,
+}
+
+</pre>
+</div>
+<div>
+<h3>Sample2</h3>
+<h4>Input</h4>
+<pre>
+http://1.2.3.4:443/it/is/a/very/long/path/name
+
+</pre>
+<h4>Output</h4>
+<pre>
+Location {
+  protocol: http,
+  host: 1.2.3.4,
+  port: 443,
+  pathname: /it/is/a/very/long/path/name,
+  search: ?,
+  hash: #,
+}
+
+</pre>
+</div>
+<div>
+<h3>Sample3</h3>
+<h4>Input</h4>
+<pre>
+ip://193.55.28.30
+
+</pre>
+<h4>Output</h4>
+<pre>
+Location {
+  protocol: ip,
+  host: 193.55.28.30,
+  port: (default),
+  pathname: /,
+  search: ?,
+  hash: #,
+}
+
+</pre>
+</div>

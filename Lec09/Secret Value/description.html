@@ -1,3 +1,4 @@
+<h2>Secret Value</h2>
 <h3>Description</h3>
 <div>
 <p><s>2021/11/05 Updated Description! (Incorrect, Removed)</s></p><p><u>2021/11/09 <strong>Added information about calculating GCD(a, 0).</strong></u></p><p></p><hr><p>David is trying to calculate the "secret value" of numbers.<br>The secret value of integer <code>N</code> is calculated as:</p><ol><li><p><strong>If </strong><code>N</code><strong> is a one-digit integer, the secret value is itself.</strong></p></li><li><p>Split the number into upper part and lower part.<br>If there are an odd number of digits, the middle digit belongs to the lower part.</p><ul><li><p>The integer 121088 gets divided into 121 and 088.</p></li><li><p>The integer 12345 gets divided into 12 and 345</p></li></ul></li><li><p>Find the two parts' <strong>greatest common divisor(GCD)</strong>. The result is called <code>k</code>.</p><ul><li><p>Please keep in mind that <strong>GCD(a, 0) = GCD(0, a) = |a|.</strong></p></li><li><p>The result of GCD(a,b) is the greatest non-negative integer k satisfices that a = ck, b = dk. Read <a rel="noopener noreferrer nofollow" href="https://en.wikipedia.org/wiki/Greatest_common_divisor#Definition">This</a> to know more.</p></li></ul></li><li><p>Sum up <code>N</code> <strong>itself</strong> and the <strong>secret value of </strong><code>k</code>.</p></li></ol><p><strong>David hate huge numbers, so you MUST answer in modular 10007.<br>Your work will be judged by </strong><u><strong>running the loader section</strong></u><strong>, so please implement the functions provided!</strong></p><hr><h3>Example (Sample Input 1)</h3><p>For <code>N</code> = 2424, we can split it into 24 and 24, whose GCD is also 24, so the result <code>k</code> of 2424 is 24. <br>Now we need to know the secret number of 24 to sum up with <code>N</code>.</p><p>For <code>N</code>= 24, we can split it into 2 and 4, whose GCD is 2, so the result <code>k</code> of 24 is 2.</p><p>Since 2 has only one digit, the secret value of 2 is 2</p><p>Hence, we can get the secret value of <u>2424 = 2424 + secret value of 24 = 2424 + 24 + secret value of 2 = 2450</u></p>
@@ -27,3 +28,36 @@ int main(){
 	return 0;
 }
 </pre>
+<div>
+<h3>Sample1</h3>
+<h4>Input</h4>
+<pre>
+2424
+</pre>
+<h4>Output</h4>
+<pre>
+2450
+</pre>
+</div>
+<div>
+<h3>Sample2</h3>
+<h4>Input</h4>
+<pre>
+99
+</pre>
+<h4>Output</h4>
+<pre>
+108
+</pre>
+</div>
+<div>
+<h3>Sample3</h3>
+<h4>Input</h4>
+<pre>
+121088
+</pre>
+<h4>Output</h4>
+<pre>
+1016
+</pre>
+</div>

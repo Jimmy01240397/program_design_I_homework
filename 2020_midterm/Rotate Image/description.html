@@ -1,3 +1,4 @@
+<h2>Rotate Image</h2>
 <h3>Description</h3>
 <div>
 <p>In computer, everything is represented by numbers — so does image. Computer stores image as a matrix. A cell in the matrix is a pixel in the image, and number in the cell represents the color of that pixel.</p><p>If we want to rotate an image, it means that we want to rotate the matrix itself. For example, consider an image as follows:</p><p><code>| 1 2 3 |</code><br><code>| 4 5 6 |</code><br><code>| 7 8 9 |</code></p><p>If we want to <strong>rotate this image 90 degrees to the right</strong>, we can rotate the matrix like this:</p><p><code>| 7 4 1 |</code><br><code>| 8 5 2 |</code><br><code>| 9 6 3 |</code></p><p>Now given the degree of <strong>right rotation</strong>, can you help me rotate my images?</p><p>在電腦裡，所有東西都是用數字來表達的——就連圖片也不例外。電腦以矩陣的形式來儲存每一張圖片，矩陣裡的格子代表著圖片的像素，而格子裡的數字就代表了該像素的顏色。</p><p>當我們要對圖片做旋轉時，我們實際上就是在旋轉這個矩陣本身。舉例來說，如果有一張圖片長這樣：</p><p><code>| 1 2 3 |</code><br><code>| 4 5 6 |</code><br><code>| 7 8 9 |</code></p><p>如果我們想將這張圖片<strong>向右旋轉 90 度</strong>，那麼就等於是把矩陣旋轉成這樣：</p><p><code>| 7 4 1 |</code><br><code>| 8 5 2 |</code><br><code>| 9 6 3 |</code></p><p>給定<strong>向右旋轉的角度</strong>，你能將圖片做正確的旋轉嗎？</p>
@@ -21,3 +22,22 @@ You need to print newline at the end of last line.
 <pre>
 
 </pre>
+<div>
+<h3>Sample1</h3>
+<h4>Input</h4>
+<pre>
+90
+3 4
+1 5 6 7
+5 8 9 2
+3 0 4 7
+</pre>
+<h4>Output</h4>
+<pre>
+3 5 1 
+0 8 5 
+4 9 6 
+7 2 7 
+
+</pre>
+</div>

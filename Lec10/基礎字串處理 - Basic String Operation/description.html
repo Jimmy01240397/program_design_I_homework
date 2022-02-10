@@ -1,3 +1,4 @@
+<h2>基礎字串處理 - Basic String Operation</h2>
 <h3>Description</h3>
 <div>
 <p>給定一個字串 <code>str1</code> 以及數個指令，請根據指令對字串進行處理並執行動作。<br>可能會出現的指令如下：<code>PRINT</code> <code>REVERSE</code> <code>TO_LOWER</code> <code>TO_UPPER</code> <code>REMOVE</code> <code>COMPRESS</code>。<br>下方是各個指令的詳細解釋；建議各位使用 function 來執行各個指令。<br><strong>每個指令的 output 後必須分行！</strong></p><p><br>Given a string of characters<code>str1</code>and a list of commands, perform operations according to the commands.<br>The possible commands are: <code>PRINT</code> <code>REVERSE</code> <code>TO_LOWER</code> <code>TO_UPPER</code> <code>REMOVE</code> <code>COMPRESS</code>.<br>Command descriptions are in the following section. Using functions to treat each commands is recommended, though not required.<br>Remember to break the line after each command's output!</p><p></p><p></p><h3>指令說明 / Command Description</h3><hr><p><strong>PRINT</strong></p><ul><li><p>印出 <code>str1</code>當下的狀態。<br>Print the current state of the string</p></li><li><p>這個指令不應該對<code>str1</code>做出任何改動。<br>No modification should occur on <code>str1</code></p></li></ul><p><strong><br><br>REVERSE</strong></p><ul><li><p>將<code>str1</code>頭尾顛倒。<br>Reverse<code>str1</code>.</p></li><li><p>假設<code>str1 = "Mine 123! @@"</code>執行結果應為<code>str1 = "@@ !321 eniM"</code>。<br>E.g.<code>str1 = "Mine 123! @@"</code>Becomes<code>str1 = "@@ !321 eniM"</code>.</p></li><li><p>你應該改變 <code>str1</code>的內容並<strong>印出來</strong>。<br>You should modify the data in<code>str1</code>and <strong>print the modified string</strong>.</p></li></ul><p><strong><br><br>TO_UPPER</strong></p><ul><li><p>將字串內<strong>所有小寫字母</strong>轉成對應的大寫字母。<br>Transform <strong>all lower-case alphabets</strong> in the string to upper-case.</p></li><li><p>不需要對非字母的字元做出任何改動。<br>Non-alphabet character remains the same.</p></li><li><p>你應該改變 <code>str1</code>的內容並<strong>印出來</strong>。<br>You should modify the data in <code>str1</code>and <strong>print the modified string</strong>.</p></li></ul><p><strong><br><br>TO_LOWER</strong></p><ul><li><p>將字串內<strong>所有大寫字母</strong>轉成對應的小寫字母。<br>Transform <strong>all upper-case alphabets</strong> in the string to lower-case.</p></li><li><p>不需要對非字母的字元做出任何改動。<br>Non-alphabet character remains the same.</p></li><li><p>你應該改變 <code>str1</code> 的內容並<strong>印出來</strong>。<br>You should modify the data in <code>str1</code> and <strong>print the modified string</strong>.</p></li></ul><p><strong><br><br>REMOVE &lt;target&gt;</strong></p><ul><li><p>自<code>str1</code>移除所有字元 &lt;target&gt;。所有剩下來的字元必須<strong>向前推移填滿所有空位</strong>。<br>From <code>str1</code>, <strong>remove</strong> <strong>all occurrence</strong> of the character &lt;target&gt;. The remaining characters must be <strong>shifted to the front to fill up the blanks</strong>.</p></li><li><p>假設<code>str1 = ['a', 'p', 'p', 'l', 'e', '\0'], target = 'p'</code>, 執行結果應為<code>str1 = ['a', 'l', 'e', '\0']</code>。有注意到長度變短了嗎？<br>e.g., <code>str1 = ['a', 'p', 'p', 'l', 'e', '\0'], target = 'p'</code>, the result should be <code>str1 = ['a', 'l', 'e', '\0']</code>. Notice the length of the string is shortened.</p></li><li><p><strong>執行完成後至少會留下 1 個字元。</strong><br><strong>There will be at least 1 character left in the string after removal.</strong></p></li><li><p>空白<code>' '</code>也可能是被移除的目標。<br>Spaces<code>' '</code>might also be the target to remove.</p></li><li><p>你應該改變 <code>str1</code> 的內容並<strong>印出來</strong>。<br>You should modify the data in <code>str1</code> and <strong>print the modified string</strong>.</p></li></ul><p><strong><br><br>COMPRESS</strong></p><ul><li><p>使用 <strong>Run-Length Encoding</strong> 來對<code>str1</code>進行壓縮。以下為 Run-Length Encoding 的執行步驟：<br>Use <strong>Run-Length Encoding</strong> to compress<code>str1</code>. The following is how to Run-Length Encoding:</p><ul><li><p>從<code>str1[0]</code>開始。<br>Start from <code>str1[0]</code>.</p></li><li><p>計算選到的字元連續出現了幾次。<br>Count the number of <strong>contiguous subsequent occurrences</strong> of the picked character.</p></li><li><p>將其改成<code>-&lt;字元&gt;&lt;出現次數&gt;</code>的形式。<strong>注意前面有個減號</strong>，用來標示被壓縮的字元。<br>Transform into the form as <code>-&lt;char&gt;&lt;occurrence&gt;</code> . <strong>Note that there is a minus sign in front of the pair</strong>, used to mark which character is getting encoded<strong>.</strong></p></li><li><p>假設<code>str1 = "aaaabbbcccikK"</code>執行結果應為<code>str1 = "-a4-b3-c3-i1-k1-K1"</code>。請注意，<strong>大小寫英文字母被視為不同的字元</strong>。<br>e.g., <code>str1 = "aaaabbbcccikK"</code> becomes <code>str1 = "-a4-b3-c3-i1-k1-K1"</code>. Notice that <strong>lower and upper case alphabets are considered different characters</strong>.</p></li><li><p>假設<code>str1 = "AaaaC@@---  """"</code>執行結果應為<code>str1 = "-A1-a3-C1-@2--3- 2-"3"</code>。請注意，<strong>空白和減號也會被處理</strong>。<br>e.g.,<code>str1 = "AaaaC@@---  """"</code> becomes <code>str1 = "-A1-a3-C1-@2--3- 2-"3"</code>. Notice that <strong>spaces and minus signs are also being encoded.</strong></p></li></ul></li><li><p>你應該改變 <code>str1</code> 的內容並<strong>印出來</strong>。<br>You should modify the data in <code>str1</code> and <strong>print the modified string</strong>.</p></li></ul><p></p><p></p><h3>提示與建議 / Tips and Suggestions</h3><hr><ol><li><p>當在 <code>scanf()</code> 中使用 <code>%s</code> 時，<strong>會取用直到下個 white space character</strong>(例如空白<code>' '</code>, 換行<code>'\n'</code> , 水平 / 垂直 Tab<code>'\t'</code> / <code>'\v'</code>等等) <strong>之前的所有字元</strong>。<strong>而這個字元則會留在 input 中不被讀取</strong>。<br>When using <code>%s</code> in <code>scanf()</code>, <strong>all inputs until the next trailing whitespace character</strong> (e.g., spaces<code>' '</code>, newline<code>'\n'</code>, horizontal / vertical tabs<code>'\t'</code> / <code>'\v'</code>) <strong>will be consumed</strong>, <strong>but the whitespace character will remain untouched</strong>.<br><br></p></li><li><p><code>getchar()</code> <strong>可以從 input 中移除一個 character</strong>，可參考以下使用例：<br><code>getchar()</code> <strong>can be used to remove a character from input</strong>. The following is a simple example:</p></li></ol><pre><code>/* 自 input 中移除一個字元並將該字元賦值給 a。 與 scanf("%c", &amp;a) 相同效果。
@@ -28,3 +29,105 @@ Print everything the commands requires you to.
 <pre>
 
 </pre>
+<div>
+<h3>Sample1</h3>
+<h4>Input</h4>
+<pre>
+ABC   %%%
+10
+REVERSE
+COMPRESS
+REMOVE -
+REMOVE  
+REMOVE 1
+REMOVE B
+REMOVE C
+TO_LOWER
+COMPRESS
+TO_UPPER
+
+</pre>
+<h4>Output</h4>
+<pre>
+%%%   CBA
+-%3- 3-C1-B1-A1
+%3 3C1B1A1
+%33C1B1A1
+%33CBA
+%33CA
+%33A
+%33a
+-%1-32-a1
+-%1-32-A1
+</pre>
+</div>
+<div>
+<h3>Sample2</h3>
+<h4>Input</h4>
+<pre>
+AAAAA - -  BBCC
+1
+PRINT
+
+</pre>
+<h4>Output</h4>
+<pre>
+AAAAA - -  BBCC
+</pre>
+</div>
+<div>
+<h3>Sample3</h3>
+<h4>Input</h4>
+<pre>
+AAAAA - -  BBCC
+1
+REVERSE
+
+</pre>
+<h4>Output</h4>
+<pre>
+CCBB  - - AAAAA
+</pre>
+</div>
+<div>
+<h3>Sample4</h3>
+<h4>Input</h4>
+<pre>
+AAAAA - -  BBCC
+1
+COMPRESS
+
+</pre>
+<h4>Output</h4>
+<pre>
+-A5- 1--1- 1--1- 2-B2-C2
+</pre>
+</div>
+<div>
+<h3>Sample5</h3>
+<h4>Input</h4>
+<pre>
+aaaaa - -  bbCC
+1
+TO_UPPER
+
+</pre>
+<h4>Output</h4>
+<pre>
+AAAAA - -  BBCC
+</pre>
+</div>
+<div>
+<h3>Sample6</h3>
+<h4>Input</h4>
+<pre>
+AAAAA - -  BBCC
+1
+REMOVE B
+
+</pre>
+<h4>Output</h4>
+<pre>
+AAAAA - -  CC
+</pre>
+</div>

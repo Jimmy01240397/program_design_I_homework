@@ -1,3 +1,4 @@
+<h2>Calculating Volume</h2>
 <h3>Description</h3>
 <div>
 <p>Read an integer <code>mode</code>, you need to calculate the volume for the mode. In different modes, you need to read different number of double precision floating-points and then print out the volume that is rounded to 2 decimal places. The followings are 4 modes:</p><ol><li><p>Mode 1:<br>In this mode, you need to <code>scanf</code> <strong>a double precision floating-point which represents the length of cube(立方體)</strong>.<br><strong>volume = length * length * length.</strong></p></li><li><p>Mode 2: <br>In this mode, you need to <code>scanf</code> <strong>three double precision floating-points which sequentially represent length, width and height of cuboid(長方體)</strong>.<br><strong>volume = length *</strong><em><strong> </strong></em><strong>width * height.</strong></p></li><li><p>Mode 3:<br>In this mode, you need to <code>scanf</code> <strong>two double precision floating-points which sequentially(依序) represents the radius and height of cylinder(圓柱體)</strong>.<br><strong>volume = 3.14 * radius * radius * height.</strong></p></li><li><p>Mode 4:<br>In this mode, you need to <code>scanf</code> <strong>an double precision floating-point which represents the length of regular&nbsp;tetrahedron(正四面體).<br>volume = √2 / 12 * length * length * length.</strong></p></li></ol><p>Given 1 &lt;= <code>mode</code>&lt;= 4, each double precision floating-point is in range 1 ~ 100</p><hr><p><strong>Hint</strong>:</p><ol><li><p>You can use the <strong>sqrt()</strong> and <strong>pow()</strong> function by using the following preprocessor directive:<br><code>#include &lt;math.h&gt;</code></p></li><li><p>All the values should be double precision floating-point, including <strong>PI(3.14)</strong>.</p></li></ol><p></p><p>讀入一個整數 <code>mode</code>，你必須計算該模式下的體積。在不同模式中，你必須要能讀入不同個數的雙精度浮點數(double)並且印出體積(四捨五入至小數點後第2位)。以下為4種模式 :</p><ol><li><p>模式 1:<br>在模式 1 中，你必須 <code>scanf</code> <strong>一個雙精度浮點數代表立方體的長度(length)</strong>。<br><strong>立方體體積 = 長度 * 長度 * 長度。</strong></p></li><li><p>模式 2:<br>在模式 2 中，你必須 <code>scanf</code> <strong>三個雙精度浮點數依序代表長方體的長(length)、寬(width)、高(height)</strong>。<br><strong>長方體體積 = 長 * 寬 * 高</strong>。</p></li><li><p>模式 3:<br>在模式 3 中，你必須 <code>scanf</code> <strong>兩個雙精度浮點數依序代表圓柱體的半徑(radius)、高(height)</strong>。<br><strong>圓柱體體積 = 3.14 * 半徑 * 半徑 * 高</strong>。</p></li><li><p>模式 4:<br>在模式 4 中，你必須 <code>scanf</code> <strong>一個雙精度浮點數代表四面體的長度(length)</strong>。<br><strong>四面體體積 = √2 / 12 * 長度 * 長度 * 長度</strong>。</p></li></ol><p>給定 1 &lt;= <code>mode</code> &lt;= 4 且每個雙精度浮點數的範圍會在 1 ~ 100。</p><hr><p><strong>提示:</strong></p><p>你可以藉由使用<code>#include&lt;math.h&gt;</code> 來呼叫函式 <strong>sqrt()</strong> 和 <strong>pow()</strong>。</p><p>所有的值都必須使用雙精度浮點數來計算，包含<strong>PI(3.14)</strong>。</p>
@@ -16,3 +17,27 @@ Double precision floating-point is rounded to 2 decimal places.
 <pre>
 
 </pre>
+<div>
+<h3>Sample1</h3>
+<h4>Input</h4>
+<pre>
+1
+6
+</pre>
+<h4>Output</h4>
+<pre>
+216.00
+</pre>
+</div>
+<div>
+<h3>Sample2</h3>
+<h4>Input</h4>
+<pre>
+2
+6 8 10
+</pre>
+<h4>Output</h4>
+<pre>
+480.00
+</pre>
+</div>

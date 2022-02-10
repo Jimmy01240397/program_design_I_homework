@@ -1,3 +1,4 @@
+<h2>Bingo!</h2>
 <h3>Description</h3>
 <div>
 <p><strong>UPDATE !!</strong></p><p>由於有同學反應在 windows 電腦上面的 clion 無法正常執行 loader code 內容，</p><p>所以更新 loader code ，</p><p>請注意讀取時與 bingo function 的參數資料型態。</p><p></p><hr><p>大家都玩過賓果吧！<br>以下是 4 * 4 的範例：</p><p>1 0 1 <strong>1</strong><br>0 0 <strong>1</strong> <strong>1</strong><br>0 <strong>1</strong> 0 <strong>1</strong><br><strong>1</strong> 0 1 <strong>1</strong></p><p>可以看到有一條直的，一條斜的，總共兩條連線。</p><p>為了環保愛地球，一個 <code>n * n</code> 的賓果使用 <code>n * n</code> 大小的空間實在太浪費了！<br>聰明的 Amy 想到，在電腦中，所有的變數背後都是 0 或 1，那我們可以使用一些數字來替代這張表格，減少使用的空間。</p><p>舉例來說，把這些 0 與 1 視作二進制的表示方式，並把他轉化為十進制</p><p><code>1 0 1 1</code> -&gt; 2^3 + 2^1 + 2^0 = <code>11</code><br><code>0 0 1 1</code> -&gt; 2^1 + 2^0 = <code>3</code><br><code>0 1 0 1</code> -&gt; 2^2 + 2^0 = <code>5</code><br><code>1 0 1 1</code> -&gt; 2^3 + 2^1 + 2^0 = <code>11</code></p><p>所以我們可以使用 <code>11 3 5 11</code> 來表示上圖的表格。</p><p>在這裡，我們要玩的是進階版賓果！<br>題目會給出 8 個 8 bits 的數字來表示 <code>8*8</code> 大小的表格，請你算出當中會有幾條連線</p><p></p><hr><p></p><p>Here is 4 * 4 sample:</p><p>1 0 1 <strong>1</strong><br>0 0 <strong>1</strong> <strong>1</strong><br>0 <strong>1</strong> 0 <strong>1</strong><br><strong>1</strong> 0 1 <strong>1</strong></p><p>There are two lines above, vertical and diagonal.</p><p>It’s wasteful to use <code>n * n</code> space to play <code>n * n</code> bingo.<br>As every number is stored as 0 or 1 in computer, we can use some other numbers to represent that table.</p><p>For example, those 0 and 1 can be regarded as binary, and we can convert it into decimal.</p><p><code>1 0 1 1</code> -&gt; 2^3 + 2^1 + 2^0 = <code>11</code><br><code>0 0 1 1</code> -&gt; 2^1 + 2^0 = <code>3</code><br><code>0 1 0 1</code> -&gt; 2^2 + 2^0 = <code>5</code><br><code>1 0 1 1</code> -&gt; 2^3 + 2^1 + 2^0 = <code>11</code></p><p>So the above bingo can be represented as <code>11 3 5 11</code>.</p><p>Here we are going to play <code>8 * 8</code> bingo.<br>Eight 8 bits numbers are provided to represent the <code>8 * 8</code> bingo. Please count how many lines are in the bingo.</p>
@@ -28,3 +29,27 @@ int main () {
     printf("%d\n", bingo(num));
 }
 </pre>
+<div>
+<h3>Sample1</h3>
+<h4>Input</h4>
+<pre>
+1 2 4 8 16 32 64 128 
+</pre>
+<h4>Output</h4>
+<pre>
+1
+
+</pre>
+</div>
+<div>
+<h3>Sample2</h3>
+<h4>Input</h4>
+<pre>
+255 2 6 10 18 35 66 130 
+</pre>
+<h4>Output</h4>
+<pre>
+3
+
+</pre>
+</div>

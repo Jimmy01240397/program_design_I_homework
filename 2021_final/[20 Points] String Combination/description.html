@@ -1,3 +1,4 @@
+<h2>[20 Points] String Combination</h2>
 <h3>Description</h3>
 <div>
 <p>沒有錯，又是組合！</p><p>給予 n 個字串及數字 k，請將所有可能的組合列出來。</p><p>例如：給予 <code>n = 5</code>, <code>k = 2</code>，以及 <code>andy becky cindy jacky willy</code> 五個字串，</p><p>代表從 5 個字串中挑選 2 個出來，注意，須根據字串給予時的順序組合進行列印。詳細請見範例。</p><hr><p></p><p>Yah, Combination Again!</p><p>Given n strings and number k, please print all possible combinations out.</p><p>For example, given <code>n = 5</code>, <code>k = 2</code>, and <code>andy becky cindy jacky willy</code> five strings,</p><p>which means that you have to choose 2 strings from the 5 strings.</p><p>Notice that you need print out them according to the given order. See examples.</p>
@@ -21,3 +22,67 @@ Print out k strings from the n strings, according to the given order in the inpu
 <pre>
 
 </pre>
+<div>
+<h3>Sample1</h3>
+<h4>Input</h4>
+<pre>
+5 2
+andy becky cindy jacky willy
+</pre>
+<h4>Output</h4>
+<pre>
+andy becky 
+andy cindy 
+andy jacky 
+andy willy 
+becky cindy 
+becky jacky 
+becky willy 
+cindy jacky 
+cindy willy 
+jacky willy 
+
+</pre>
+</div>
+<div>
+<h3>Sample2</h3>
+<h4>Input</h4>
+<pre>
+5 3
+andy becky cindy jacky willy
+</pre>
+<h4>Output</h4>
+<pre>
+andy becky cindy 
+andy becky jacky 
+andy becky willy 
+andy cindy jacky 
+andy cindy willy 
+andy jacky willy 
+becky cindy jacky 
+becky cindy willy 
+becky jacky willy 
+cindy jacky willy 
+
+</pre>
+</div>
+<div>
+<h3>Sample3</h3>
+<h4>Input</h4>
+<pre>
+8 1
+andy becky cindy jacky larry mandy sandy willy
+</pre>
+<h4>Output</h4>
+<pre>
+andy 
+becky 
+cindy 
+jacky 
+larry 
+mandy 
+sandy 
+willy 
+
+</pre>
+</div>

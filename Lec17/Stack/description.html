@@ -1,3 +1,4 @@
+<h2>Stack</h2>
 <h3>Description</h3>
 <div>
 <p>Stack is an abstract data type that serves as a collection of elements, with two main principal operations:</p><ol><li><p>Push: which adds an element to the top of the stack</p></li><li><p>Pop: which removes an element from the top of the stack if the stack is not empty</p></li></ol><p><img alt="Image" src="https://www.tutorialspoint.com/data_structures_algorithms/images/stack_representation.jpg"></p><p>Please implement push and pop operations of the stack using linked list.</p><p>Reference: <a rel="noopener noreferrer nofollow" href="https://www.tutorialspoint.com/data_structures_algorithms/stack_algorithm.htm">https://www.tutorialspoint.com/data_structures_algorithms/stack_algorithm.htm</a></p>
@@ -63,3 +64,39 @@ void print_stack(struct element *top) {
     }
 }
 </pre>
+<div>
+<h3>Sample1</h3>
+<h4>Input</h4>
+<pre>
+5
+push 1
+push 2
+push 3
+pop
+pop
+
+</pre>
+<h4>Output</h4>
+<pre>
+1
+1 
+</pre>
+</div>
+<div>
+<h3>Sample2</h3>
+<h4>Input</h4>
+<pre>
+5
+push 1
+pop
+push 2
+push 3
+pop
+
+</pre>
+<h4>Output</h4>
+<pre>
+1
+2 
+</pre>
+</div>

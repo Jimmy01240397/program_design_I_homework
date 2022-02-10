@@ -1,3 +1,4 @@
+<h2>Rat in a Maze</h2>
 <h3>Description</h3>
 <div>
 <p>There is a <code>5*5</code> maze. A rat wants to walk through the maze and it moves in a vertical or a horizontal direction. Please help the rat find a route from&nbsp;the upper-left block to the bottom-right block.</p><p>upper-left block: <code>(0,0)</code></p><p>bottom-right block: <code>(4,4)</code></p><p><strong>Note</strong>: There is at most one route.</p><p><strong>Hint</strong>: You can use recursion to solve this problem.</p>
@@ -43,3 +44,40 @@ int main(void) {
     return 0;
 }
 </pre>
+<div>
+<h3>Sample1</h3>
+<h4>Input</h4>
+<pre>
+r w r r r
+r w r w w
+r r r r r
+r w r w w
+r w r r r
+
+</pre>
+<h4>Output</h4>
+<pre>
+1 0 0 0 0 
+1 0 0 0 0 
+1 1 1 0 0 
+0 0 1 0 0 
+0 0 1 1 1 
+
+</pre>
+</div>
+<div>
+<h3>Sample2</h3>
+<h4>Input</h4>
+<pre>
+r w r r r
+r w r w w
+r r r w r
+r w r w w
+r w r w r
+
+</pre>
+<h4>Output</h4>
+<pre>
+Can't find the exit!
+</pre>
+</div>

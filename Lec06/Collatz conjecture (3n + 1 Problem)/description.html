@@ -1,3 +1,4 @@
+<h2>Collatz conjecture (3n + 1 Problem)</h2>
 <h3>Description</h3>
 <div>
 <p><strong>Collatz conjecture</strong>, also known as <strong>3n+1 problem</strong>, which is a conjecture in mathematics that is about a sequence defined as follows: Let <code>S1</code> be a positive integer which is the start of the sequence, and</p><ul><li><p>if <code>Sn</code> is <strong>even</strong>, then <code>Sn+1 = Sn / 2</code></p></li><li><p>if <code>Sn</code> is <strong>odd</strong>, then <code>Sn+1 = 3 * Sn + 1</code></p></li></ul><p>The conjecture is that for any given positive integer <code>S1</code> (&lt;= 10^5), the sequence will reach 1.</p><p>e.g. Given <code>S1 = 22</code>, the sequence will be: <code>22 11 34 17 52 26 13 40 20 10 5 16 8 4 2 1</code></p><p>As students of NCKU, we are interested in this conjecture, please write a program to help us do some research in this conjecture.</p>
@@ -16,3 +17,25 @@ Two integer L, M within a line, where L represents the length of the sequence an
 <pre>
 
 </pre>
+<div>
+<h3>Sample1</h3>
+<h4>Input</h4>
+<pre>
+22
+</pre>
+<h4>Output</h4>
+<pre>
+16 52
+</pre>
+</div>
+<div>
+<h3>Sample2</h3>
+<h4>Input</h4>
+<pre>
+999
+</pre>
+<h4>Output</h4>
+<pre>
+50 11392
+</pre>
+</div>

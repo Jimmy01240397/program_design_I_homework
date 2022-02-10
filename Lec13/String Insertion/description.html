@@ -1,3 +1,4 @@
+<h2>String Insertion</h2>
 <h3>Description</h3>
 <div>
 <p>Given a paragraph <code>P</code> and 2 strings <code>s</code>, <code>t</code>, find all string <code>s</code> in paragraph<code>P</code> and insert a string <code>t</code> after string <code>s</code>.</p><p>Note: The size of the modified paragraph <code>P</code> is shorter than 100000 and the size of both string <code>s</code> and string <code>t</code> are less than 100.</p>
@@ -42,3 +43,41 @@ int main() {
   return 0;
 }
 </pre>
+<div>
+<h3>Sample1</h3>
+<h4>Input</h4>
+<pre>
+abc
+def
+abcdef
+abc def
+---
+abc
+d
+
+</pre>
+<h4>Output</h4>
+<pre>
+abcd
+def
+abcddef
+abcd def
+
+</pre>
+</div>
+<div>
+<h3>Sample2</h3>
+<h4>Input</h4>
+<pre>
+hello world
+---
+o
+o
+
+</pre>
+<h4>Output</h4>
+<pre>
+helloo woorld
+
+</pre>
+</div>

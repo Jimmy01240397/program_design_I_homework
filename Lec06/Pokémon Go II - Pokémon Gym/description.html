@@ -1,3 +1,4 @@
+<h2>Pokémon Go II - Pokémon Gym</h2>
 <h3>Description</h3>
 <div>
 <p>Ariel likes to play Pokémon Go! She had many battles in pokémon gym. She needs a tool to record the battle's result.<br>She had <code>n</code> battles. Each battle is three-on-three and each pokémon has <strong>combat power(CP)</strong>. If the combat power of Ariel's pokémon is more than competitor's, then Ariel's pokémon wins. If Ariel has more wins than competitor, she wins the battle. Please record each battle is "<strong>Win</strong>", "<strong>Tie</strong>", or "<strong>Lose</strong>" and calculate the <strong>win rates</strong>.<br><br>For example,</p><p>Ariel had a battle. Her three pokémons' combat power are 200, 300 and 400, and the competitor's three pokémons' combat power are 100,350 and 400. Then,</p><p><strong>200&gt;100</strong> Win</p><p><strong>300&lt;350</strong> Lose</p><p><strong>400=400</strong> Tie</p><p>Because Ariel and competitor had the same number of wins, this battle is "<strong>Tie</strong>". Ariel had one battle and the number of wins is 0, then the win rates is <strong>0/1 = 0.00%</strong></p><p></p><hr><p></p><p>Ariel 最喜歡玩 Pokémon Go! 她參加了很多場道館賽，所以她需要有個小幫手幫忙記錄!<br>她參加了 <code>n</code> 場道館對戰，每一場中，對方派出 3 隻寶可夢，Ariel 也同樣派出 3 隻寶可夢應戰，每隻寶可夢都有 <strong>CP 值</strong>，CP 值較高的寶可夢獲勝，CP 值相同的寶可夢對戰則為平手，獲勝的寶可夢數量最多的那一方獲勝，若雙方獲勝的寶可夢數量相同時，則這一場為平手，請幫忙紀錄每一場比賽 Ariel 是 <strong>獲勝</strong>、<strong>平手</strong>或是<strong>輸</strong>，並算出<strong>勝場率</strong>。</p><p></p><p>舉例:</p><p>Ariel 參加了一場道館賽，派出了三隻寶可夢，其CP值分別為 200、300、400，而對方派出的寶可夢其 CP 值為 100、350、400<br>所以<br><br><strong>200&gt;100</strong> Win</p><p><strong>300&lt;350</strong> Lose</p><p><strong>400=400</strong> Tie<br><br>雙方各有一隻寶可夢獲勝，所以這場比賽比賽為平手(<strong>Tie</strong>)，而Ariel總共參加了一場比賽，勝場數為 0 ，所以<strong>勝場率</strong>為 <strong>0/1 = 0.00%</strong></p>
@@ -22,3 +23,43 @@ The win rates is a floating-point number with two digits after the decimal point
 <pre>
 
 </pre>
+<div>
+<h3>Sample1</h3>
+<h4>Input</h4>
+<pre>
+3
+1000 200
+500 100
+400 399
+100 200
+222 122
+200 200
+133 500
+122 444
+700 900
+
+</pre>
+<h4>Output</h4>
+<pre>
+Win
+Tie
+Lose
+33.33%
+</pre>
+</div>
+<div>
+<h3>Sample2</h3>
+<h4>Input</h4>
+<pre>
+1
+200 500
+100 222
+500 900
+
+</pre>
+<h4>Output</h4>
+<pre>
+Lose
+0.00%
+</pre>
+</div>

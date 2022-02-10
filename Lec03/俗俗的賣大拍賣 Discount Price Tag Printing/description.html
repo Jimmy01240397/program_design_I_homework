@@ -1,3 +1,4 @@
+<h2>俗俗的賣大拍賣 Discount Price Tag Printing</h2>
 <h3>Description</h3>
 <div>
 <p>2021/10/21 21:50 更新 / Update:</p><p>新增提示，請至下方 Hint 查看</p><p>Added hint below</p><hr><p>資訊系阿超正在協助可憐的銷售員設計即將到來的周年慶看板。</p><p>但是因為人工處理起來真的太費時了，</p><p>請幫她設計一個程式可以自動化的處理完這件任務吧!</p><p>別擔心，阿超知道要如何將輸出結果從螢幕終端顯示器中帶到現實的!</p><p>A-chao, from CSIE, is helping a poor supermarket salesperson designing the price tag for the upcoming anniversary event. However, there is way too much to do it by hand. Please help him design a program to print out the price tag format. Don't worry, he knows how to make things in the terminal become physical.</p><p>The following are the rules for each output lines:</p><ul><li><p>Line #0 / #4: Filly Packed with the character <code>"</code></p></li><li><p>Line #1: Start with a backslash <code>\</code>, four spaces, <strong>the discount percentage which takes 3 character lengths</strong>, the string <code>%off!</code>, four more spaces, then ends with another backslash.</p></li><li><p>Line #2: Start with a backslash <code>\</code>, one space, the string <code>Before</code> , two more spaces, a dollar sign <code>$</code>, <strong>the original cost without a decimal point </strong>using<strong> </strong>a<strong> field width of five characters (justified to the right)</strong>, and ends with another space and a backslash.</p></li><li><p>Line #3: Start with a backslash <code>\</code>, one space, the string <code>After</code>, three more spaces, a dollar sign <code>$</code>, <strong>the discounted cost till the second decimal place</strong> using a <strong>field width of five characters (justified to the right)</strong>, and ends with another space and a backslash.</p></li><li><p><strong>No leading zero</strong> should be added to any of the printed numbers.</p></li><li><p>You can checkout the testing cases for full examples.</p></li></ul>
@@ -21,3 +22,67 @@ Please refer to the description section for details of each line.
 <pre>
 
 </pre>
+<div>
+<h3>Sample1</h3>
+<h4>Input</h4>
+<pre>
+50 8
+</pre>
+<h4>Output</h4>
+<pre>
+""""""""""""""""""
+\     50%off!    \
+\ Before  $    8 \
+\ After   $ 4.00 \
+""""""""""""""""""
+
+</pre>
+</div>
+<div>
+<h3>Sample2</h3>
+<h4>Input</h4>
+<pre>
+25 16
+</pre>
+<h4>Output</h4>
+<pre>
+""""""""""""""""""
+\     25%off!    \
+\ Before  $   16 \
+\ After   $12.00 \
+""""""""""""""""""
+
+</pre>
+</div>
+<div>
+<h3>Sample3</h3>
+<h4>Input</h4>
+<pre>
+15 80
+</pre>
+<h4>Output</h4>
+<pre>
+""""""""""""""""""
+\     15%off!    \
+\ Before  $   80 \
+\ After   $68.00 \
+""""""""""""""""""
+
+</pre>
+</div>
+<div>
+<h3>Sample4</h3>
+<h4>Input</h4>
+<pre>
+100 1
+</pre>
+<h4>Output</h4>
+<pre>
+""""""""""""""""""
+\    100%off!    \
+\ Before  $    1 \
+\ After   $ 0.00 \
+""""""""""""""""""
+
+</pre>
+</div>

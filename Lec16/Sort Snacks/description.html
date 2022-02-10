@@ -1,3 +1,4 @@
+<h2>Sort Snacks</h2>
 <h3>Description</h3>
 <div>
 <p>In lab, students buy snacks once a month. They want to choose snacks with good value for money. (物超所值)</p><p>The <code>value</code> means  <code>weight/price</code>. </p><p>Please help them sort snacks in descending order based on snacks' <code>value</code>. <br>If the <code>value</code> of snacks are equal, sort snacks in ascending order based on snacks' <code>price</code>. <br>If the <code>price</code> of snacks are equal, sort snacks in ascending order based on snacks' <code>id</code>. </p><p>You can use C standard library's <code>qsort</code> function to sort snacks:</p><p><code>void qsort (void* base, size_t num, size_t size, int (*compar)(const void*,const void*));</code></p><p>The reference link: <a rel="noopener noreferrer nofollow" href="https://www.cplusplus.com/reference/cstdlib/qsort/?kw=qsort">https://www.cplusplus.com/reference/cstdlib/qsort/?kw=qsort</a></p>
@@ -43,3 +44,51 @@ int main() {
     return 0;
 }
 </pre>
+<div>
+<h3>Sample1</h3>
+<h4>Input</h4>
+<pre>
+5
+1 2
+4 6
+4 10
+2 3
+12 18
+
+</pre>
+<h4>Output</h4>
+<pre>
+3 2.50
+1 2.00
+4 1.50
+2 1.50
+5 1.50
+
+</pre>
+</div>
+<div>
+<h3>Sample2</h3>
+<h4>Input</h4>
+<pre>
+7
+8 2
+44 10
+7 2
+22 5
+6 9
+10 4
+4 1
+
+</pre>
+<h4>Output</h4>
+<pre>
+5 1.50
+6 0.40
+3 0.29
+7 0.25
+1 0.25
+4 0.23
+2 0.23
+
+</pre>
+</div>

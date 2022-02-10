@@ -1,3 +1,4 @@
+<h2>[25 Points] Order Recovery</h2>
 <h3>Description</h3>
 <div>
 <p>小混蛋工廠最近遇到了大麻煩！</p><p>他們的系統不知道出了什麼問題，接收到的訂單可能會少字，並以奇怪的格式呈現。</p><p>請協助他們恢復訂單內容，並告訴他們該訂單要的貨到底是什麼！</p><p>舉例來說，當訂單收到的是 <code>ter:mel</code>，代表要的貨有兩個（以 <code>:</code> 隔開），其中一個包含字串 <code>ter</code>，另一個包含字串 <code>mel</code>。</p><p>然而，工廠內有太多東西了，以符合 <code>ter</code> 來說，可能是 <code>water</code>，可能是 <code>battery</code>，也可能是 <code>butter</code>。（沒錯，這間工廠什麼都有。）</p><p>因此小混蛋工廠的員工決定只選擇「最先符合該字串」的物品，當作客人要的貨，上述三項的話，將會選擇 <code>water</code> 當作結果。</p><p>（因為 <code>water</code> 是在第三個字母開始符合，其他兩者都是在第四個字母才開始符合。）</p><p>當然，若有兩個以上字串符合上述情況，則優先選擇字數最短的字串，字數相同時，則比較兩字串各字元，優先選擇字元較前面的字串。</p><p>例如：訂單要求 <code>ham</code>，則 <code>hammer</code> 和 <code>hamburger</code> 將選擇 <code>hammer</code>。</p><p>又例如：訂單要求 <code>yo</code>，則 <code>yolk</code> 和 <code>yoyo</code> 將選擇 <code>yolk</code>（因為順序上 <code>l</code> 比 <code>y</code> 前面）。</p><p>最後回到訂單的舉例，若 <code>ter</code> 選出的貨為 <code>water</code>，<code>mel</code> 選出的貨為 <code>melon</code>，則最後以 <code>+</code> 連結，輸出 <code>water+melon</code>。</p><p></p><p>另外，每張訂單最少有 1 樣物品，但最多不會超過 30 樣物品。</p><p></p><hr><p></p><p>Bestards' Factory has a big trouble!</p><p>Somewhere is wrong in their system, so the order they received may miss some characters, and is showed in a strange way.</p><p>Please help them recover the order, and tell they what the customers want.</p><p>For example, if the order's content is <code>ter:mel</code>, it means there are two items（separated by <code>:</code>）, one includes substring <code>ter</code>, and the other includes substring <code>mel</code>.</p><p>However, there are too many goods, we use <code>ter</code> as an example, it may be <code>water</code>, <code>battery</code>, or <code>butter</code>. (Yah, the factory sells everything!)</p><p>Hence we choose the goods that 「is matched by the substring from the more forward position」, as the goods that the customers want.</p><p>In the example, we will choose <code>water</code>. (Since <code>water</code> matches <code>ter</code> from the third position, while the other two match from the fourth position.)</p><p>If there are at least two goods meet the condition, then we choose the string with shorter length.</p><p>If the length are the same, then compare two strings, and choose the one that is less than the other.</p><p>For example, if <code>ham</code>, then <code>hammer</code> and <code>hamburger</code>, we choose <code>hammer</code>.</p><p>Another example, if <code>yo</code>, then <code>yolk</code> and <code>yoyo</code>, we choose <code>yolk</code>. (Since in ascii, <code>l</code> is prior to <code>y</code>.)</p><p>Back to the first example, if <code>ter</code> represents for <code>water</code>, and <code>mel</code> represents for <code>melon</code>, then concatenate them by using <code>+</code> and print out <code>water+melon</code> as the result.</p><p></p><p>Every order orders at least 1 goods, but won't exceed 30 goods.</p>
@@ -63,3 +64,36 @@ int main(void) {
     return 0;
 }
 </pre>
+<div>
+<h3>Sample1</h3>
+<h4>Input</h4>
+<pre>
+ter:mel
+</pre>
+<h4>Output</h4>
+<pre>
+water+melon
+</pre>
+</div>
+<div>
+<h3>Sample2</h3>
+<h4>Input</h4>
+<pre>
+nut:il
+</pre>
+<h4>Output</h4>
+<pre>
+nut+oil
+</pre>
+</div>
+<div>
+<h3>Sample3</h3>
+<h4>Input</h4>
+<pre>
+in:lo:low
+</pre>
+<h4>Output</h4>
+<pre>
+ink+lock+flower
+</pre>
+</div>

@@ -1,3 +1,4 @@
+<h2>Spread the Color</h2>
 <h3>Description</h3>
 <div>
 <p>Read a graph with size <code>M(5) * N(8)</code>, for each pixel there are <strong>3 colors(Red, Green, Blue)</strong> that we respectively use <code>R</code>, <code>G</code>, <code>B</code> to represent. If the pixel is <strong>empty</strong>, we use <code>X</code> to represent. After reading the graph, read <code>row</code> and <code>col</code> to get the color of <code>graph[row][col]</code>.Now, you need to spread the color starting from the position <code>(row, col)</code> and finally print out the result. The spreading rules are below:</p><p><strong>Spread color </strong><code>graph[row][col]</code><strong> starting from </strong><code>(row, col)</code><strong>in 4 directions(Up, Down, Left, Right).</strong> You will encounter three situations. <br>1. Pixel's color is <code>X</code>: Fill the color with <code>graph[row][col]</code> and go on.<br>2. Pixel's color is the same as <code>graph[row][col]</code>: Go on.<br>3. Pixel's color is different from <code>graph[row][col]</code>: Stop spreading.</p><h3><strong>Hint: See two-dimensional array as one-dimensional array.</strong></h3><p>Given <code>char *p = &amp;graph[0][0]</code>, you can use <code>*(p+row*N+col)</code> to visit the element in <code>graph[row][col]</code>.</p>
@@ -43,3 +44,45 @@ int main(void) {
     return 0;
 }
 </pre>
+<div>
+<h3>Sample1</h3>
+<h4>Input</h4>
+<pre>
+XXXXXXXX
+XXGXXXXX
+XRRXRXBX
+XXXXXXXX
+XXBXXXXX
+2 2
+</pre>
+<h4>Output</h4>
+<pre>
+XXXXXXXX
+XXGXXXXX
+RRRRRRBX
+XXRXXXXX
+XXBXXXXX
+
+</pre>
+</div>
+<div>
+<h3>Sample2</h3>
+<h4>Input</h4>
+<pre>
+RXXXXXXX
+XXXXXXXX
+XXXXXXXX
+XXXXXXXX
+XXXXXXXX
+0 0
+</pre>
+<h4>Output</h4>
+<pre>
+RRRRRRRR
+RXXXXXXX
+RXXXXXXX
+RXXXXXXX
+RXXXXXXX
+
+</pre>
+</div>

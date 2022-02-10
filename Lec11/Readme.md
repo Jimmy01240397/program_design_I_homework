@@ -1,6 +1,5 @@
 Lec11
 =====
-
 FORTUNE LOVER 世界的加法規則
 ----------------------------
 
@@ -178,7 +177,6 @@ Your code will be judge using this program:
     -15942 + -18168 = -1928919040
 
 </div>
-
 Kira Kira Random Star
 ---------------------
 
@@ -269,7 +267,6 @@ Your code will be judge using this program:
     1181
 
 </div>
-
 Polynomial Function
 -------------------
 
@@ -360,7 +357,6 @@ Your code will be judge using this program:
     105
 
 </div>
-
 Score Calculation
 -----------------
 
@@ -448,7 +444,6 @@ Your code will be judge using this program:
     495 99.0
 
 </div>
-
 Share Candy
 -----------
 
@@ -530,7 +525,6 @@ Your code will be judge using this program:
     5 0
 
 </div>
-
 Swap Again
 ----------
 

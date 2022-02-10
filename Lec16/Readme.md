@@ -1,6 +1,5 @@
 Lec16
 =====
-
 LEVEL5 -judgelight-
 -------------------
 
@@ -94,7 +93,6 @@ Your code will be judge using this program:
     6 NanjoYoshino
 
 </div>
-
 Look Up the Word in the Dictionary
 ----------------------------------
 
@@ -197,7 +195,6 @@ Your code will be judge using this program:
     0
 
 </div>
-
 Matrix Addition and Multiplication
 ----------------------------------
 
@@ -325,7 +322,6 @@ Your code will be judge using this program:
     43 50 
 
 </div>
-
 Notice Struct Pointer
 ---------------------
 
@@ -400,7 +396,6 @@ Your code will be judge using this program:
     12393933
 
 </div>
-
 Sei\'s online potion store
 --------------------------
 
@@ -613,7 +608,6 @@ Your code will be judge using this program:
     #104 200
 
 </div>
-
 Sort Snacks
 -----------
 
@@ -736,7 +730,6 @@ Your code will be judge using this program:
     2 0.23
 
 </div>
-
 Struct Array
 ------------
 
@@ -816,7 +809,6 @@ Your code will be judge using this program:
     44352
 
 </div>
-
 Weighted Score
 --------------
 
@@ -989,7 +981,6 @@ Your code will be judge using this program:
     pon 90 100 0
 
 </div>
-
 windowlocation
 --------------
 

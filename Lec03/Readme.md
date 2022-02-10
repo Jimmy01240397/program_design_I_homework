@@ -1,6 +1,5 @@
 Lec03
 =====
-
 Addition in Column Form
 -----------------------
 
@@ -103,7 +102,6 @@ Your code will be judge using this program:
     001035
 
 </div>
-
 Cirno\'s Perfect Math Class 琪露諾的完美算術教室
 ------------------------------------------------
 
@@ -234,7 +232,6 @@ Your code will be judge using this program:
     6641 7585 1702
 
 </div>
-
 Scanf Format Problem
 --------------------
 
@@ -320,7 +317,6 @@ Your code will be judge using this program:
     2230286
 
 </div>
-
 俗俗的賣大拍賣 Discount Price Tag Printing
 ------------------------------------------
 

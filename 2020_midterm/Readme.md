@@ -1,6 +1,5 @@
 2020\_midterm
 =============
-
 Calculating Volume
 ------------------
 
@@ -132,7 +131,6 @@ Your code will be judge using this program:
     480.00
 
 </div>
-
 Department Store Anniversary
 ----------------------------
 
@@ -193,7 +191,6 @@ Your code will be judge using this program:
     1 2 5 7 8 9 11 16 17 21 
 
 </div>
-
 Odd Magic Square
 ----------------
 
@@ -336,7 +333,6 @@ Your code will be judge using this program:
     22 31 40 49 2 11 20 
 
 </div>
-
 Plague Inc
 ----------
 
@@ -414,7 +410,6 @@ Your code will be judge using this program:
     23857
 
 </div>
-
 Rotate Image
 ------------
 
@@ -503,7 +498,6 @@ Your code will be judge using this program:
     7 2 7 
 
 </div>
-
 Vigenère Cipher Encoder
 -----------------------
 

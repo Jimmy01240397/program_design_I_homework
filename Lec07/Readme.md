@@ -1,6 +1,5 @@
 Lec07
 =====
-
 Add Up Two Hexadecimal
 ----------------------
 
@@ -63,7 +62,6 @@ Your code will be judge using this program:
     OVERFLOW!
 
 </div>
-
 Caesar Cipher Encoder
 ---------------------
 
@@ -141,7 +139,6 @@ Your code will be judge using this program:
     z,a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y.
 
 </div>
-
 Combination
 -----------
 
@@ -198,7 +195,6 @@ Your code will be judge using this program:
     120
 
 </div>
-
 進階版快閃心算 - Advanced Flashing Number Mental Arithmetic
 -----------------------------------------------------------
 

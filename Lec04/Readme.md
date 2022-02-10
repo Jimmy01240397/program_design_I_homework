@@ -1,6 +1,5 @@
 Lec04
 =====
-
 EAN-13
 ------
 
@@ -96,7 +95,6 @@ Your code will be judge using this program:
     1
 
 </div>
-
 Lena\'s pudding plan
 --------------------
 
@@ -193,7 +191,6 @@ Your code will be judge using this program:
     1588 6
 
 </div>
-
 Polynomial Calculation
 ----------------------
 
@@ -251,7 +248,6 @@ Your code will be judge using this program:
     -22.0
 
 </div>
-
 Temperature conversion
 ----------------------
 

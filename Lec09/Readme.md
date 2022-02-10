@@ -1,6 +1,5 @@
 Lec09
 =====
-
 Alpha compositing
 -----------------
 
@@ -238,7 +237,6 @@ Your code will be judge using this program:
     139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 139 
 
 </div>
-
 Combination Again (Oh come on)
 ------------------------------
 
@@ -305,7 +303,6 @@ Your code will be judge using this program:
     3276
 
 </div>
-
 Passcode of Treasure Box
 ------------------------
 
@@ -396,7 +393,6 @@ Your code will be judge using this program:
     2
 
 </div>
-
 Secret Value
 ------------
 

@@ -1,6 +1,5 @@
 Lec02
 =====
-
 Division of Two Integers
 ------------------------
 
@@ -60,7 +59,6 @@ Your code will be judge using this program:
     0.0 0.00
 
 </div>
-
 Make a Circle
 -------------
 
@@ -122,7 +120,6 @@ Your code will be judge using this program:
     28.26 18.84
 
 </div>
-
 Say Hello to C
 --------------
 
@@ -161,7 +158,6 @@ Your code will be judge using this program:
     Hello C!
 
 </div>
-
 Swap Two Variables
 ------------------
 
